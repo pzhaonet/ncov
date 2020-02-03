@@ -1,3 +1,15 @@
+require(ncovr)
+require(leafletCN)
+library(htmlwidgets)
+library(htmltools)
+
+ncov <- get_ncov()
+leafMap <- plot_map(ncov$area, filter = '待明确地区')
+oldwd <- getwd()
+setwd('static/leaflet')
+saveWidget(leafMap, "leafmap.html")
+setwd(oldwd)
+
 remotes::install_github('pzhaonet/ncovr')
 blogdown::install_hugo()
 blogdown::build_site()
