@@ -4,5 +4,5 @@ date: 2020-02-03
 slug: china-map
 ---
 
-<iframe seamless src="/static/leaflet/leafmap/index.html" width="100%" height="500"></iframe>
+<iframe seamless src="/static/leaflet/leafmap.html" width="100%" height="500"></iframe>
 
