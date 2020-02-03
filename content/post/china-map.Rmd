@@ -17,3 +17,10 @@ ncov <- get_ncov()
 plot_map(ncov$area, filter = '待明确地区')
 ```
 
+```{r}
+dat = data.frame(name = regionNames("china"),
+                 value = runif(34))
+geojsonMap(dat,"china")
+```
+
+
