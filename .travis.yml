@@ -1,0 +1,22 @@
+language: r
+sudo: false
+latex: false
+pandoc: false
+cache:
+  packages: true
+
+git: 
+  depth: 5
+  submodules: false
+
+before_install:
+  - git config --global user.email "baydap@gmail.com"
+  - git config --global user.name "pzhaonet"
+
+script:
+  - Rscript scripts/run.R
+
+after_success:
+  - git add -A
+  - git commit -m"travis update"
+  - git push -q https://${GITHUB_PAT}@github.com/pzhaonet/ncov.git HEAD:master

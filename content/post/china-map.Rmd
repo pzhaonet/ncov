@@ -1,0 +1,19 @@
+---
+title: 全国疫情地图
+date: `r Sys.Date()`
+slug: china-map
+---
+
+
+```{r include=FALSE}
+knitr::opts_chunk$set(eval = TRUE, message = FALSE, warning = FALSE, error = FALSE)
+```
+
+```{r}
+# Sys.setlocale('LC_CTYPE', 'Chinese')
+require(ncovr)
+require(leafletCN)
+ncov <- get_ncov()
+plot_map(ncov$area, filter = '待明确地区')
+```
+

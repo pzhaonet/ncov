@@ -1,0 +1,5 @@
+Package: placeholder
+Type: placeholder
+Title: placeholder
+Version: 0.0.1
+Imports: blogdown, remotes, leafletCN
