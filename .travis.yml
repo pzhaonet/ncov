@@ -1,7 +1,7 @@
 language: r
 sudo: false
 latex: false
-pandoc: false
+pandoc: true
 cache:
   packages: true
 
