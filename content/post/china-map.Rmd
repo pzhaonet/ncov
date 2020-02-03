@@ -1,5 +1,5 @@
 ---
-title: 全国疫情地图
+title: "China Map"
 date: `r Sys.Date()`
 slug: china-map
 ---
