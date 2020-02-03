@@ -4,23 +4,5 @@ date: 2020-02-03
 slug: china-map
 ---
 
-
-```{r include=FALSE}
-knitr::opts_chunk$set(eval = TRUE, message = FALSE, warning = FALSE, error = FALSE)
-```
-
-```{r}
-# Sys.setlocale('LC_CTYPE', 'Chinese')
-require(ncovr)
-require(leafletCN)
-ncov <- get_ncov()
-plot_map(ncov$area, filter = '待明确地区')
-```
-
-```{r}
-dat = data.frame(name = regionNames("china"),
-                 value = runif(34))
-geojsonMap(dat,"china")
-```
-
+<iframe seamless src="/static/leaflet/leafmap/index.html" width="100%" height="500"></iframe>
 
