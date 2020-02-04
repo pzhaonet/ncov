@@ -1,5 +1,5 @@
 ---
-title: 疫情预测<<date>>
+title: 疫情预测(<<date>>)
 date: <<date>>
 slug: predict-<<date>>
 ---
