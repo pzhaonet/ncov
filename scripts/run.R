@@ -14,26 +14,35 @@ post_map <- function(method, date){
   filename <- paste0(method, '-map-', date)
   pathname <- paste0('content/post/', filename, '.Rmd')
   if(!file.exists(pathname)){
-  link <- paste0('https://pzhaonet.github.io/ncov/leaflet/leafmap-', method, '-', date, '.html')
-  filetext <- 
-    c("---",
-      paste0("title: 全国疫情地图(", prefix, "级)", date),
-      paste0("date: ", date),
-      paste0("slug: ", filename),
-      "---",
-      "",
-      paste0('<iframe seamless src="', link, '" width="100%" height="500"></iframe>'), 
-      "",
-      paste0('[点击这里全屏显示。](', link, ')')
-    )
-  writeLines(filetext, pathname, useBytes = TRUE)
+    link <- paste0('https://pzhaonet.github.io/ncov/leaflet/leafmap-', method, '-', date, '.html')
+    filetext <-
+      c("---",
+        paste0("title: 全国疫情地图(", prefix, "级)", date),
+        paste0("date: ", date),
+        paste0("slug: ", filename),
+        "---",
+        "",
+        paste0('<iframe seamless src="', link, '" width="100%" height="500"></iframe>'), 
+        "",
+        paste0('[点击这里全屏显示。](', link, ')'),
+        "",
+        "```{r, echo=FALSE}",
+        'require(ncovr)',
+        'ncov <- get_ncov()',
+        'ncov$area$date <- as.character(as.Date(ncovr:::conv_time(ncov$area$updateTime)))',
+        'ncov$area <- ncov$area[!duplicated(paste(ncov$area$provinceName, ncov$area$date)), ]',
+        paste0('x <- ncov$area[ncov$area$date == "', date, '", 2:6]'),
+        'knitr::kable(x, format = "html", caption = paste(date, "疫情数据表（", method, ")"), row.names = FALSE, col.names = c("名称", "确诊", "疑似", "治愈", "死亡"))',
+        "```"
+      )
+    writeLines(filetext, pathname, useBytes = TRUE)
   }
 }
 
 ## Get data ----
 ncov <- get_ncov()
 ncov$area$date <- as.character(as.Date(ncovr:::conv_time(ncov$area$updateTime)))
-ncov$area <- ncov$area[!duplicated(paste(ncov$area$provinceName, ncov$area$date)) & ncov$area$country == '中国', ]
+ncov$area <- ncov$area[!duplicated(paste(ncov$area$provinceName, ncov$area$date)), ]
 ncov_dates <- unique(ncov$area$date)
 
 ## create maps ----

@@ -1,9 +1,0 @@
----
-title: 全国疫情地图(市级)2020-02-02
-date: 2020-02-02
-slug: city-map-2020-02-02
----
-
-<iframe seamless src="https://pzhaonet.github.io/ncov/leaflet/leafmap-city-2020-02-02.html" width="100%" height="500"></iframe>
-
-[点击这里全屏显示。](https://pzhaonet.github.io/ncov/leaflet/leafmap-city-2020-02-02.html)
