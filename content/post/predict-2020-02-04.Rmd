@@ -1,7 +1,7 @@
 ---
-title: 疫情预测(<<date>>)
-date: <<date>>
-slug: predict-<<date>>
+title: 疫情预测(2020-02-04)
+date: 2020-02-04
+slug: predict-2020-02-04
 ---
 
 ```{r include=FALSE}
@@ -72,7 +72,7 @@ Input = nrow(Dat) + 1
 
 我们的模型显示，全国总体疫情将于 `r Dseq [round(xmax,0)]` 结束。
 
-明天（<<date>>）的累计确诊病例预计是 `r format(round(Coe[1, 1] / (1 + exp((Coe[2, 1] - Input) / Coe[3, 1]))), scientific=FALSE)` 例。
+明天（2020-02-04）的累计确诊病例预计是 `r format(round(Coe[1, 1] / (1 + exp((Coe[2, 1] - Input) / Coe[3, 1]))), scientific=FALSE)` 例。
 
 
 ```{r}
@@ -84,7 +84,7 @@ tomorrow <- df_predict$tomorrow[1]
 ```
 
 ```{r, results='asis'}
-cat("## <<date>> 各地区疫情预测表")
+cat("## 2020-02-04 各地区疫情预测表")
 ```
 
 ```{r}
