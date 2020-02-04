@@ -92,10 +92,11 @@ knitr::kable(df_predict[, c(1, 2, 4)], format = "html", row.names = FALSE, col.n
 ```
 
 ```{r, results='asis'}
-fig <- sapply(unique(ncov$area$provinceShortName), function(x) {
-  predict_date(province = x, ncov = ncov)$fig
-  cat(x, '\\n' )
-  }
-  )
+lapply(unique(ncov$area$provinceShortName), 
+       function(x) {
+         predict_date(province = x, ncov = ncov)$fig
+         cat(x, '\\n' )
+       }
+)
 ```
 

@@ -14,9 +14,6 @@ publishDir = "docs"
     name = "关于"
     url = "/about/"
 
-    name = "概况"
-    url = "/intro/"
-
 [params]
     description = "A website built through Hugo and blogdown."
 
