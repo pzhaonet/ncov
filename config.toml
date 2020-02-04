@@ -1,6 +1,6 @@
 baseurl = "https://pzhaonet.github.io/ncov/"
 languageCode = "en-us"
-title = "nCoV：全国新型冠状病毒疫情报告"
+title = "nCoV：新型冠状病毒疫情报告"
 theme = "hugo-lithium"
 googleAnalytics = ""
 disqusShortname = ""

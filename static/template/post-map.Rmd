@@ -1,5 +1,5 @@
 ---
-title: 全国疫情地图(<<method-zh>>级)<<date>>
+title: 疫情地图(<<method-zh>>级)<<date>>
 date: <<date>>
 slug: <<method>>-map-<<date>>
 ---
