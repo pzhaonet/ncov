@@ -23,6 +23,16 @@ post_map <- function(method, date){
   }
 }
 
+post_predict <- function(date){
+  filename <- paste0('predict-', date)
+  pathname <- paste0('content/post/', filename, '.Rmd')
+  if(!file.exists(pathname)){
+    filetext <- readLines('static/template/post-predict.Rmd', encoding = 'UTF-8')
+    filetext <- gsub("<<date>>", date, filetext)
+    writeLines(filetext, pathname, useBytes = TRUE)
+  }
+}
+
 ## Get data ----
 ncov <- get_ncov()
 ncov$area$date <- as.character(as.Date(ncovr:::conv_time(ncov$area$updateTime)))
@@ -64,12 +74,15 @@ for(i in ncov_dates){
 }
 setwd(oldwd)
 
-## Create posts ----
+## Create map posts ----
 if(!dir.exists('content/post/')) dir.create('content/post/')
 for(i in ncov_dates){
   post_map(method = 'province', date = i)
   post_map(method = 'city', date = i)
 }
+
+## Create predict posts ----
+post_predict(date = Sys.Date())
 
 ## Build site ----
 blogdown::install_hugo()
