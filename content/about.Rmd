@@ -14,13 +14,17 @@ slug: about
 knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, error = FALSE)
 ```
 
-```{r}
+以下图片来自丁香园：
+
+```{r, out.width="80%"}
 require(ncovr)
 # Sys.setlocale('LC_CTYPE', 'Chinese')
 ncov <- get_ncov()
 ncov <- ncov$overall
 knitr::include_graphics(unlist(ncov$dailyPics))
 ```
+
+
 
 ```{r, results='asis'}
 cat(
@@ -41,6 +45,6 @@ cat(
   '今日新增死亡：', ncov$deadIncr,  "  \n\n",
   '今日新增严重：', ncov$seriousIncr,  "  \n\n",
   '更新时间：', as.character(ncovr:::conv_time(ncov$updateTime)), "  \n\n",
-  ncov$generalRemark
+  ncov$generalRemark, '。'
 )
 ```

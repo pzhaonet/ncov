@@ -91,10 +91,9 @@ cat("## <<date>> 各地区疫情预测表")
 knitr::kable(df_predict[, c(1, 2, 4)], format = "html", row.names = FALSE, col.names = c("地区", "结束时间", paste0("今日(", tomorrow, ")确诊人数预测")))
 ```
 
-```{r}
+```{r, results='asis'}
 for(x in unique(ncov$area$provinceShortName)) {
-    print(predict_date(province = x, ncov = ncov)$fig)
-    cat(x, '\\n' )
+    predict_date(province = x, ncov = ncov)$fig
+    cat(x, '  \\n')
 }
 ```
-

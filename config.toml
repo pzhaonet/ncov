@@ -33,5 +33,5 @@ publishDir = "docs"
     url = "logo.png"
     width = 50
     height = 50
-    alt = "Logo"
+    alt = "pzhao.org"
 

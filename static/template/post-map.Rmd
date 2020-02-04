@@ -36,6 +36,8 @@ if(method == 'city'){
 
 prefix <- switch(method, "province" = "省", "city" = "市")
 x <- x[order(-x$confirmedCount), ]
+x$rank <- 1:nrow(x)
+x <- x[, c(6,1:5)]
 ```
 
 ```{r, results='asis'}
@@ -43,5 +45,5 @@ cat("## <<date>> 疫情数据表(", prefix, ")")
 ```
 
 ```{r}
-knitr::kable(x, format = "html", row.names = FALSE, col.names = c("名称", "确诊", "疑似", "治愈", "死亡"))
+knitr::kable(x, format = "html", row.names = FALSE, col.names = c("排序", "名称", "确诊", "疑似", "治愈", "死亡"))
 ```
