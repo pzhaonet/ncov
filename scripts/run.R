@@ -81,6 +81,7 @@ for(i in ncov_dates){
 setwd(oldwd)
 
 ## Create posts ----
+if(!dir.exists('content/post/')) dir.create('content/post/')
 for(i in ncov_dates){
   post_map(method = 'province', date = i)
   post_map(method = 'city', date = i)
