@@ -15,28 +15,9 @@ post_map <- function(method, date){
   pathname <- paste0('content/post/', filename, '.Rmd')
   if(!file.exists(pathname)){
     link <- paste0('https://pzhaonet.github.io/ncov/leaflet/leafmap-', method, '-', date, '.html')
-    filetext <-
-      c("---",
-        paste0("title: 全国疫情地图(", prefix, "级)", date),
-        paste0("date: ", date),
-        paste0("slug: ", filename),
-        "---",
-        "",
-        paste0('<iframe seamless src="', link, '" width="100%" height="500"></iframe>'), 
-        "",
-        paste0('[点击这里全屏显示。](', link, ')'),
-        "",
-        "```{r, echo=FALSE}",
-        'require(ncovr)',
-        'ncov <- get_ncov()',
-        'ncov$area$date <- as.character(as.Date(ncovr:::conv_time(ncov$area$updateTime)))',
-        'ncov$area <- ncov$area[!duplicated(paste(ncov$area$provinceName, ncov$area$date)), ]',
-        paste0('x <- ncov$area[ncov$area$date == "', date, '", 2:6]'),
-        paste0('method <- "', method, '"'), 
-        'prefix <- switch(method, "province" = "省", "city" = "市")',
-        'knitr::kable(x, format = "html", caption = paste0(', date, '"疫情数据表（", prefix, ")"), row.names = FALSE, col.names = c("名称", "确诊", "疑似", "治愈", "死亡"))',
-        "```"
-      )
+    filetext <- readLines('static/template/post-map.Rmd', encoding = 'UTF-8')
+    filetext <- gsub("<<method>>", method, filetext)
+    filetext <- gsub("<<date>>", date, filetext)
     writeLines(filetext, pathname, useBytes = TRUE)
   }
 }
