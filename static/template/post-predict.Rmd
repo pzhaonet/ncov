@@ -77,7 +77,7 @@ Input = nrow(Dat) + 1
 
 ```{r}
 ncov <- get_ncov()
-df_predict <- t(sapply(unique(ncov$area$provinceShortName), function(x) predict_date(province = x, ncov = ncov, ifplot = FALSE)))
+df_predict <- t(sapply(unique(ncov$area$provinceShortName), function(x) calc_predict(province = x, ncov = ncov, ifplot = FALSE)))
 df_predict <- as.data.frame(df_predict)
 df_predict <- df_predict[order(-as.numeric(df_predict$tomorrowcount)), ]
 tomorrow <- df_predict$tomorrow[1]
@@ -93,7 +93,7 @@ knitr::kable(df_predict[, c(1, 2, 4)], format = "html", row.names = FALSE, col.n
 
 ```{r, results='asis'}
 for(x in unique(ncov$area$provinceShortName)) {
-    predict_date(province = x, ncov = ncov)$fig
-    cat(x, '  \\n')
+    cat(x)
+    plot_predict(province = x, ncov = ncov)
 }
 ```
