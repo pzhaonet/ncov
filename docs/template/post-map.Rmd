@@ -1,14 +1,21 @@
 ---
-title: 全国疫情地图(<<method>>级)<<date>>
+title: 全国疫情地图(<<method-zh>>级)<<date>>
 date: <<date>>
 slug: <<method>>-map-<<date>>
 ---
+
+```{r include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, error = FALSE)
+```
+
 
 <iframe seamless src="https://pzhaonet.github.io/ncov/leaflet/leafmap-<<method>>-<<date>>.html" width="100%" height="500"></iframe>
 
 [点击这里全屏显示。](https://pzhaonet.github.io/ncov/leaflet/leafmap-<<method>>-<<date>>.html)
 
-```{r, echo=FALSE}
+
+
+```{r}
 require(ncovr)
 require(leafletCN)
 # Sys.setlocale('LC_CTYPE', 'Chinese')
@@ -30,5 +37,13 @@ if(method == 'city'){
   x <- x[x$cityName %in% cities, ]
 }
 prefix <- switch(method, "province" = "省", "city" = "市")
-knitr::kable(x, format = "html", caption = paste0("<<date>> 疫情数据表(", prefix, ")"), row.names = FALSE, col.names = c("名称", "确诊", "疑似", "治愈", "死亡"))
+x <- x[order(-x$confirmedCount), ]
+```
+
+```{r, results='asis'}
+paste0("## <<date>> 疫情数据表(", prefix, ")")
+```
+
+```{r}
+knitr::kable(x, format = "html", row.names = FALSE, col.names = c("名称", "确诊", "疑似", "治愈", "死亡"))
 ```
