@@ -34,7 +34,7 @@ post_map <- function(method, date){
         paste0('x <- ncov$area[ncov$area$date == "', date, '", 2:6]'),
         paste0('method <- "', method, '"'), 
         'prefix <- switch(method, "province" = "省", "city" = "市")',
-        'knitr::kable(x, format = "html", caption = paste0(date, "疫情数据表（", prefix, ")"), row.names = FALSE, col.names = c("名称", "确诊", "疑似", "治愈", "死亡"))',
+        'knitr::kable(x, format = "html", caption = paste0(', date, '"疫情数据表（", prefix, ")"), row.names = FALSE, col.names = c("名称", "确诊", "疑似", "治愈", "死亡"))',
         "```"
       )
     writeLines(filetext, pathname, useBytes = TRUE)
