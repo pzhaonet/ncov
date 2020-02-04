@@ -1,0 +1,9 @@
+---
+title: 全国疫情地图(省级)2020-01-30
+date: 2020-01-30
+slug: province-map-2020-01-30
+---
+
+<iframe seamless src="https://pzhaonet.github.io/ncov/leaflet/leafmap-province-2020-01-30.html" width="100%" height="500"></iframe>
+
+[点击这里全屏显示。](https://pzhaonet.github.io/ncov/leaflet/leafmap-province-2020-01-30.html)
