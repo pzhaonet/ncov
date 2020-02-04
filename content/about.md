@@ -1,6 +1,10 @@
 ---
 date: "2020-02-02"
-title: About
+title: 关于
 ---
 
-This is a "hello world" example website for the [**blogdown**](https://github.com/rstudio/blogdown) package. The theme was forked from [@jrutheiser/hugo-lithium-theme](https://github.com/jrutheiser/hugo-lithium-theme) and modified by [Yihui Xie](https://github.com/yihui/hugo-lithium).
+这是我们搭建的一个新型冠状病毒疫情信息的网站。
+
+欢迎参与到我们的项目中来。
+
+联系邮箱: openr(at)pzhao.net
