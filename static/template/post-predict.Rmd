@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALS
 
 ```{r}
 require(ncovr)
-Sys.setlocale('LC_CTYPE', 'Chinese')
+# Sys.setlocale('LC_CTYPE', 'Chinese')
 ```
 
 
