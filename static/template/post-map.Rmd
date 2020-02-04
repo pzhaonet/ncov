@@ -28,9 +28,8 @@ method <- "<<method>>"
 
 if(method == 'city'){
   x_city <- dplyr::bind_rows(ncov$area$cities[ncov$area$date == "<<date>>"])
-  x_area <- x
-  names(x_area)[1] <- "cityName"
-  x <- rbind(x_city[, 1:5], x_area)
+  names(x)[1] <- "cityName"
+  if(nrow(x_city) > 0) x <- rbind(x_city[, 1:5], x)
   cities <- leafletCN::regionNames(mapName = "city")
   x <- x[x$cityName %in% cities, ]
 }
