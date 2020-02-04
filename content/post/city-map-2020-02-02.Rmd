@@ -1,0 +1,34 @@
+---
+title: 全国疫情地图(city级)2020-02-02
+date: 2020-02-02
+slug: city-map-2020-02-02
+---
+
+<iframe seamless src="https://pzhaonet.github.io/ncov/leaflet/leafmap-city-2020-02-02.html" width="100%" height="500"></iframe>
+
+[点击这里全屏显示。](https://pzhaonet.github.io/ncov/leaflet/leafmap-city-2020-02-02.html)
+
+```{r, echo=FALSE}
+require(ncovr)
+require(leafletCN)
+# Sys.setlocale('LC_CTYPE', 'Chinese')
+ncov <- get_ncov()
+ncov$area$date <- as.character(as.Date(ncovr:::conv_time(ncov$area$updateTime)))
+ncov$area <- ncov$area[!duplicated(paste(ncov$area$provinceName, ncov$area$date)), ]
+x <- ncov$area[ncov$area$date == "2020-02-02", 2:6]
+
+method <- "city"
+
+if(method == 'city'){
+  x_city <- dplyr::bind_rows(ncov$area$cities)
+  if (nrow(x_city) != 0) 
+    x_city <- x_city[, 1:5]
+  x_area <- x
+  names(x_area)[1] <- "cityName"
+  x <- rbind(x_city, x_area)
+  cities <- leafletCN::regionNames(mapName = "city")
+  x <- x[x$cityName %in% cities, ]
+}
+prefix <- switch(method, "province" = "省", "city" = "市")
+knitr::kable(x, format = "html", caption = paste0("2020-02-02 疫情数据表(", prefix, ")"), row.names = FALSE, col.names = c("名称", "确诊", "疑似", "治愈", "死亡"))
+```

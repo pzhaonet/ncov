@@ -13,11 +13,6 @@
   </url>
   
   <url>
-    <loc>https://pzhaonet.github.io/ncov/post/china-map/</loc>
-    <lastmod>2020-02-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://pzhaonet.github.io/ncov/post/city-map-2020-02-03/</loc>
     <lastmod>2020-02-03T00:00:00+00:00</lastmod>
   </url>
@@ -28,17 +23,17 @@
   </url>
   
   <url>
-    <loc>https://pzhaonet.github.io/ncov/about/</loc>
-    <lastmod>2020-02-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://pzhaonet.github.io/ncov/post/city-map-2020-02-02/</loc>
     <lastmod>2020-02-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://pzhaonet.github.io/ncov/post/province-map-2020-02-02/</loc>
+    <lastmod>2020-02-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/about/</loc>
     <lastmod>2020-02-02T00:00:00+00:00</lastmod>
   </url>
   
