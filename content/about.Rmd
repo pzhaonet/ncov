@@ -1,7 +1,14 @@
 ---
-title: 疫情简介
-slug: intro
+title: 简介
+slug: about
 ---
+
+这是我们搭建的一个新型冠状病毒疫情信息的网站。
+
+欢迎参与到我们的项目中来。
+
+联系邮箱: openr(at)pzhao.net
+
 
 ```{r include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, error = FALSE)
@@ -37,4 +44,3 @@ cat(
   ncov$generalRemark
 )
 ```
-
