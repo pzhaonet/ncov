@@ -27,21 +27,20 @@ x <- ncov$area[ncov$area$date == "<<date>>", 2:6]
 method <- "<<method>>"
 
 if(method == 'city'){
-  x_city <- dplyr::bind_rows(ncov$area$cities)
-  if (nrow(x_city) != 0) 
-    x_city <- x_city[, 1:5]
+  x_city <- dplyr::bind_rows(ncov$area$cities[ncov$area$date == "<<date>>"])
   x_area <- x
   names(x_area)[1] <- "cityName"
   x <- rbind(x_city, x_area)
   cities <- leafletCN::regionNames(mapName = "city")
   x <- x[x$cityName %in% cities, ]
 }
+
 prefix <- switch(method, "province" = "省", "city" = "市")
 x <- x[order(-x$confirmedCount), ]
 ```
 
 ```{r, results='asis'}
-paste0("## <<date>> 疫情数据表(", prefix, ")")
+cat("## <<date>> 疫情数据表(", prefix, ")")
 ```
 
 ```{r}
