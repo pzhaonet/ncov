@@ -17,6 +17,7 @@ post_map <- function(method, date){
     link <- paste0('https://pzhaonet.github.io/ncov/leaflet/leafmap-', method, '-', date, '.html')
     filetext <- readLines('static/template/post-map.Rmd', encoding = 'UTF-8')
     filetext <- gsub("<<method>>", method, filetext)
+    filetext <- gsub("<<method-zh>>", prefix, filetext)
     filetext <- gsub("<<date>>", date, filetext)
     writeLines(filetext, pathname, useBytes = TRUE)
   }
