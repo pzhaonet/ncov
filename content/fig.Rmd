@@ -1,0 +1,19 @@
+---
+title: 最新图表
+slug: fig
+---
+
+
+```{r include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, error = FALSE)
+```
+
+以下图片来自丁香园：
+
+```{r, out.width="100%"}
+require(ncovr)
+Sys.setlocale('LC_CTYPE', 'Chinese')
+ncov <- get_ncov()
+ncov <- ncov$overall
+knitr::include_graphics(unlist(ncov$dailyPics))
+```

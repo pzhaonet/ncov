@@ -1,0 +1,20 @@
+---
+title: 辟谣
+slug: rumors
+---
+
+```{r include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, error = FALSE)
+```
+
+```{r, results='asis'}
+require(ncovr)
+Sys.setlocale('LC_CTYPE', 'Chinese')
+ncov <- get_ncov('csv', 'rumors')$rumors
+ncov$title <- gsub('\u00A0', ' ', ncov$title)
+
+cat(paste0('## ', ncov$title, '  \n\n',
+    ncov$mainSummary, '  \n\n',
+    ncov$body),
+    sep = '  \n\n')
+```

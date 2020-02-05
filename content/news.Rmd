@@ -1,0 +1,22 @@
+---
+title: 新闻汇总
+slug: news
+---
+
+```{r include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, error = FALSE)
+```
+
+```{r, results='asis'}
+require(ncovr)
+Sys.setlocale('LC_CTYPE', 'Chinese')
+ncov <- get_ncov('csv', 'news')$news
+ncov$title <- gsub('\u00A0', ' ', ncov$title)
+
+cat(paste0('## [', ncov$title, '](', ncov$sourceUrl, ')  \n\n',
+           ncov$pubDate, ' ',
+           ncov$infoSource, ' ',
+           ncov$provinceName,  '  \n\n',
+           ncov$summary), 
+    sep = '  \n\n')
+```
