@@ -32,7 +32,7 @@ ncov <- get_ncov()
 df_predict <- t(sapply(unique(ncov$area$provinceShortName), function(x) predict_date(province = x, ncov = ncov, ifplot = FALSE)))
 df_predict <- as.data.frame(df_predict)
 df_predict <- df_predict[order(-as.numeric(df_predict$tomorrowNew)), ]
-tomorrow <- df_predict$tomorrow[1]
+tomorrow <- substr(as.character(as.Date(paste0('2002-', df_predict$tomorrow[1]))-1), 6,  10)
 ```
 
 ```{r, results='asis'}
