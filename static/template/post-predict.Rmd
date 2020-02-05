@@ -1,233 +1,37 @@
 ---
-title: 疫情预测(<<date>>)
+title: 疫情缓和时间预测(<<date>>)
 date: <<date>>
 slug: predict-<<date>>
 ---
 
 ```{r include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, error = FALSE)
+Sys.setlocale('LC_CTYPE', 'Chinese')
 ```
 
 ```{r}
 require(ncovr)
-# Sys.setlocale('LC_CTYPE', 'Chinese')
+ncovChina <- get_ncov('china') 
 ```
-
 
 ## 全国确诊病例时间趋势图和模型预测
 
 ```{r}
-ncov <- get_ncov('china')
-Confirmed <- c(58, 136, 198, ncov[, '确诊'])
-Suspected <- c(NA,  NA,  NA, ncov[, '疑似'])
-Death <- c(1, 1, 4, ncov[, '死亡'])
-Dat <- data.frame(Confirmed, Death, Suspected)
-# 设置一列为时间
-Dat$Date <- seq(as.Date("2020-01-17",format="%Y-%m-%d"),
-                by = "day", 
-                length.out = nrow(Dat))
-# 以1月17日作为第一天，是x变量
-Dat$Day <- 1:nrow(Dat)
-# 选择模型的y，我们先以确诊病例作为y
-Dat$Ymod <- Dat$Confirmed
-#模型需要设置初始值，但是我们也可以采用自动初始值用SSlogis()函数
-md <- nls(Ymod ~ SSlogis(Day, Asym, xmid, scal), data = Dat)
-Coe <- summary(md)$coefficients
-a <- Coe[1, 1]# 第一个参数Coe[1,1]是模型渐近线
-xmax <-  2 * Coe[2, 1] #第二个参数Coe[2,1]是模型x中值
-with(Dat,
-     plot(y = Ymod, x = Day,
-          xlim = c(0, 1.8 * xmax),
-          ylim = c(0, 1.2 * a),
-          ylab = "Number of cases",
-          xlab = "",
-          bty = 'n',
-          xaxt = "n"
-     )
-) #用xaxt = "n"先隐藏x轴
-
-#模型的预测值和预测线
-Pred <- seq(0, 1.2 * xmax, length = 100)
-lines(Pred, predict(md, list(Day = Pred)), col = "red")
-
-#画上x轴
-Length <- round(2.2 * nrow(Dat), 0)#需要预测到第几天，这里采用2.2倍的我们的数据时间
-Dseq <- format(seq(Dat$Date[1], by = "day", length.out = Length), "%m-%d") #设置新的x轴标签
-axis(1, at = 1:Length, labels = Dseq,
-    cex.axis = 0.6,las = 2)
-
-#做一个简单的图例，当然也可以用legend做图例
-points(2, 0.8 * a)
-text(3, 0.8 * a, "Confirmed", cex = 0.8, adj = 0)
-segments(1.5, 0.7 * a, 2.5, 0.7 * a, col = "red")
-text(3, 0.7 * a, "Model fit", cex = 0.8, adj = 0)
-
-#画上两条参考线
-segments(0, a, xmax, a, lty = "dotted")
-segments(xmax, 0, xmax, a, lty = "dotted")
-Input = nrow(Dat) + 1
-
+predict_date(province = "中国",  ncov = ncovChina,type="confirmed")
+pre <- predict_date(province = "中国",  ncov = ncovChina,type="confirmed", ifplot = FALSE)
 ```
 
 
-我们的模型显示，全国总体疫情将于 `r Dseq [round(xmax,0)]` 结束。
+我们的模型显示，全国总体疫情将于 `r pre$enddate` 缓解（确诊病例不再明显增长）。
 
-明天（<<date>>）的累计确诊病例预计是 `r format(round(Coe[1, 1] / (1 + exp((Coe[2, 1] - Input) / Coe[3, 1]))), scientific=FALSE)` 例。
+2020-`r pre$tomorrow` 确诊病例将新增`r pre$tomorrowNew`例，累计确诊病例将达到 `r pre$tomorrowcount` 例。
 
 
 ```{r}
-
-plot_predict <- function(province, ncov = ncov, ifplot = TRUE, addtitle = NA){
-  #Dataset For a specific area
-  Area <- ncov$area
-  Area$updateTime <- ncovr:::conv_time(Area$updateTime)#Correct the time
-  
-  Region_all <- unique(Area$provinceShortName)
-  Region_name <- Region_all[match(province, Region_all)]#Match regional name
-  Region <- subset(Area,provinceShortName==Region_name)
-  
-  RegionTime <- aggregate(confirmedCount~updateTime,data=Region,sum)
-  
-  RegionTime$Date <- format(RegionTime$updateTime,"%m-%d")
-  
-  RegionDat <- aggregate(confirmedCount~Date,data=RegionTime,max)
-  
-  #No data availalbe for specific date
-  RegionDat$Day <- 1:nrow(RegionDat)
-  RegionDat$New <- with(RegionDat,confirmedCount-c(0,confirmedCount[-nrow(RegionDat)]))
-  RegionDat$Date <-  as.Date(RegionDat$Date,"%m-%d")
-  Length <- round(2.2*nrow(RegionDat),0)
-  Dseq <- format(seq(RegionDat$Date[1], by = "day", length.out = Length ),"%m-%d")
-  
-  END <- NA
-  Predict <- NA
-  
-  #Model logistic regression
-  if(class(try(nls(confirmedCount~SSlogis(Day, Asym, xmid, scal),data= RegionDat), silent = TRUE)) != "try-error"){
-    md <- nls(confirmedCount~SSlogis(Day, Asym, xmid, scal),data= RegionDat)
-    Coe <- summary(md)$coefficients
-    a <- Coe[1,1]
-    xmax <-  2*Coe[2,1]
-    
-    #End date
-    END <- Dseq [round(xmax,0)]
-    #Predict
-    Input=nrow(RegionDat)+1
-    Predict <- round(a/(1+exp((Coe[2,1]-Input)/Coe[3,1])),0)
-    
-    # if(ifplot){
-      #Plot the results
-        par(mgp = c(2.5, 1, 0))
-        with(RegionDat,plot(y=confirmedCount,x=Day,xlim=c(0,1.8*xmax),ylim=c(0,1.3*a),ylab="Number of cases",xlab="",bty='n',xaxt = "n"));title(ifelse(is.na(addtitle), '', Region_name))
-        
-        with(RegionDat,points(y=New,x=Day,col="grey",pch=19))
-        
-        #Smooth predict line
-        PredS <- seq(0, 1.3*xmax, length = 100)
-        lines(PredS, predict(md, list(Day = PredS )),col="red")
-        
-        #The daily increase case
-        Lth<- round(1.3*xmax,0)
-        newdat <- data.frame(Pred=1:Lth)
-        newdat <- within(newdat, ypred <- predict(md,  list(Day = Pred )))
-        newdat$Prednew <- with(newdat,ypred-c(0,ypred[-nrow(newdat)]))
-        lines(x=newdat$Pred,y=newdat$Prednew,col="blue")
-        
-        axis(1, at=1:Length , labels=Dseq,cex.axis = 0.6,las=2)
-        
-        points(2,0.8*a)
-        text(3,0.8*a,"Confirmed",cex=0.8,adj=0)
-        segments(1.5,0.7*a,2.5,0.7*a,col="red")
-        text(3,0.7*a,"Model fit",cex=0.8,adj=0)
-        points(2,0.6*a,col="grey",pch=19)
-        text(3,0.6*a,"Daily increase",cex=0.8,adj=0)
-        
-        segments(0,a,xmax,a,lty="dotted")
-        segments(xmax,0,xmax,a,lty="dotted")
-      }
-      
-}
-
-calc_predict <- function(province, ncov = ncov, ifplot = FALSE, addtitle = NA){
-  #Dataset For a specific area
-  Area <- ncov$area
-  Area$updateTime <- ncovr:::conv_time(Area$updateTime)#Correct the time
-  
-  Region_all <- unique(Area$provinceShortName)
-  Region_name <- Region_all[match(province, Region_all)]#Match regional name
-  Region <- subset(Area,provinceShortName==Region_name)
-  
-  RegionTime <- aggregate(confirmedCount~updateTime,data=Region,sum)
-  
-  RegionTime$Date <- format(RegionTime$updateTime,"%m-%d")
-  
-  RegionDat <- aggregate(confirmedCount~Date,data=RegionTime,max)
-  
-  #No data availalbe for specific date
-  RegionDat$Day <- 1:nrow(RegionDat)
-  RegionDat$New <- with(RegionDat,confirmedCount-c(0,confirmedCount[-nrow(RegionDat)]))
-  RegionDat$Date <-  as.Date(RegionDat$Date,"%m-%d")
-  Length <- round(2.2*nrow(RegionDat),0)
-  Dseq <- format(seq(RegionDat$Date[1], by = "day", length.out = Length ),"%m-%d")
-  
-  END <- NA
-  Predict <- NA
-  
-  #Model logistic regression
-  if(class(try(nls(confirmedCount~SSlogis(Day, Asym, xmid, scal),data= RegionDat), silent = TRUE)) != "try-error"){
-    md <- nls(confirmedCount~SSlogis(Day, Asym, xmid, scal),data= RegionDat)
-    Coe <- summary(md)$coefficients
-    a <- Coe[1,1]
-    xmax <-  2*Coe[2,1]
-    
-    #End date
-    END <- Dseq [round(xmax,0)]
-    #Predict
-    Input=nrow(RegionDat)+1
-    Predict <- round(a/(1+exp((Coe[2,1]-Input)/Coe[3,1])),0)
-    
-    if(ifplot){
-      #Plot the results
-      myplot <- function(){
-        par(mgp = c(2.5, 1, 0))
-        with(RegionDat,plot(y=confirmedCount,x=Day,xlim=c(0,1.8*xmax),ylim=c(0,1.3*a),ylab="Number of cases",xlab="",bty='n',xaxt = "n"));title(ifelse(is.na(addtitle), '', Region_name))
-        
-        with(RegionDat,points(y=New,x=Day,col="grey",pch=19))
-        
-        #Smooth predict line
-        PredS <- seq(0, 1.3*xmax, length = 100)
-        lines(PredS, predict(md, list(Day = PredS )),col="red")
-        
-        #The daily increase case
-        Lth<- round(1.3*xmax,0)
-        newdat <- data.frame(Pred=1:Lth)
-        newdat <- within(newdat, ypred <- predict(md,  list(Day = Pred )))
-        newdat$Prednew <- with(newdat,ypred-c(0,ypred[-nrow(newdat)]))
-        lines(x=newdat$Pred,y=newdat$Prednew,col="blue")
-        
-        axis(1, at=1:Length , labels=Dseq,cex.axis = 0.6,las=2)
-        
-        points(2,0.8*a)
-        text(3,0.8*a,"Confirmed",cex=0.8,adj=0)
-        segments(1.5,0.7*a,2.5,0.7*a,col="red")
-        text(3,0.7*a,"Model fit",cex=0.8,adj=0)
-        points(2,0.6*a,col="grey",pch=19)
-        text(3,0.6*a,"Daily increase",cex=0.8,adj=0)
-        
-        segments(0,a,xmax,a,lty="dotted")
-        segments(xmax,0,xmax,a,lty="dotted")
-      }
-      
-      return(list(area = province, enddate = END, tomorrow = Dseq[nrow(RegionDat)+1], tomorrowcount = Predict, fig = myplot()))
-      
-    }
-  }
-  return(list(area = province, enddate = END, tomorrow = Dseq[nrow(RegionDat)+1], tomorrowcount = Predict))
-}
 ncov <- get_ncov()
-df_predict <- t(sapply(unique(ncov$area$provinceShortName), function(x) calc_predict(province = x, ncov = ncov, ifplot = FALSE)))
+df_predict <- t(sapply(unique(ncov$area$provinceShortName), function(x) predict_date(province = x, ncov = ncov, ifplot = FALSE)))
 df_predict <- as.data.frame(df_predict)
-df_predict <- df_predict[order(-as.numeric(df_predict$tomorrowcount)), ]
+df_predict <- df_predict[order(-as.numeric(df_predict$tomorrowNew)), ]
 tomorrow <- df_predict$tomorrow[1]
 ```
 
@@ -236,12 +40,13 @@ cat("## <<date>> 各地区疫情预测表")
 ```
 
 ```{r}
-knitr::kable(df_predict[, c(1, 2, 4)], format = "html", row.names = FALSE, col.names = c("地区", "结束时间", paste0("今日(", tomorrow, ")确诊人数预测")))
+knitr::kable(df_predict[, c(1, 2, 5, 4)], format = "html", row.names = FALSE, col.names = c("地区", "疫情缓解日期", paste0(tomorrow, "新增确诊人数预测"), paste0(tomorrow, "累计确诊人数预测")))
 ```
 
 ```{r, results='asis'}
 for(x in unique(ncov$area$provinceShortName)) {
-    cat(x)
-    plot_predict(province = x, ncov = ncov)
+  cat(x, ":  \n")
+  predict_date(province = x, ncov = ncov, ifplot = TRUE, ifchinese = TRUE)
+  cat("  \n")
 }
 ```
