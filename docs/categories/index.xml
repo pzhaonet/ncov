@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on nCoV：新型冠状病毒疫情报告</title>
-    <link>https://pzhaonet.github.io/ncov/categories/</link>
+    <link>https://ncov2020.org/categories/</link>
     <description>Recent content in Categories on nCoV：新型冠状病毒疫情报告</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://pzhaonet.github.io/ncov/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ncov2020.org/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

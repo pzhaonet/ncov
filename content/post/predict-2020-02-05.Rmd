@@ -1,7 +1,7 @@
 ---
-title: 疫情缓和时间预测(<<date>>)
-date: <<date>>
-slug: predict-<<date>>
+title: 疫情缓和时间预测(2020-02-05)
+date: 2020-02-05
+slug: predict-2020-02-05
 ---
 
 ```{r include=FALSE}
@@ -36,7 +36,7 @@ tomorrow <- df_predict$tomorrow[1]
 ```
 
 ```{r, results='asis'}
-cat("## <<date>> 各地区疫情预测表")
+cat("## 2020-02-05 各地区疫情预测表")
 ```
 
 ```{r}
