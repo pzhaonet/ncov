@@ -26,11 +26,11 @@ post_map <- function(method, date){
 post_predict <- function(date){
   filename <- paste0('predict-', date)
   pathname <- paste0('content/post/', filename, '.Rmd')
-  if(!file.exists(pathname)){
+  # if(!file.exists(pathname)){
     filetext <- readLines('static/template/post-predict.Rmd', encoding = 'UTF-8')
     filetext <- gsub("<<date>>", date, filetext)
     writeLines(filetext, pathname, useBytes = TRUE)
-  }
+  # }
 }
 
 ## Get data ----
