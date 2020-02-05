@@ -1,46 +1,213 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>file:///D:/temp/delete/github/ncov/docs/_about/</loc>
+    <loc>https://pzhaonet.github.io/ncov/</loc>
+    <lastmod>2020-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/post/</loc>
+    <lastmod>2020-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/post/city-map-2020-02-05/</loc>
+    <lastmod>2020-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/post/province-map-2020-02-05/</loc>
+    <lastmod>2020-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/post/predict-2020-02-05/</loc>
+    <lastmod>2020-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/post/city-map-2020-02-04/</loc>
+    <lastmod>2020-02-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/post/province-map-2020-02-04/</loc>
+    <lastmod>2020-02-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/post/city-map-2020-02-03/</loc>
+    <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/post/province-map-2020-02-03/</loc>
+    <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/_about/</loc>
     <lastmod>2020-02-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>file:///D:/temp/delete/github/ncov/docs/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>file:///D:/temp/delete/github/ncov/docs/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>file:///D:/temp/delete/github/ncov/docs/</loc>
+    <loc>https://pzhaonet.github.io/ncov/post/city-map-2020-02-02/</loc>
     <lastmod>2020-02-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>file:///D:/temp/delete/github/ncov/docs/news/</loc>
+    <loc>https://pzhaonet.github.io/ncov/post/province-map-2020-02-02/</loc>
+    <lastmod>2020-02-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>file:///D:/temp/delete/github/ncov/docs/fig/</loc>
+    <loc>https://pzhaonet.github.io/ncov/post/city-map-2020-02-01/</loc>
+    <lastmod>2020-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>file:///D:/temp/delete/github/ncov/docs/about/</loc>
+    <loc>https://pzhaonet.github.io/ncov/post/province-map-2020-02-01/</loc>
+    <lastmod>2020-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>file:///D:/temp/delete/github/ncov/docs/intro/</loc>
+    <loc>https://pzhaonet.github.io/ncov/post/city-map-2020-01-31/</loc>
+    <lastmod>2020-01-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>file:///D:/temp/delete/github/ncov/docs/rumors/</loc>
+    <loc>https://pzhaonet.github.io/ncov/post/province-map-2020-01-31/</loc>
+    <lastmod>2020-01-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/post/city-map-2020-01-30/</loc>
+    <lastmod>2020-01-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/post/province-map-2020-01-30/</loc>
+    <lastmod>2020-01-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/post/city-map-2020-01-29/</loc>
+    <lastmod>2020-01-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/post/province-map-2020-01-29/</loc>
+    <lastmod>2020-01-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/post/city-map-2020-01-28/</loc>
+    <lastmod>2020-01-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/post/province-map-2020-01-28/</loc>
+    <lastmod>2020-01-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/post/city-map-2020-01-27/</loc>
+    <lastmod>2020-01-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/post/province-map-2020-01-27/</loc>
+    <lastmod>2020-01-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/post/city-map-2020-01-26/</loc>
+    <lastmod>2020-01-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/post/province-map-2020-01-26/</loc>
+    <lastmod>2020-01-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/post/city-map-2020-01-25/</loc>
+    <lastmod>2020-01-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/post/province-map-2020-01-25/</loc>
+    <lastmod>2020-01-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/post/city-map-2020-01-24/</loc>
+    <lastmod>2020-01-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/post/province-map-2020-01-24/</loc>
+    <lastmod>2020-01-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/post/city-map-2020-01-23/</loc>
+    <lastmod>2020-01-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/post/province-map-2020-01-23/</loc>
+    <lastmod>2020-01-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/post/city-map-2020-01-22/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/post/province-map-2020-01-22/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/post/city-map-2020-01-21/</loc>
+    <lastmod>2020-01-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/post/province-map-2020-01-21/</loc>
+    <lastmod>2020-01-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/tags/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/news/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/fig/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/intro/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pzhaonet.github.io/ncov/rumors/</loc>
   </url>
   
 </urlset>
