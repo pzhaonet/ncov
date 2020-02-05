@@ -4,10 +4,10 @@ slug: intro
 ---
 
 ```{r include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, error = FALSE)
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, error = FALSE, include = FALSE)
 ```
 
-```{r, out.width="80%"}
+```{r, }
 require(ncovr)
 Sys.setlocale('LC_CTYPE', 'Chinese')
 ncov <- get_ncov()

@@ -4,7 +4,7 @@ slug: rumors
 ---
 
 ```{r include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, error = FALSE)
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, error = FALSE, include = FALSE)
 ```
 
 ```{r, results='asis'}
