@@ -12,8 +12,9 @@ Sys.setlocale('LC_CTYPE', 'Chinese')
 ncov <- get_ncov(port = c('area?latest=0', 'overall', 'provinceName', 'news', 'rumors'), method = 'api')
 names(ncov)[1] <- 'area'
 ncov_tidy <- ncovr:::conv_ncov(ncov)
-saveRDS(ncov_tidy, 'data/ncov_tidy.RDS')
-saveRDS(ncov, 'data/ncov.RDS')
+if(!dir.exists('static/data')) dir.create('static/data')
+saveRDS(ncov_tidy, 'static/data/ncov_tidy.RDS')
+saveRDS(ncov, 'static/data/ncov.RDS')
 
 
 ## Create map post ----
@@ -90,7 +91,7 @@ for(i in ncov_dates){
 }
 
 ## Create predict posts ----
-post_predict(date = Sys.Date())
+for(i in as.character(seq.Date(Sys.Date() - 7, Sys.Date(), 1))) post_predict(date = as.Date(i))
 
 ## Build site ----
 blogdown::install_hugo()
