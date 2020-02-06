@@ -1,5 +1,5 @@
 ---
-title: 疫情缓和时间预测(<<date>>)
+title: 2019-nCoV 疫情缓和时间预测(<<date>>)
 date: <<date>>
 slug: predict-<<date>>
 ---
@@ -12,7 +12,7 @@ Sys.setlocale('LC_CTYPE', 'Chinese')
 ```{r}
 require(ncovr)
 ncovChina <- get_ncov('china') 
-ncovChina <- ncovChina[ncovChina$`日期` < as.Date('<<date>>'), ]
+ncovChina <- ncovChina[ncovChina[, "日期"] <= as.Date('<<date>>'), ]
 ```
 
 ## 全国确诊病例时间趋势图和模型预测
@@ -29,9 +29,14 @@ pre <- predict_date(province = "中国",  ncov = ncovChina,type="confirmed", ifp
 
 ## 全国疫情时间序列
 
+<small>
+
 ```{r}
+ncovChina <- ncovChina[rev(order(ncovChina[, 1])), ]
 knitr::kable(ncovChina[, 1:9], format = "html", row.names = FALSE)
 ```
+
+</small>
 
 
 ```{r}
@@ -41,7 +46,7 @@ ncov$area <- ncov$area[ncov$area$date < as.Date('<<date>>'), ]
 df_predict <- t(sapply(unique(ncov$area$provinceShortName), function(x) predict_date(province = x, ncov = ncov, ifplot = FALSE)))
 df_predict <- as.data.frame(df_predict)
 df_predict <- df_predict[order(-as.numeric(df_predict$tomorrowNew)), ]
-tomorrow <- substr(as.character(as.Date(paste0('2002-', df_predict$tomorrow[1]))-1), 6,  10)
+tomorrow <- df_predict$tomorrow[1]
 ```
 
 ```{r, results='asis'}
