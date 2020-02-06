@@ -6,7 +6,15 @@ require(ncovr)
 require(leafletCN)
 require(htmlwidgets)
 require(htmltools)
-# Sys.setlocale('LC_CTYPE', 'Chinese')
+Sys.setlocale('LC_CTYPE', 'Chinese')
+
+## backup data
+ncov <- get_ncov(port = c('area?latest=0', 'overall', 'provinceName', 'news', 'rumors'), method = 'api')
+names(ncov)[1] <- 'area'
+ncov_tidy <- ncovr:::conv_ncov(ncov)
+saveRDS(ncov_tidy, 'data/ncov_tidy.RDS')
+saveRDS(ncov, 'data/ncov.RDS')
+
 
 ## Create map post ----
 post_map <- function(method, date){
