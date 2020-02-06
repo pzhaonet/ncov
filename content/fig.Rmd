@@ -9,6 +9,13 @@ knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALS
 Sys.setlocale('LC_CTYPE', 'Chinese')
 ```
 
+## 全国疫情时间序列
+
+```{r}
+require(ncovr)
+ncovChina <- get_ncov('china') 
+knitr::kable(ncovChina[, 1:9], format = "html", row.names = FALSE)
+```
 以下图片来自丁香园：
 
 ```{r, out.width="100%"}

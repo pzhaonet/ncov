@@ -30,7 +30,7 @@ pre <- predict_date(province = "中国",  ncov = ncovChina,type="confirmed", ifp
 ## 全国疫情时间序列
 
 ```{r}
-knitr::kable(ncovChina, format = "html", row.names = FALSE)
+knitr::kable(ncovChina[, 1:9], format = "html", row.names = FALSE)
 ```
 
 
