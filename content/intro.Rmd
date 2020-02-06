@@ -1,5 +1,5 @@
 ---
-title: 疫情概况
+title: 概览
 slug: intro
 ---
 
@@ -7,6 +7,8 @@ slug: intro
 knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, error = FALSE)
 Sys.setlocale('LC_CTYPE', 'Chinese')
 ```
+
+## 病毒简介
 
 ```{r, results='asis'}
 require(ncovr)
@@ -18,7 +20,14 @@ cat(
   ncov$note3, "  \n\n",
   ncov$remark1, "  \n\n",
   ncov$remark2, "  \n\n",
-  ncov$remark3, "  \n\n",
+  ncov$remark3, "  \n\n"
+  )
+```
+
+## 最新数据
+
+```{r, results='asis'}
+cat(
   '确诊：', ncov$confirmedCount,  "  \n\n",
   '疑似：', ncov$suspectedCount,  "  \n\n",
   '治愈：', ncov$curedCount,  "  \n\n",
@@ -32,4 +41,22 @@ cat(
   '更新时间：', as.character(ncovr:::conv_time(ncov$updateTime)), "  \n\n",
   ncov$generalRemark, '。'
 )
+```
+
+## 全国疫情时间序列
+
+<small>
+
+```{r}
+ncovChina <- get_ncov('china')
+ncovChina <- ncovChina[rev(order(ncovChina[, 1])), ]
+knitr::kable(ncovChina[, 1:9], format = "html", row.names = FALSE)
+```
+
+</small>
+
+以下图片来自丁香园：
+
+```{r, out.width="100%"}
+knitr::include_graphics(unlist(ncov$dailyPics))
 ```

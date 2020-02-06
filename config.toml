@@ -19,13 +19,9 @@ publishDir = "docs"
     weight = 10
 
 [[menu.main]]
-    name = "疫情概况"
+    name = "概览"
     url = "/intro/"
     weight = 20
-[[menu.main]]
-    name = "最新图表"
-    url = "/fig/"
-    weight = 30
 
 [[menu.main]]
     name = "简讯"
@@ -36,6 +32,11 @@ publishDir = "docs"
     name = "辟谣"
     url = "/rumors/"
     weight = 50
+
+[[menu.main]]
+    name = "数据下载"
+    url = "/data/"
+    weight = 60
 
 [params]
     description = "A website built through Hugo and blogdown."
