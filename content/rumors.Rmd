@@ -12,6 +12,7 @@ Sys.setlocale('LC_CTYPE', 'Chinese')
 require(ncovr)
 ncov <- get_ncov('csv', 'rumors')$rumors
 ncov$title <- gsub('\u00A0', ' ', ncov$title)
+ncov <- ncov[!duplicated(ncov$title), ]
 
 cat(paste0('## ', ncov$title, '  \n\n',
     ncov$mainSummary, '  \n\n',

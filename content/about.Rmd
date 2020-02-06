@@ -3,16 +3,25 @@ title: 关于
 slug: about
 ---
 
-这是我们搭建的一个新型冠状病毒疫情信息的网站。
+感谢您的关注。这是我们搭建的一个新型冠状病毒疫情信息的网站。
 
-欢迎参与到我们的项目中来。
+## 项目主页
 
-项目成员：
+如果您对这个项目有任何建议，欢迎在项目主页上提交。项目主页是：
+
+- <https://github.com/pzhaonet/ncov>
+
+## 项目成员
 
 - 赵鹏
 - 邹怡
 - 王小享
 - 韩蕾
 
-联系邮箱: openr(at)pzhao.net
+## 联系邮箱
 
+- <openr(at)pzhao.net>。
+
+## 致谢
+
+本站采用的数据来自[BlankerL/DXY-2019-nCoV-Crawler](https://github.com/BlankerL/DXY-2019-nCoV-Crawler)和 [JackieZheng/2019-nCoV](https://github.com/JackieZheng/2019-nCoV)。

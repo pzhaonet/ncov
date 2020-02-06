@@ -1,5 +1,5 @@
 ---
-title: 新闻汇总
+title: 简讯
 slug: news
 ---
 
@@ -12,6 +12,7 @@ Sys.setlocale('LC_CTYPE', 'Chinese')
 require(ncovr)
 ncov <- get_ncov('csv', 'news')$news
 ncov$title <- gsub('\u00A0', ' ', ncov$title)
+ncov <- ncov[!duplicated(ncov$title), ]
 cat(paste0('## [', ncov$title, '](', ncov$sourceUrl, ')  \n\n',
            ncov$pubDate, ' ',
            ncov$infoSource, ' ',
