@@ -43,7 +43,7 @@ post_predict <- function(date){
 }
 
 ## Get data ----
-ncov <- get_ncov()
+# ncov <- get_ncov()
 ncov$area$date <- as.character(as.Date(ncovr:::conv_time(ncov$area$updateTime)))
 ncov$area <- ncov$area[!duplicated(paste(ncov$area$provinceName, ncov$area$date)), ]
 ncov_dates <- unique(ncov$area$date)

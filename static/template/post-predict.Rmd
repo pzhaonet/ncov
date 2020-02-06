@@ -18,8 +18,8 @@ ncovChina <- ncovChina[ncovChina[, "日期"] <= as.Date('<<date>>'), ]
 ## 全国确诊病例时间趋势图和模型预测
 
 ```{r}
-predict_date(province = "中国",  ncov = ncovChina,type="confirmed")
-pre <- predict_date(province = "中国",  ncov = ncovChina,type="confirmed", ifplot = FALSE)
+predict_date(province = "中国",  ncov = ncovChina)
+pre <- predict_date(province = "中国",  ncov = ncovChina, ifplot = FALSE)
 ```
 
 
@@ -33,7 +33,7 @@ pre <- predict_date(province = "中国",  ncov = ncovChina,type="confirmed", ifp
 
 ```{r}
 ncovChina <- ncovChina[rev(order(ncovChina[, 1])), ]
-knitr::kable(ncovChina[, 1:9], format = "html", row.names = FALSE)
+knitr::kable(ncovChina[-1, 1:9], format = "html", row.names = FALSE)
 ```
 
 </small>
