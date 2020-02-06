@@ -2,9 +2,9 @@
 baseurl = "https://ncov2020.org/"
 # baseurl = "file:///D:/temp/delete/github/ncov/docs/"
 languageCode = "en-us"
-title = "nCoV：新型冠状病毒疫情报告"
+title = "2019-nCoV：新型冠状病毒疫情报告"
 theme = "hugo-lithium"
-googleAnalytics = ""
+googleAnalytics = "UA-157876946-1"
 disqusShortname = ""
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 publishDir = "docs"
