@@ -2,7 +2,7 @@ setwd('d:/temp/delete/github/ncov/')
 # Functions ----
 
 ## Packages ----
-remotes::install_github('pzhaonet/ncovr')
+# remotes::install_github('pzhaonet/ncovr')
 require(ncovr)
 require(leafletCN)
 require(htmlwidgets)
