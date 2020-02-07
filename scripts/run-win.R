@@ -20,7 +20,7 @@ saveRDS(ncov, 'static/data/ncov.RDS')
 
 ## Create map post ----
 post_map <- function(method, date){
-  prefix <- switch(method, 'province' = 'Ê¡', 'city' = '??')
+  prefix <- switch(method, 'province' = 'Ê¡', 'city' = 'ÊÐ')
   filename <- paste0(method, '-map-', date)
   pathname <- paste0('content/post/', filename, '.Rmd')
   # if(!file.exists(pathname)){
@@ -62,8 +62,8 @@ for(i in ncov_dates){
       key = c("confirmedCount", "suspectedCount", "curedCount", "deadCount")[1], 
       scale = "log", 
       method = c("province", "city")[1], 
-      legend_title = paste0("È·?ï²¡??(", i, ")"), 
-      filter = '????È·????'
+      legend_title = paste0("È·Õï²¡Àý(", i, ")"), 
+      filter = '´ýÃ÷È·µØÇø'
     )
     saveWidget(leafMap, filename)
   }
@@ -76,8 +76,8 @@ for(i in ncov_dates){
       key = c("confirmedCount", "suspectedCount", "curedCount", "deadCount")[1], 
       scale = "log", 
       method = c("province", "city")[2], 
-      legend_title = paste0("È·?ï²¡??(", i, ")"), 
-      filter = '????È·????'
+      legend_title = paste0("È·Õï²¡Àý(", i, ")"), 
+      filter = '´ýÃ÷È·µØÇø'
     )
     saveWidget(leafMap, filename)
   }
