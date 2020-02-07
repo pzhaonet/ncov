@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.64.0" />
+
+
+<title>2019-nCoV 疫情数据下载 - 2019-nCoV：新型冠状病毒疫情报告</title>
+<meta property="og:title" content="2019-nCoV 疫情数据下载 - 2019-nCoV：新型冠状病毒疫情报告">
+
+
+  <link href='https://ncov2020.org/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="pzhao.org">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">关于</a></li>
+    
+    <li><a href="/intro/">概览</a></li>
+    
+    <li><a href="/news/">简讯</a></li>
+    
+    <li><a href="/rumors/">辟谣</a></li>
+    
+    <li><a href="/data/">数据下载</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+
+    <h1 class="article-title">2019-nCoV 疫情数据下载</h1>
+
+    
+
+    <div class="article-content">
+      
+
+
+<p>这里介绍几种获取疫情数据的途径。</p>
+<div id="利用-r-ncovr-包" class="section level2">
+<h2>利用 R ncovr 包</h2>
+<p>R 语言用户可以通过 ncovr 包获取疫情数据，基本囊括了后面介绍的几种格式。</p>
+<pre class="r"><code>install.packages(&#39;remotes&#39;) # 安装 remotes 包
+remotes::install_github(&#39;pzhaonet/ncovr&#39;) # 安装 ncovr 包
+Sys.setlocale(&#39;LC_CTYPE&#39;, &#39;Chinese&#39;) # windows 用户设置中文环境
+require(&quot;ncovr&quot;) # 加载
+get_ncov() # 读取 RDS数据（推荐）
+get_ncov(method = &#39;csv&#39;) # 从 csv 文件读取（推荐）
+get_ncov(method = &#39;api&#39;) # 从 api 接口读取</code></pre>
+<p>更多功能请参看函数的帮助信息。</p>
+</div>
+<div id="直接下载" class="section level2">
+<h2>直接下载</h2>
+<p>普通用户可以直接从<a href="https://github.com/BlankerL/DXY-2019-nCoV-Data">BlankerL/DXY-2019-nCoV-Data</a>项目下载 csv 文件到本地，然后可以用 Excel 等工具打开：</p>
+<ul>
+<li><a href="https://raw.githubusercontent.com/BlankerL/DXY-2019-nCoV-Data/master/csv/DXYArea.csv">各地疫情</a></li>
+<li><a href="https://raw.githubusercontent.com/BlankerL/DXY-2019-nCoV-Data/master/csv/DXYNews.csv">概况</a></li>
+<li><a href="https://raw.githubusercontent.com/BlankerL/DXY-2019-nCoV-Data/master/csv/DXYOverall.csv">新闻</a></li>
+<li><a href="https://raw.githubusercontent.com/BlankerL/DXY-2019-nCoV-Data/master/csv/DXYRumors.csv">谣言</a></li>
+</ul>
+<p>上述项目还包含了 json 格式的数据。</p>
+<p>每天全国的数据可以从 <a href="https://github.com/JackieZheng/2019-nCoV/">JackieZheng/2019-nCoV</a>下载 <a href="https://github.com/JackieZheng/2019-nCoV/raw/master/Excel/data.xlsx">Excel 表格</a>。这个项目还提供了同样内容的其他数据格式。</p>
+<p>如果您知道其他的数据获取途径，欢迎告知我们，以便汇总。</p>
+</div>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank"> <img src="/rss100.png" alt="Img link to RSS" width="22" height="22"></a>
+          </li>
+          <li>
+            <a href="https://openr.pzhao.org/" class="footer-links-kudos"> <img src="https://openr.pzhao.org/img/logo-small.png" alt="Img link to openr website" width="72" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-157876946-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  </body>
+</html>
+
