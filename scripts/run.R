@@ -1,4 +1,3 @@
-setwd('d:/temp/delete/github/ncov/')
 # Functions ----
 
 ## Packages ----
