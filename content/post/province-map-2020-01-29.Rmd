@@ -25,6 +25,7 @@ ncov$area <- ncov$area[rev(order(ncov$area$date)), ]
 ncov$area <- ncov$area[ncov$area$date <= as.Date("2020-01-29"), ]
 ncov$area <- ncov$area[!duplicated(ncov$area$provinceName), ]
 x <- ncov$area[, c('provinceShortName', 'confirmedCount', 'curedCount', 'deadCount')]
+names(x)[1] <- 'provinceName'
 
 method <- "province"
 
