@@ -29,6 +29,7 @@ x <- ncov$area[, c('provinceShortName', 'confirmedCount', 'curedCount', 'deadCou
 method <- "province"
 
 if(method == 'city'){
+  x <- x[x$provinceName %in% c("北京", "上海", "重庆", "天津"), ]
   names(x)[1] <- "cityName"
   x_city <- get_ncov('tidy')$area
   x_city$date <- x_city$updateTime
