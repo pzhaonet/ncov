@@ -37,18 +37,8 @@ Content type 'application/x-gzip' length 12843 bytes (12 KB)
 ==================================================
 downloaded 12 KB
 
-* installing *source* package 'mime' ...
-** package 'mime' successfully unpacked and MD5 sums checked
-ERROR: cannot remove earlier installation, is it in use?
-* removing 'd:/Program Files/R-3.6.1/library/mime'
-* restoring previous 'd:/Program Files/R-3.6.1/library/mime'
-Error in file.copy(lp, dirname(pkgdir), recursive = TRUE, copy.date = TRUE) : 
-  (converted from warning) problem copying d:\Program Files\R-3.6.1\library\00LOCK-mime\mime\libs\x64\mime.dll to d:\Program Files\R-3.6.1\library\mime\libs\x64\mime.dll: Permission denied
-* removing 'd:/Program Files/R-3.6.1/library/mime'
-* restoring previous 'd:/Program Files/R-3.6.1/library/mime'
-Error in file.copy(lp, dirname(pkgdir), recursive = TRUE, copy.date = TRUE) : 
-  (converted from warning) problem copying d:\Program Files\R-3.6.1\library\00LOCK-mime\mime\libs\x64\mime.dll to d:\Program Files\R-3.6.1\library\mime\libs\x64\mime.dll: Permission denied
-Execution halted
+ERROR: failed to lock directory 'd:/Program Files/R-3.6.1/library' for modifying
+Try removing 'd:/Program Files/R-3.6.1/library/00LOCK-mime'
 Error: Failed to install 'ncovr' from GitHub:
   (converted from warning) installation of package 'mime' had non-zero exit status
 Execution halted
