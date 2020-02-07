@@ -91,7 +91,7 @@ for(i in ncov_dates){
   # if(!file.exists(filename)){
     x_cities$key_log <- log10(x_cities$key)
     x_cities$key_log[x_cities$key == 0] <- NA
-    leafmap <- geojsonMap_legendless(dat = as.data.frame(x_cities), 
+    leafMap <- geojsonMap_legendless(dat = as.data.frame(x_cities), 
                                    mapName = "city", palette = 'Reds', namevar = ~provinceName, 
                                    valuevar = ~key_log, popup = paste(x_cities$provinceName, 
                                                                       x_cities$key)) %>% 
