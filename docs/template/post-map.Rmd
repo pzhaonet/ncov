@@ -26,7 +26,7 @@ ncov$area <- ncov$area[ncov$area$date <= as.Date("<<date>>"), ]
 ncov$area <- ncov$area[!duplicated(ncov$area$provinceName), ]
 x <- ncov$area[, c('provinceShortName', 'confirmedCount', 'curedCount', 'deadCount')]
 
-method <- "city"
+method <- "<<method>>"
 
 if(method == 'city'){
   names(x)[1] <- "cityName"
