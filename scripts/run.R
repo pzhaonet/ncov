@@ -63,7 +63,7 @@ for(i in ncov_dates){
   
   # province 
   filename <- paste0("leafmap-province-", i, ".html")
-  if(!file.exists(filename)){
+  # if(!file.exists(filename)){
     leafMap <- plot_map(
       x = y, 
       key = "confirmedCount", 
@@ -73,7 +73,7 @@ for(i in ncov_dates){
       filter = '待明确地区'
     )
     saveWidget(leafMap, filename)
-  }
+  # }
 
   # city
   filename <- paste0("leafmap-city-", i, ".html")
@@ -88,7 +88,7 @@ for(i in ncov_dates){
   x_cities <- x[x$provinceName %in% cities, ]
   x_cities$key <- x_cities$confirmedCount
   
-  if(!file.exists(filename)){
+  # if(!file.exists(filename)){
     x_cities$key_log <- log10(x_cities$key)
     x_cities$key_log[x_cities$key == 0] <- NA
     leafmap <- geojsonMap_legendless(dat = as.data.frame(x_cities), 
@@ -101,7 +101,7 @@ for(i in ncov_dates){
                          title = paste0("确诊病例(", i, ")"), labFormat = leaflet::labelFormat(digits = 0, 
                                                                                            transform = function(x) 10^x), opacity = 1)
     saveWidget(leafMap, filename)
-  }
+  # }
 }
 setwd(oldwd)
 
