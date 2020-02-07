@@ -132,13 +132,17 @@ Rendering content/about.Rmd
 Rendering content/data.Rmd
 Rendering content/intro.Rmd
 载入需要的程辑包：ncovr
-Quitting from lines 14-25 (intro.Rmd) 
-Error in readRDS(gzcon(url("https://github.com/pzhaonet/travis-ncov/raw/master/data/ncov.RDS"))) : 
-  无法打开链结
-Calls: local ... withCallingHandlers -> withVisible -> eval -> eval -> get_ncov -> readRDS
 此外: Warning message:
 In readRDS(gzcon(url("https://github.com/pzhaonet/travis-ncov/raw/master/data/ncov.RDS"))) :
   InternetOpenUrl失败:’The server name or address could not be resolved'
+No encoding supplied: defaulting to UTF-8.
+No encoding supplied: defaulting to UTF-8.
+No encoding supplied: defaulting to UTF-8.
+No encoding supplied: defaulting to UTF-8.
+Quitting from lines 51-54 (intro.Rmd) 
+Error in open.connection(con, "rb") : 
+  Could not resolve host: raw.githubusercontent.com
+Calls: local ... parse_and_simplify -> parseJSON -> parse_con -> open -> open.connection
 停止执行
 Error in render_page(f) : Failed to render 'content/intro.Rmd'
 Calls: <Anonymous> -> build_rmds -> render_page
