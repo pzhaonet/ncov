@@ -83,6 +83,7 @@ for(i in ncov_dates){
   x_city <- x_city[!duplicated(x_city$cityName), ]
   names(x_city)[1] <- 'provinceName'
   
+  x <- x[x$provinceName %in% c("北京", "上海", "重庆", "天津"), ]
   if(nrow(x_city) > 0) x <- rbind(x_city[, c('provinceName', 'confirmedCount', 'curedCount', 'deadCount')], x)
   cities <- leafletCN::regionNames(mapName = "city")
   x_cities <- x[x$provinceName %in% cities, ]
