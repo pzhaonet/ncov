@@ -1,0 +1,58 @@
+WARNING: unknown option '-slave'
+
+
+R version 3.6.1 (2019-07-05) -- "Action of the Toes"
+Copyright (C) 2019 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> setwd('d:/temp/delete/github/ncov/')
+> # Functions ----
+> 
+> ## Packages ----
+> remotes::install_github('pzhaonet/ncovr')
+Skipping install of 'ncovr' from a github remote, the SHA1 (ee3e8ec9) has not changed since last install.
+  Use `force = TRUE` to force installation
+> require(ncovr)
+Loading required package: ncovr
+> require(leafletCN)
+Loading required package: leafletCN
+Warning message:
+package 'leafletCN' was built under R version 3.6.2 
+> require(htmlwidgets)
+Loading required package: htmlwidgets
+> require(htmltools)
+Loading required package: htmltools
+> Sys.setlocale('LC_CTYPE', 'Chinese')
+[1] "Chinese (Simplified)_China.936"
+> 
+> ## backup data
+> ncov <- get_ncov(port = c('area?latest=0', 'overall', 'provinceName', 'news', 'rumors'), method = 'api')
+No encoding supplied: defaulting to UTF-8.
+No encoding supplied: defaulting to UTF-8.
+No encoding supplied: defaulting to UTF-8.
+No encoding supplied: defaulting to UTF-8.
+No encoding supplied: defaulting to UTF-8.
+> names(ncov)[1] <- 'area'
+> ncov_tidy <- ncovr:::conv_ncov(ncov)
+> if(!dir.exists('static/data')) dir.create('static/data')
+> saveRDS(ncov_tidy, 'static/data/ncov_tidy.RDS')
+> saveRDS(ncov, 'static/data/ncov.RDS')
+> 
+> 
+> ## Create map post ----
+> post_map <- function(method, date){
++   prefix <- switch(method, 'province' = 'çœ', 'city' = 'å¸‚')
+´íÎó: ¾ä·¨·ÖÎöÆ÷2ÐÐÀï²»ÄÜÓÐ¶à×Ö½Ú×Ö·û
+Í£Ö¹Ö´ÐÐ
