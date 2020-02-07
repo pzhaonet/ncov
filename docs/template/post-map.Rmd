@@ -20,16 +20,22 @@ Sys.setlocale('LC_CTYPE', 'Chinese')
 require(ncovr)
 require(leafletCN)
 ncov <- get_ncov()
-ncov$area$date <- as.character(as.Date(ncovr:::conv_time(ncov$area$updateTime)))
-ncov$area <- ncov$area[!duplicated(paste(ncov$area$provinceName, ncov$area$date)), ]
-x <- ncov$area[ncov$area$date == "<<date>>", c(2, 3, 5, 6)]
+ncov$area$date <- as.Date(ncovr:::conv_time(ncov$area$updateTime))
+ncov$area <- ncov$area[rev(order(ncov$area$date)), ]
+ncov$area <- ncov$area[ncov$area$date <= as.Date("<<date>>"), ]
+ncov$area <- ncov$area[!duplicated(ncov$area$provinceName), ]
+x <- ncov$area[, c('provinceShortName', 'confirmedCount', 'curedCount', 'deadCount')]
 
-method <- "<<method>>"
+method <- "city"
 
 if(method == 'city'){
-  x_city <- dplyr::bind_rows(ncov$area$cities[ncov$area$date == "<<date>>"])
   names(x)[1] <- "cityName"
-  if(nrow(x_city) > 0) x <- rbind(x_city[, c(1, 2, 4, 5)], x)
+  x_city <- get_ncov('tidy')$area
+  x_city$date <- x_city$updateTime
+  x_city <- x_city[rev(order(x_city$date)), ]
+  x_city <- x_city[as.Date(x_city$date) <= as.Date("<<date>>"), ]
+  x_city <- x_city[!duplicated(x_city$cityName), ]
+  if(nrow(x_city) > 0) x <- rbind(x_city[, c('cityName', 'confirmedCount', 'curedCount', 'deadCount')], x)
   cities <- leafletCN::regionNames(mapName = "city")
   x <- x[x$cityName %in% cities, ]
 }
