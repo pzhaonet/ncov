@@ -95,5 +95,5 @@ for(i in ncov_dates){
 for(i in as.character(seq.Date(Sys.Date() - 7, Sys.Date(), 1))) post_predict(date = as.Date(i))
 
 ## Build site ----
-blogdown::install_hugo()
+# blogdown::install_hugo()
 blogdown::build_site()

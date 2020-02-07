@@ -126,14 +126,7 @@ No encoding supplied: defaulting to UTF-8.
 > for(i in as.character(seq.Date(Sys.Date() - 7, Sys.Date(), 1))) post_predict(date = as.Date(i))
 > 
 > ## Build site ----
-> blogdown::install_hugo()
-The latest Hugo version is 0.64.0
-ÊÔ¿ªURL¡¯https://github.com/gohugoio/hugo/releases/download/v0.64.0/hugo_extended_0.64.0_Windows-64bit.zip'
- length 30997088 bytes (29.6 MB)
-==================================================
-downloaded 29.6 MB
-
-Hugo has been installed to C:\Users\peng.zhao\AppData\Roaming\Hugo
+> # blogdown::install_hugo()
 > blogdown::build_site()
 Rendering content/about.Rmd
 Rendering content/data.Rmd
