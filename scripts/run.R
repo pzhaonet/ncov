@@ -44,21 +44,29 @@ post_predict <- function(date){
 
 ## Get data ----
 # ncov <- get_ncov()
-ncov$area$date <- as.character(as.Date(ncovr:::conv_time(ncov$area$updateTime)))
-ncov$area <- ncov$area[!duplicated(paste(ncov$area$provinceName, ncov$area$date)), ]
-ncov_dates <- unique(ncov$area$date)
+ncov$area$date <- as.Date(ncovr:::conv_time(ncov$area$updateTime))
+ncov$area <- ncov$area[rev(order(ncov$area$date)), ]
+ncov_tidy$area$date <- as.Date(ncov_tidy$area$updateTime)
+ncov_tidy$area <- ncov_tidy$area[rev(order(ncov_tidy$area$date)), ]
+
+ncov_dates <- as.character(unique(ncov$area$date))
 
 ## create maps ----
 oldwd <- getwd()
 setwd('static/leaflet')
 
 for(i in ncov_dates){
+  y <- ncov$area[ncov$area$date <= as.Date(i), ]
+  y <- y[!duplicated(y$provinceName), ]
+  x <- y[, c('provinceShortName', 'confirmedCount', 'curedCount', 'deadCount')]
+  names(x)[1] <- 'provinceName'
+  
   # province 
   filename <- paste0("leafmap-province-", i, ".html")
   if(!file.exists(filename)){
     leafMap <- plot_map(
-      x = ncov$area[ncov$area$date == i, ], 
-      key = c("confirmedCount", "suspectedCount", "curedCount", "deadCount")[1], 
+      x = y, 
+      key = "confirmedCount", 
       scale = "log", 
       method = c("province", "city")[1], 
       legend_title = paste0("确诊病例(", i, ")"), 
@@ -69,15 +77,29 @@ for(i in ncov_dates){
 
   # city
   filename <- paste0("leafmap-city-", i, ".html")
+  
+  x_city <- ncov_tidy$area[ncov_tidy$area$date <= as.Date(i), ]
+  x_city <- x_city[as.Date(x_city$date) <= as.Date("2020-02-07"), ]
+  x_city <- x_city[!duplicated(x_city$cityName), ]
+  names(x_city)[1] <- 'provinceName'
+  
+  if(nrow(x_city) > 0) x <- rbind(x_city[, c('provinceName', 'confirmedCount', 'curedCount', 'deadCount')], x)
+  cities <- leafletCN::regionNames(mapName = "city")
+  x_cities <- x[x$provinceName %in% cities, ]
+  x_cities$key <- x_cities$confirmedCount
+  
   if(!file.exists(filename)){
-    leafMap <- plot_map(
-      x = ncov$area[ncov$area$date == i, ], 
-      key = c("confirmedCount", "suspectedCount", "curedCount", "deadCount")[1], 
-      scale = "log", 
-      method = c("province", "city")[2], 
-      legend_title = paste0("确诊病例(", i, ")"), 
-      filter = '待明确地区'
-    )
+    x_cities$key_log <- log10(x_cities$key)
+    x_cities$key_log[x_cities$key == 0] <- NA
+    leafmap <- geojsonMap_legendless(dat = as.data.frame(x_cities), 
+                                   mapName = "city", palette = 'Reds', namevar = ~provinceName, 
+                                   valuevar = ~key_log, popup = paste(x_cities$provinceName, 
+                                                                      x_cities$key)) %>% 
+      leaflet::addLegend("bottomright", 
+                         bins = 4, pal = leaflet::colorNumeric(palette = 'Reds', 
+                                                               domain = x_cities$key_log), values = x_cities$key_log, 
+                         title = paste0("确诊病例(", i, ")"), labFormat = leaflet::labelFormat(digits = 0, 
+                                                                                           transform = function(x) 10^x), opacity = 1)
     saveWidget(leafMap, filename)
   }
 }
