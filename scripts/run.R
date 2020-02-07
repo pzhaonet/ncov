@@ -23,14 +23,14 @@ post_map <- function(method, date){
   prefix <- switch(method, 'province' = '省', 'city' = '市')
   filename <- paste0(method, '-map-', date)
   pathname <- paste0('content/post/', filename, '.Rmd')
-  if(!file.exists(pathname)){
+  # if(!file.exists(pathname)){
     link <- paste0('https://pzhaonet.github.io/ncov/leaflet/leafmap-', method, '-', date, '.html')
     filetext <- readLines('static/template/post-map.Rmd', encoding = 'UTF-8')
     filetext <- gsub("<<method>>", method, filetext)
     filetext <- gsub("<<method-zh>>", prefix, filetext)
     filetext <- gsub("<<date>>", date, filetext)
     writeLines(filetext, pathname, useBytes = TRUE)
-  }
+  # }
 }
 
 post_predict <- function(date){

@@ -20,17 +20,17 @@ saveRDS(ncov, 'static/data/ncov.RDS')
 
 ## Create map post ----
 post_map <- function(method, date){
-  prefix <- switch(method, 'province' = 'Ê¡', 'city' = 'ÊÐ')
+  prefix <- switch(method, 'province' = 'Ê¡', 'city' = '??')
   filename <- paste0(method, '-map-', date)
   pathname <- paste0('content/post/', filename, '.Rmd')
-  if(!file.exists(pathname)){
+  # if(!file.exists(pathname)){
     link <- paste0('https://pzhaonet.github.io/ncov/leaflet/leafmap-', method, '-', date, '.html')
     filetext <- readLines('static/template/post-map.Rmd', encoding = 'UTF-8')
     filetext <- gsub("<<method>>", method, filetext)
     filetext <- gsub("<<method-zh>>", prefix, filetext)
     filetext <- gsub("<<date>>", date, filetext)
     writeLines(filetext, pathname, useBytes = TRUE)
-  }
+  # }
 }
 
 post_predict <- function(date){
@@ -62,8 +62,8 @@ for(i in ncov_dates){
       key = c("confirmedCount", "suspectedCount", "curedCount", "deadCount")[1], 
       scale = "log", 
       method = c("province", "city")[1], 
-      legend_title = paste0("È·Õï²¡Àý(", i, ")"), 
-      filter = '´ýÃ÷È·µØÇø'
+      legend_title = paste0("È·?ï²¡??(", i, ")"), 
+      filter = '????È·????'
     )
     saveWidget(leafMap, filename)
   }
@@ -76,8 +76,8 @@ for(i in ncov_dates){
       key = c("confirmedCount", "suspectedCount", "curedCount", "deadCount")[1], 
       scale = "log", 
       method = c("province", "city")[2], 
-      legend_title = paste0("È·Õï²¡Àý(", i, ")"), 
-      filter = '´ýÃ÷È·µØÇø'
+      legend_title = paste0("È·?ï²¡??(", i, ")"), 
+      filter = '????È·????'
     )
     saveWidget(leafMap, filename)
   }
