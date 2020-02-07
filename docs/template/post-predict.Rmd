@@ -5,7 +5,7 @@ slug: predict-<<date>>
 ---
 
 ```{r include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, error = FALSE)
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, error = FALSE, collapse = TRUE, out.width = "100%")
 Sys.setlocale('LC_CTYPE', 'Chinese')
 ```
 
