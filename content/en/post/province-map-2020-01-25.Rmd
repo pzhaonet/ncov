@@ -1,0 +1,59 @@
+---
+title: 2019-nCoV Epidemic Map (Provinces) 2020-01-25
+date: 2020-01-25
+slug: province-map-2020-01-25
+---
+
+```{r include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, error = FALSE)
+Sys.setlocale('LC_CTYPE', 'Chinese')
+```
+
+Updated: `r format(Sys.time(), tz = "Asia/Shanghai")` (UTC+08:00)
+
+<iframe seamless src="https://pzhaonet.github.io/ncov/leaflet/leafmap-province-2020-01-25.html" width="100%" height="500"></iframe>
+
+Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
+
+[Click here for full screen display.](https://pzhaonet.github.io/ncov/leaflet/leafmap-province-2020-01-25.html)
+
+
+```{r}
+require(ncovr)
+require(leafletCN)
+ncov <- get_ncov()
+ncov$area$date <- as.Date(ncovr:::conv_time(ncov$area$updateTime))
+ncov$area <- ncov$area[rev(order(ncov$area$date)), ]
+ncov$area <- ncov$area[ncov$area$date <= as.Date("2020-01-25"), ]
+ncov$area <- ncov$area[!duplicated(ncov$area$provinceName), ]
+x <- ncov$area[, c('provinceShortName', 'confirmedCount', 'curedCount', 'deadCount')]
+names(x)[1] <- 'provinceName'
+
+method <- "province"
+
+if(method == 'city'){
+  x <- x[x$provinceName %in% c("北京", "上海", "重庆", "天津"), ]
+  names(x)[1] <- "cityName"
+  x_city <- get_ncov('tidy')$area
+  x_city$date <- x_city$updateTime
+  x_city <- x_city[rev(order(x_city$date)), ]
+  x_city <- x_city[as.Date(x_city$date) <= as.Date("2020-01-25"), ]
+  x_city <- x_city[!duplicated(x_city$cityName), ]
+  if(nrow(x_city) > 0) x <- rbind(x_city[, c('cityName', 'confirmedCount', 'curedCount', 'deadCount')], x)
+  cities <- leafletCN::regionNames(mapName = "city")
+  x <- x[x$cityName %in% cities, ]
+}
+
+prefix <- switch(method, "province" = "Provinces", "city" = "Cities")
+x <- x[order(-x$confirmedCount), ]
+x$rank <- 1:nrow(x)
+x <- x[, c(5,1:4)]
+```
+
+```{r, results='asis'}
+cat("## 2020-01-25 Epidemic Data Sheet (", prefix, ")")
+```
+
+```{r}
+knitr::kable(x, format = "html", row.names = FALSE, col.names = c("Rank", "Name", "Confirmed", "Cured", "Dead"))
+```
