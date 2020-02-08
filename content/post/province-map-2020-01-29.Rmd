@@ -13,6 +13,8 @@ Sys.setlocale('LC_CTYPE', 'Chinese')
 
 <iframe seamless src="https://pzhaonet.github.io/ncov/leaflet/leafmap-province-2020-01-29.html" width="100%" height="500"></iframe>
 
+图中灰色区域表示缺少该区域城市的相关数据。
+
 [点击这里全屏显示。](https://pzhaonet.github.io/ncov/leaflet/leafmap-province-2020-01-29.html)
 
 
