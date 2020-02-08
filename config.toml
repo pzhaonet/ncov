@@ -14,8 +14,8 @@ publishDir = "docs"
     post = "/post/:slug/"
 
 [[menu.main]]
-    name = "关于"
-    url = "/about/"
+    name = "主页"
+    url = "/"
     weight = 10
 
 [[menu.main]]
@@ -37,6 +37,11 @@ publishDir = "docs"
     name = "数据下载"
     url = "/data/"
     weight = 60
+
+[[menu.main]]
+    name = "关于本站"
+    url = "/about/"
+    weight = 70
 
 [params]
     description = "A website built through Hugo and blogdown."
