@@ -5,6 +5,12 @@ slug: about
 
 感谢您的关注。这是我们搭建的一个新型冠状病毒疫情信息的网站。
 
+## 微信公众号
+
+```{r, echo=FALSE, out.width="60%"}
+knitr::include_graphics('wechat.jpg')
+```
+
 ## 项目主页
 
 如果您对这个项目有任何建议，欢迎在项目主页上提交。项目主页是：
@@ -12,6 +18,8 @@ slug: about
 - <https://github.com/pzhaonet/ncov>
 
 ## 项目成员
+
+莱茵数据在线：
 
 - 赵鹏
 - 邹怡
@@ -22,10 +30,11 @@ slug: about
 
 - <openr(at)pzhao.net>。
 
+
 ## 致谢
 
-本站采用的数据来自[BlankerL/DXY-2019-nCoV-Crawler](https://github.com/BlankerL/DXY-2019-nCoV-Crawler)和 [JackieZheng/2019-nCoV](https://github.com/JackieZheng/2019-nCoV)。
-
 本站使用 [R ncovr 包](https://github.com/pzhaonet/ncovr)进行数据处理和可视化。
+
+本站采用的数据来自[BlankerL/DXY-2019-nCoV-Crawler](https://github.com/BlankerL/DXY-2019-nCoV-Crawler)和 [JackieZheng/2019-nCoV](https://github.com/JackieZheng/2019-nCoV)。
 
 本站是 [R blogdown 包](https://bookdown.org/yihui/blogdown/)搭建，采用 [HUGO](https://gohugo.io/) 框架，利用 [travis-CI](https://travis-ci.org/) 自动化完成。
