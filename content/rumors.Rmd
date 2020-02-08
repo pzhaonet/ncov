@@ -13,7 +13,7 @@ require(ncovr)
 ncov <- get_ncov('csv', 'rumors')$rumors
 ncov$title <- gsub('\u00A0', ' ', ncov$title)
 ncov$body <- gsub('\u00A0', ' ', ncov$body)
-ncov <- ncov[!duplicated(ncov$id), ]
+ncov <- ncov[!duplicated(ncov$id) & !duplicated(ncov$body) , ]
 
 cat(paste0('## ', ncov$title, '  \n\n',
     ncov$mainSummary, '  \n\n',
