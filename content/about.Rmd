@@ -8,7 +8,7 @@ slug: about
 ## 微信公众号
 
 ```{r, echo=FALSE, out.width="60%"}
-knitr::include_graphics('wechat.jpg')
+knitr::include_graphics('https://raw.githubusercontent.com/pzhaonet/ncov/master/static/wechat.jpg')
 ```
 
 ## 项目主页
