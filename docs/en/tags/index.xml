@@ -2,12 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 2019-nCoV：新型冠状病毒疫情报告</title>
+<<<<<<< HEAD
     <link>file:///D:/temp/delete/github/ncov/docs/en/tags/</link>
+=======
+    <link>https://ncov2020.org/en/tags/</link>
+>>>>>>> f69675aa1183d7ca76308c58f7ad32b4a5576010
     <description>Recent content in Tags on 2019-nCoV：新型冠状病毒疫情报告</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     
+<<<<<<< HEAD
 	<atom:link href="file:///D:/temp/delete/github/ncov/docs/en/tags/index.xml" rel="self" type="application/rss+xml" />
+=======
+	<atom:link href="https://ncov2020.org/en/tags/index.xml" rel="self" type="application/rss+xml" />
+>>>>>>> f69675aa1183d7ca76308c58f7ad32b4a5576010
     
     
   </channel>
