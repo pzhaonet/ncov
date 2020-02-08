@@ -1,5 +1,5 @@
 ---
-title: 2019-nCoV Epidemic Map (Provinces) 2020-01-27
+title: 2019-nCoV Epidemic Map (cities) 2020-01-27
 date: 2020-01-27
 slug: city-map-2020-01-27
 ---

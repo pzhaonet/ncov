@@ -1,5 +1,5 @@
 ---
-title: 2019-nCoV Epidemic Map (Provinces) <<date>>
+title: 2019-nCoV Epidemic Map (<<method-zh>>) <<date>>
 date: <<date>>
 slug: <<method>>-map-<<date>>
 ---

@@ -1,5 +1,5 @@
 ---
-title: 2019-nCoV Epidemic Map (Provinces) 2020-02-08
+title: 2019-nCoV Epidemic Map (provinces) 2020-02-08
 date: 2020-02-08
 slug: province-map-2020-02-08
 ---
