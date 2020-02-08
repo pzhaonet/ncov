@@ -1,0 +1,66 @@
+---
+title: Overview of 2019-nCoV
+slug: intro
+---
+
+```{r include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, error = FALSE)
+Sys.setlocale('LC_CTYPE', 'Chinese')
+```
+
+## Introduction of the virus
+
+Virus Type: New Coronavirus 2019-nCoV
+
+Source of infection: patients who are already with new coronavirus infection. Asymptomatic patients can also be contagious.
+
+Ways of Transmission: Respiratory droplets and contact transmission are the main ways of transmission. Other transmission ways such as aerosol and digestive tract are yet to be confirmed.
+
+Vulnerable population: Generally susceptible to all population. Elderly people and those with chronic diseases are more sick after infection. Children, infants and young children also have symptoms
+Incubation period: Generally 3 to 7 days, up to 14 days. Infectious during incubation period, and contagious cases with asymptomatic are very rare.
+
+Host: Wild animal, possibly Rhinolophus sinicus. 
+
+
+```{r, results='asis'}
+require(ncovr)
+ncov <- get_ncov()
+ncov <- ncov$overall
+```
+
+## Latest data
+
+```{r, results='asis'}
+cat(
+  'Confirmed: ', ncov$confirmedCount,  "  \n\n",
+  'Suspected: ', ncov$suspectedCount,  "  \n\n",
+  'Cured: ', ncov$curedCount,  "  \n\n",
+  'Dead: ', ncov$deadCount,  "  \n\n",
+  'Serious: ', ncov$seriousCount,  "  \n\n",
+  'Daily increase of confirmed: ', ncov$confirmedIncr,  "  \n\n",
+  'Daily increase of suspected: ', ncov$suspectedIncr,  "  \n\n",
+  'Daily increase of cured: ', ncov$curedIncr,  "  \n\n",
+  'Daily increase of dead: ', ncov$deadIncr,  "  \n\n",
+  'Daily increase of serious: ', ncov$seriousIncr,  "  \n\n",
+  'Updated: ', as.character(ncovr:::conv_time(ncov$updateTime))
+)
+```
+The number of suspected cases comes from the National Health and Medical Commission's data, which is currently national-wide data.
+
+## National Epidemic Time Series
+
+<small>
+
+```{r}
+ncovChina <- get_ncov('china')
+ncovChina <- ncovChina[rev(order(ncovChina[, 1])), ]
+knitr::kable(ncovChina[, 1:9], format = "html", row.names = FALSE)
+```
+
+</small>
+
+The following pictures are from dxy.cn.
+
+```{r, out.width="100%"}
+knitr::include_graphics(unlist(ncov$dailyPics))
+```

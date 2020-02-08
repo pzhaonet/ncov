@@ -1,47 +1,80 @@
 # baseurl = "https://pzhaonet.github.io/ncov/"
 baseurl = "https://ncov2020.org/"
-# baseurl = "file:///D:/temp/delete/github/ncov/docs/"
+# baseurl = "file:///D:/temp/delete/github/ncov-en/docs/"
 # languageCode = "en-us"
 languageCode = "zh-cn"
-title = "2019-nCoV：新型冠状病毒疫情报告"
 theme = "hugo-lithium"
 googleAnalytics = "UA-157876946-1"
 disqusShortname = ""
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 publishDir = "docs"
+DefaultContentLanguage = "zh"
 
-[permalinks]
-    post = "/post/:slug/"
 
-[[menu.main]]
-    name = "主页"
+[languages]
+  [languages.en]
+    contentDir = "content/en"
+    title = "2019-nCoV: Epidemic Reports"
+  [languages.zh]
+    contentDir = "content/zh"
+    title = "2019-nCoV：新型冠状病毒疫情报告"
+    
+  [[languages.en.menu.main]]
+    name = "Homepage"
+    url = "/en/"
+    weight = 10
+  [[languages.en.menu.main]]
+    name = "Overview"
+    url = "/en/intro/"
+    weight = 20
+  [[languages.en.menu.main]]
+    name = "Data"
+    url = "/en/data/"
+    weight = 60
+  [[languages.en.menu.main]]
+    name = "About"
+    url = "/en/about/"
+    weight = 70
+  [[languages.en.menu.main]]
+    name = "中文"
+    url = "/zh/"
+    weight = 80
+
+  [[languages.zh.menu.main]]
+    name = "首页"
     url = "/"
     weight = 10
-
-[[menu.main]]
+  [[languages.zh.menu.main]]
     name = "概览"
     url = "/intro/"
     weight = 20
-
-[[menu.main]]
+  [[languages.zh.menu.main]]
     name = "简讯"
     url = "/news/"
     weight = 40
-
-[[menu.main]]
+  [[languages.zh.menu.main]]
     name = "辟谣"
     url = "/rumors/"
     weight = 50
-
-[[menu.main]]
+  [[languages.zh.menu.main]]
     name = "数据下载"
     url = "/data/"
     weight = 60
-
-[[menu.main]]
+  [[languages.zh.menu.main]]
     name = "关于本站"
     url = "/about/"
     weight = 70
+  [[languages.zh.menu.main]]
+    name = "English"
+    url = "/en/"
+    weight = 80
+    
+  [languages.en.permalinks]
+    post = "/en/:slug/"
+  [languages.zh.permalinks]
+    post = "/zh/:slug/"
+
+
 
 [params]
     description = "A website built through Hugo and blogdown."

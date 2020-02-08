@@ -12,31 +12,35 @@ Sys.setlocale('LC_CTYPE', 'Chinese')
 ncov <- get_ncov(port = c('area?latest=0', 'overall', 'provinceName', 'news', 'rumors'), method = 'api')
 names(ncov)[1] <- 'area'
 ncov_tidy <- ncovr:::conv_ncov(ncov)
-if(!dir.exists('static/data')) dir.create('static/data')
-saveRDS(ncov_tidy, 'static/data/ncov_tidy.RDS')
-saveRDS(ncov, 'static/data/ncov.RDS')
+if(!dir.exists('static/data-download')) dir.create('static/data-download')
+saveRDS(ncov_tidy, 'static/data-download/ncov_tidy.RDS')
+saveRDS(ncov, 'static/data-download/ncov.RDS')
 
 
 ## Create map post ----
-post_map <- function(method, date){
-  prefix <- switch(method, 'province' = '省', 'city' = '市')
+post_map <- function(method, date, language = c('en', 'zh')){
+  
+  prefix <- switch(method, 
+                   'province' = if(language == 'zh') '省' else 'provinces', 
+                   'city' = if(language == 'zh') '市' else 'cities')
   filename <- paste0(method, '-map-', date)
-  pathname <- paste0('content/post/', filename, '.Rmd')
+  pathname <- paste0('content/', language, '/post/', filename, '.Rmd')
   # if(!file.exists(pathname)){
     link <- paste0('https://pzhaonet.github.io/ncov/leaflet/leafmap-', method, '-', date, '.html')
-    filetext <- readLines('static/template/post-map.Rmd', encoding = 'UTF-8')
+    filetext <- readLines(paste0('static/template/post-map-', language, '.Rmd'), encoding = 'UTF-8')
     filetext <- gsub("<<method>>", method, filetext)
+    filetext <- gsub("<<language>>", language, filetext)
     filetext <- gsub("<<method-zh>>", prefix, filetext)
     filetext <- gsub("<<date>>", date, filetext)
     writeLines(filetext, pathname, useBytes = TRUE)
   # }
 }
 
-post_predict <- function(date){
+post_predict <- function(date, language = c('en', 'zh')){
   filename <- paste0('predict-', date)
-  pathname <- paste0('content/post/', filename, '.Rmd')
+  pathname <- paste0('content/', language, '/post/', filename, '.Rmd')
   # if(!file.exists(pathname)){
-    filetext <- readLines('static/template/post-predict.Rmd', encoding = 'UTF-8')
+    filetext <- readLines(paste0('static/template/post-predict-', language, '.Rmd'), encoding = 'UTF-8')
     filetext <- gsub("<<date>>", date, filetext)
     writeLines(filetext, pathname, useBytes = TRUE)
   # }
@@ -107,14 +111,23 @@ for(i in ncov_dates){
 setwd(oldwd)
 
 ## Create map posts ----
-if(!dir.exists('content/post/')) dir.create('content/post/')
+if(!dir.exists('content/en/')) dir.create('content/en/')
+if(!dir.exists('content/en/post/')) dir.create('content/en/post/')
+if(!dir.exists('content/zh/')) dir.create('content/zh/')
+if(!dir.exists('content/zh/post/')) dir.create('content/zh/post/')
 for(i in ncov_dates){
-  post_map(method = 'province', date = i)
-  post_map(method = 'city', date = i)
+  for(j in c('zh', 'en')){
+  post_map(method = 'province', date = i, language = j)
+  post_map(method = 'city', date = i, language = j)
+  }
 }
 
 ## Create predict posts ----
-for(i in as.character(seq.Date(Sys.Date() - 7, Sys.Date(), 1))) post_predict(date = as.Date(i))
+for(i in as.character(seq.Date(Sys.Date() - 7, Sys.Date(), 1))) {
+  for(j in c('zh', 'en')){
+    post_predict(date = as.Date(i), language = j)
+  }
+}
 
 ## Build site ----
 blogdown::install_hugo()

@@ -1,0 +1,38 @@
+---
+title: About
+slug: about
+---
+
+This is the website for information of 2019-nCoV outbreak.
+
+## WeChat official account
+
+```{r, echo=FALSE, out.width="60%"}
+knitr::include_graphics('https://raw.githubusercontent.com/pzhaonet/ncov/master/static/wechat.jpg')
+```
+
+## Project Homepage
+
+If you have any suggestions for this project, please feel free to submit an issue to the project homepage:
+
+- <https://github.com/pzhaonet/ncov>
+
+## The Laiyindata Team
+
+- ZHAO Peng
+- ZOU Yi
+- WANG Xiaoxiang
+- HAN Lei
+
+## Contact
+
+- <openr(at)pzhao.net>。
+
+
+## Acknowledgments
+
+[R ncovr package](https://github.com/pzhaonet/ncovr) is used for data processing and visualization.
+
+The data used on this site come from [BlankerL/DXY-2019-nCoV-Crawler](https://github.com/BlankerL/DXY-2019-nCoV-Crawler) and [JackieZheng/2019-nCoV](https://github.com/JackieZheng/2019-nCoV)。
+
+This site is built by [R blogdown package](https://bookdown.org/yihui/blogdown/) with [HUGO](https://gohugo.io/), and updated automatically with [Travis-CI](https://travis-ci.org/).

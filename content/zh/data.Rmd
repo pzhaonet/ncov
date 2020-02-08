@@ -1,0 +1,43 @@
+---
+title: 2019-nCoV 疫情数据下载
+slug: data
+---
+
+
+```{r include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, error = FALSE)
+Sys.setlocale('LC_CTYPE', 'Chinese')
+```
+
+这里介绍几种获取疫情数据的途径。
+
+## 利用 R ncovr 包
+
+R 语言用户可以通过 ncovr 包获取疫情数据，基本囊括了后面介绍的几种格式。
+
+```r
+install.packages('remotes') # 安装 remotes 包
+remotes::install_github('pzhaonet/ncovr') # 安装 ncovr 包
+Sys.setlocale('LC_CTYPE', 'Chinese') # windows 用户设置中文环境
+require("ncovr") # 加载
+get_ncov() # 读取 RDS数据（推荐）
+get_ncov(method = 'csv') # 从 csv 文件读取（推荐）
+get_ncov(method = 'api') # 从 api 接口读取
+```
+
+更多功能请参看函数的帮助信息。
+
+## 直接下载
+
+普通用户可以直接从[BlankerL/DXY-2019-nCoV-Data](https://github.com/BlankerL/DXY-2019-nCoV-Data)项目下载 csv 文件到本地，然后可以用 Excel 等工具打开：
+
+- [各地疫情](https://raw.githubusercontent.com/BlankerL/DXY-2019-nCoV-Data/master/csv/DXYArea.csv)
+- [概况](https://raw.githubusercontent.com/BlankerL/DXY-2019-nCoV-Data/master/csv/DXYOverall.csv)
+- [新闻](https://raw.githubusercontent.com/BlankerL/DXY-2019-nCoV-Data/master/csv/DXYNews.csv)
+- [谣言](https://raw.githubusercontent.com/BlankerL/DXY-2019-nCoV-Data/master/csv/DXYRumors.csv)
+
+上述项目还包含了 json 格式的数据。
+
+每天全国的数据可以从 [JackieZheng/2019-nCoV](https://github.com/JackieZheng/2019-nCoV/)下载 [Excel 表格](https://github.com/JackieZheng/2019-nCoV/raw/master/Excel/data.xlsx)。这个项目还提供了同样内容的其他数据格式。
+
+如果您知道其他的数据获取途径，欢迎告知我们，以便汇总。
