@@ -21,7 +21,7 @@ knitr::include_graphics('https://raw.githubusercontent.com/pzhaonet/ncov/master/
 
 莱茵数据在线：
 
-- 赵鹏
+- [赵鹏](https://pzhaonet.github.io/xuer/)
 - 邹怡
 - 王小享
 - 韩蕾
