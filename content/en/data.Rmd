@@ -41,3 +41,12 @@ This repository provides .json files as well.
 An Excel spreadsheet of daily national data can be [downloaded](https://github.com/JackieZheng/2019-nCoV/raw/master/Excel/data.xlsx) from the [JackieZheng/2019-nCoV](https://github.com/JackieZheng/2019-nCoV/). This project also provides other data format with the same content.
 
 It would be appreciated if you let us know other data sources, which will be listed here.
+
+
+## Introduction to R
+
+R is a free and open-source software package. We use R for data, 作为免费开源的软件，R 语言是国际上最流行的数据分析语言之一，同时也是一个极其人性化的编程环境。本站的数据获取、清理、建模、可视化、网站搭建、自动更新等过程，全部是使用 R 语言完成的。
+
+对于欲了解或学习 R 语言的初学者，我们出版了一本入门教材：《学 R：零基础学习 R 语言》（赵鹏，李怡。研究出版社。北京，2018）。点击下面的图片可访问该书主页和免费试读。
+
+[![](https://openr.pzhao.org/img/xuer_weidian.png)](https://pzhaonet.github.io/xuer/)

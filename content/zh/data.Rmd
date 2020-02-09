@@ -41,3 +41,11 @@ get_ncov(method = 'api') # 从 api 接口读取
 每天全国的数据可以从 [JackieZheng/2019-nCoV](https://github.com/JackieZheng/2019-nCoV/)下载 [Excel 表格](https://github.com/JackieZheng/2019-nCoV/raw/master/Excel/data.xlsx)。这个项目还提供了同样内容的其他数据格式。
 
 如果您知道其他的数据获取途径，欢迎告知我们，以便汇总。
+
+## R 语言简介
+
+作为免费开源的软件，R 语言是国际上最流行的数据分析语言之一，同时也是一个极其人性化的编程环境。本站的数据获取、清理、建模、可视化、网站搭建、自动更新等过程，全部是使用 R 语言完成的。
+
+对于欲了解或学习 R 语言的初学者，我们出版了一本入门教材：《学 R：零基础学习 R 语言》（赵鹏，李怡。研究出版社。北京，2018）。点击下面的图片可访问该书主页和免费试读。
+
+[![](https://openr.pzhao.org/img/xuer_weidian.png)](https://pzhaonet.github.io/xuer/)
