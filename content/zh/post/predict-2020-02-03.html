@@ -9,8 +9,8 @@ slug: predict-2020-02-03
 <div id="全国确诊病例时间趋势图和模型预测" class="section level2">
 <h2>全国确诊病例时间趋势图和模型预测</h2>
 <p><img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-3-1.png" width="100%" /></p>
-<p>我们的模型显示，全国总体疫情将于 02-16 缓解（确诊病例不再明显增长）。</p>
-<p>2020-02-03 确诊病例将新增2092例，累计确诊病例将达到 19038 例。</p>
+<p>我们的模型显示，全国总体疫情将于 02-18 缓解（确诊病例不再明显增长）。</p>
+<p>2020-02-04 确诊病例将新增750例，累计确诊病例将达到 22471 例。</p>
 </div>
 <div id="全国疫情时间序列" class="section level2">
 <h2>全国疫情时间序列</h2>
@@ -37,13 +37,13 @@ slug: predict-2020-02-03
 治愈
 </th>
 <th style="text-align:right;">
-确认+疑似
+确诊+疑似
 </th>
 <th style="text-align:right;">
-新增(疑似+确认)
+新增确诊
 </th>
 <th style="text-align:right;">
-观察中
+新增疑似
 </th>
 </tr>
 </thead>
@@ -71,10 +71,10 @@ slug: predict-2020-02-03
 43652
 </td>
 <td style="text-align:right;">
-4889
+3235
 </td>
 <td style="text-align:right;">
-171329
+5072
 </td>
 </tr>
 <tr>
@@ -100,10 +100,10 @@ slug: predict-2020-02-03
 38763
 </td>
 <td style="text-align:right;">
-4839
+2829
 </td>
 <td style="text-align:right;">
-152700
+5173
 </td>
 </tr>
 <tr>
@@ -129,10 +129,10 @@ slug: predict-2020-02-03
 33924
 </td>
 <td style="text-align:right;">
-4145
+2590
 </td>
 <td style="text-align:right;">
-137594
+4562
 </td>
 </tr>
 <tr>
@@ -158,10 +158,10 @@ slug: predict-2020-02-03
 29779
 </td>
 <td style="text-align:right;">
-4849
+2102
 </td>
 <td style="text-align:right;">
-118478
+5019
 </td>
 </tr>
 <tr>
@@ -187,10 +187,10 @@ slug: predict-2020-02-03
 24930
 </td>
 <td style="text-align:right;">
-5052
+1982
 </td>
 <td style="text-align:right;">
-102427
+4812
 </td>
 </tr>
 <tr>
@@ -216,10 +216,10 @@ slug: predict-2020-02-03
 19878
 </td>
 <td style="text-align:right;">
-4665
+1737
 </td>
 <td style="text-align:right;">
-81947
+4148
 </td>
 </tr>
 <tr>
@@ -245,10 +245,10 @@ slug: predict-2020-02-03
 15213
 </td>
 <td style="text-align:right;">
-4904
+1459
 </td>
 <td style="text-align:right;">
-59990
+3248
 </td>
 </tr>
 <tr>
@@ -274,10 +274,10 @@ slug: predict-2020-02-03
 11488
 </td>
 <td style="text-align:right;">
-2950
+1771
 </td>
 <td style="text-align:right;">
-44132
+2077
 </td>
 </tr>
 <tr>
@@ -303,10 +303,10 @@ slug: predict-2020-02-03
 8538
 </td>
 <td style="text-align:right;">
-3879
+769
 </td>
 <td style="text-align:right;">
-30453
+3806
 </td>
 </tr>
 <tr>
@@ -332,10 +332,10 @@ slug: predict-2020-02-03
 4659
 </td>
 <td style="text-align:right;">
-1407
+688
 </td>
 <td style="text-align:right;">
-21556
+1309
 </td>
 </tr>
 <tr>
@@ -361,10 +361,10 @@ slug: predict-2020-02-03
 3252
 </td>
 <td style="text-align:right;">
-1350
+444
 </td>
 <td style="text-align:right;">
-13967
+1118
 </td>
 </tr>
 <tr>
@@ -390,10 +390,10 @@ slug: predict-2020-02-03
 1902
 </td>
 <td style="text-align:right;">
-938
+259
 </td>
 <td style="text-align:right;">
-8420
+680
 </td>
 </tr>
 <tr>
@@ -419,10 +419,10 @@ slug: predict-2020-02-03
 964
 </td>
 <td style="text-align:right;">
-487
+131
 </td>
 <td style="text-align:right;">
-4928
+257
 </td>
 </tr>
 <tr>
@@ -448,10 +448,10 @@ slug: predict-2020-02-03
 477
 </td>
 <td style="text-align:right;">
-132
+149
 </td>
 <td style="text-align:right;">
-1394
+26
 </td>
 </tr>
 <tr>
@@ -477,10 +477,10 @@ NA
 345
 </td>
 <td style="text-align:right;">
-NA
+77
 </td>
 <td style="text-align:right;">
-922
+27
 </td>
 </tr>
 </tbody>
@@ -515,7 +515,7 @@ NA
 02-10
 </td>
 <td style="text-align:left;">
-823
+74
 </td>
 <td style="text-align:left;">
 10106
@@ -529,7 +529,7 @@ NA
 02-12
 </td>
 <td style="text-align:left;">
-85
+19
 </td>
 <td style="text-align:left;">
 714
@@ -543,94 +543,10 @@ NA
 02-10
 </td>
 <td style="text-align:left;">
-47
+5
 </td>
 <td style="text-align:left;">
 534
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-浙江
-</td>
-<td style="text-align:left;">
-02-08
-</td>
-<td style="text-align:left;">
-42
-</td>
-<td style="text-align:left;">
-710
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-湖南
-</td>
-<td style="text-align:left;">
-02-09
-</td>
-<td style="text-align:left;">
-37
-</td>
-<td style="text-align:left;">
-489
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-安徽
-</td>
-<td style="text-align:left;">
-02-10
-</td>
-<td style="text-align:left;">
-33
-</td>
-<td style="text-align:left;">
-371
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-江西
-</td>
-<td style="text-align:left;">
-02-08
-</td>
-<td style="text-align:left;">
-32
-</td>
-<td style="text-align:left;">
-361
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-江苏
-</td>
-<td style="text-align:left;">
-02-09
-</td>
-<td style="text-align:left;">
-24
-</td>
-<td style="text-align:left;">
-259
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-四川
-</td>
-<td style="text-align:left;">
-02-09
-</td>
-<td style="text-align:left;">
-19
-</td>
-<td style="text-align:left;">
-249
 </td>
 </tr>
 <tr>
@@ -641,7 +557,7 @@ NA
 02-10
 </td>
 <td style="text-align:left;">
-16
+5
 </td>
 <td style="text-align:left;">
 202
@@ -655,7 +571,7 @@ NA
 02-15
 </td>
 <td style="text-align:left;">
-16
+5
 </td>
 <td style="text-align:left;">
 111
@@ -663,72 +579,16 @@ NA
 </tr>
 <tr>
 <td style="text-align:left;">
-上海
+江西
 </td>
 <td style="text-align:left;">
-02-08
+02-11
 </td>
 <td style="text-align:left;">
-14
+4
 </td>
 <td style="text-align:left;">
-200
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-重庆
-</td>
-<td style="text-align:left;">
-02-06
-</td>
-<td style="text-align:left;">
-11
-</td>
-<td style="text-align:left;">
-287
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-陕西
-</td>
-<td style="text-align:left;">
-02-08
-</td>
-<td style="text-align:left;">
-11
-</td>
-<td style="text-align:left;">
-126
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-山东
-</td>
-<td style="text-align:left;">
-02-07
-</td>
-<td style="text-align:left;">
-10
-</td>
-<td style="text-align:left;">
-235
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-福建
-</td>
-<td style="text-align:left;">
-02-06
-</td>
-<td style="text-align:left;">
-9
-</td>
-<td style="text-align:left;">
-163
+331
 </td>
 </tr>
 <tr>
@@ -736,83 +596,27 @@ NA
 贵州
 </td>
 <td style="text-align:left;">
-02-14
-</td>
-<td style="text-align:left;">
-9
-</td>
-<td style="text-align:left;">
-47
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-河北
-</td>
-<td style="text-align:left;">
-02-07
-</td>
-<td style="text-align:left;">
-6
-</td>
-<td style="text-align:left;">
-110
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-广西
-</td>
-<td style="text-align:left;">
-02-05
-</td>
-<td style="text-align:left;">
-6
-</td>
-<td style="text-align:left;">
-114
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-辽宁
-</td>
-<td style="text-align:left;">
-02-08
-</td>
-<td style="text-align:left;">
-5
-</td>
-<td style="text-align:left;">
-75
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-天津
-</td>
-<td style="text-align:left;">
-02-09
+02-17
 </td>
 <td style="text-align:left;">
 4
 </td>
 <td style="text-align:left;">
-49
+38
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-云南
+安徽
 </td>
 <td style="text-align:left;">
-02-07
+02-10
 </td>
 <td style="text-align:left;">
-4
+3
 </td>
 <td style="text-align:left;">
-106
+371
 </td>
 </tr>
 <tr>
@@ -820,27 +624,13 @@ NA
 吉林
 </td>
 <td style="text-align:left;">
-02-10
+02-16
 </td>
 <td style="text-align:left;">
-3
+2
 </td>
 <td style="text-align:left;">
-25
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-宁夏
-</td>
-<td style="text-align:left;">
-02-10
-</td>
-<td style="text-align:left;">
-3
-</td>
-<td style="text-align:left;">
-31
+22
 </td>
 </tr>
 <tr>
@@ -851,7 +641,7 @@ NA
 02-04
 </td>
 <td style="text-align:left;">
-2
+0
 </td>
 <td style="text-align:left;">
 63
@@ -865,7 +655,7 @@ NA
 02-04
 </td>
 <td style="text-align:left;">
-1
+0
 </td>
 <td style="text-align:left;">
 42
@@ -873,16 +663,198 @@ NA
 </tr>
 <tr>
 <td style="text-align:left;">
+辽宁
+</td>
+<td style="text-align:left;">
+02-08
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+75
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+四川
+</td>
+<td style="text-align:left;">
+02-09
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+249
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+湖南
+</td>
+<td style="text-align:left;">
+02-09
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+489
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+浙江
+</td>
+<td style="text-align:left;">
+02-08
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+710
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+江苏
+</td>
+<td style="text-align:left;">
+02-09
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+259
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+天津
+</td>
+<td style="text-align:left;">
+02-09
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+49
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+云南
+</td>
+<td style="text-align:left;">
+02-07
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+106
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 山西
 </td>
 <td style="text-align:left;">
-02-03
+02-05
 </td>
 <td style="text-align:left;">
-1
+0
 </td>
 <td style="text-align:left;">
 57
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+山东
+</td>
+<td style="text-align:left;">
+02-07
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+235
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+重庆
+</td>
+<td style="text-align:left;">
+02-06
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+287
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+青海
+</td>
+<td style="text-align:left;">
+01-30
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+上海
+</td>
+<td style="text-align:left;">
+02-08
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+200
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+澳门
+</td>
+<td style="text-align:left;">
+01-28
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+福建
+</td>
+<td style="text-align:left;">
+02-06
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+163
 </td>
 </tr>
 <tr>
@@ -893,7 +865,7 @@ NA
 02-03
 </td>
 <td style="text-align:left;">
-1
+0
 </td>
 <td style="text-align:left;">
 26
@@ -901,21 +873,49 @@ NA
 </tr>
 <tr>
 <td style="text-align:left;">
-新疆
+陕西
 </td>
 <td style="text-align:left;">
-02-03
+02-08
 </td>
 <td style="text-align:left;">
-1
+0
 </td>
 <td style="text-align:left;">
-21
+126
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-台湾
+河北
+</td>
+<td style="text-align:left;">
+02-07
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+110
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+宁夏
+</td>
+<td style="text-align:left;">
+02-10
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+31
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+香港
 </td>
 <td style="text-align:left;">
 02-01
@@ -924,49 +924,49 @@ NA
 0
 </td>
 <td style="text-align:left;">
-11
+12
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-青海
+新疆
 </td>
 <td style="text-align:left;">
-01-29
+02-05
 </td>
 <td style="text-align:left;">
-NA
+0
 </td>
 <td style="text-align:left;">
-9
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-澳门
-</td>
-<td style="text-align:left;">
-01-26
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-8
+20
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-香港
+广西
 </td>
 <td style="text-align:left;">
-01-29
+02-08
 </td>
 <td style="text-align:left;">
-NA
+0
 </td>
 <td style="text-align:left;">
-14
+109
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+台湾
+</td>
+<td style="text-align:left;">
+02-03
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+10
 </td>
 </tr>
 </tbody>
@@ -1011,65 +1011,80 @@ NA
 <img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-19.png" width="100%" /><br />
 青海 :<br />
 <img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-20.png" width="100%" /><br />
-西藏 :</p>
-<p>待明确地区 :</p>
-<p>上海 :<br />
+西藏 :<br />
 <img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-21.png" width="100%" /><br />
-印度 :</p>
-<p>阿联酋 :<br />
+待明确地区 :<br />
 <img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-22.png" width="100%" /><br />
-澳大利亚 :<br />
+上海 :<br />
 <img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-23.png" width="100%" /><br />
-新加坡 :<br />
+印度 :<br />
 <img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-24.png" width="100%" /><br />
-澳门 :<br />
+阿联酋 :<br />
 <img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-25.png" width="100%" /><br />
-福建 :<br />
+澳大利亚 :<br />
 <img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-26.png" width="100%" /><br />
-内蒙古 :<br />
+新加坡 :<br />
 <img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-27.png" width="100%" /><br />
-菲律宾 :</p>
-<p>陕西 :<br />
+澳门 :<br />
 <img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-28.png" width="100%" /><br />
-黑龙江 :<br />
+福建 :<br />
 <img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-29.png" width="100%" /><br />
-河北 :<br />
+内蒙古 :<br />
 <img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-30.png" width="100%" /><br />
-吉林 :<br />
+菲律宾 :<br />
 <img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-31.png" width="100%" /><br />
-韩国 :<br />
+陕西 :<br />
 <img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-32.png" width="100%" /><br />
-宁夏 :<br />
+黑龙江 :<br />
 <img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-33.png" width="100%" /><br />
-香港 :<br />
+河北 :<br />
 <img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-34.png" width="100%" /><br />
-贵州 :<br />
+吉林 :<br />
 <img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-35.png" width="100%" /><br />
-新疆 :<br />
+韩国 :<br />
 <img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-36.png" width="100%" /><br />
-广西 :<br />
+宁夏 :<br />
 <img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-37.png" width="100%" /><br />
-美国 :</p>
-<p>日本 :<br />
+香港 :<br />
 <img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-38.png" width="100%" /><br />
-台湾 :<br />
+贵州 :<br />
 <img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-39.png" width="100%" /><br />
-泰国 :<br />
+新疆 :<br />
 <img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-40.png" width="100%" /><br />
-马来西亚 :<br />
+广西 :<br />
 <img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-41.png" width="100%" /><br />
-法国 :<br />
+美国 :<br />
 <img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-42.png" width="100%" /><br />
-越南 :</p>
-<p>加拿大 :<br />
+日本 :<br />
 <img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-43.png" width="100%" /><br />
-意大利 :</p>
-<p>英国 :</p>
-<p>俄罗斯 :</p>
-<p>尼泊尔 :</p>
-<p>柬埔寨 :</p>
-<p>斯里兰卡 :</p>
-<p>芬兰 :</p>
-<p>西班牙 :</p>
-<p>瑞典 :</p>
+台湾 :<br />
+<img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-44.png" width="100%" /><br />
+泰国 :<br />
+<img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-45.png" width="100%" /><br />
+马来西亚 :<br />
+<img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-46.png" width="100%" /><br />
+法国 :<br />
+<img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-47.png" width="100%" /><br />
+越南 :<br />
+<img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-48.png" width="100%" /><br />
+加拿大 :<br />
+<img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-49.png" width="100%" /><br />
+意大利 :<br />
+<img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-50.png" width="100%" /><br />
+英国 :<br />
+<img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-51.png" width="100%" /><br />
+俄罗斯 :<br />
+<img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-52.png" width="100%" /><br />
+尼泊尔 :<br />
+<img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-53.png" width="100%" /><br />
+柬埔寨 :<br />
+<img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-54.png" width="100%" /><br />
+斯里兰卡 :<br />
+<img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-55.png" width="100%" /><br />
+芬兰 :<br />
+<img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-56.png" width="100%" /><br />
+西班牙 :<br />
+<img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-57.png" width="100%" /><br />
+瑞典 :<br />
+<img src="/zh/post/predict-2020-02-03_files/figure-html/unnamed-chunk-8-58.png" width="100%" /></p>
 </div>
