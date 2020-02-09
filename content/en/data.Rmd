@@ -49,4 +49,4 @@ R is a free and open-source software package. We use R for data collection, clea
 
 For R beginners, we published a book *Learning R: from the very beginning* (Peng Zhao and Yi Li. Research Press,2018. In Chinese). Click the following image and visit the homepage and read sample chapters for free.
 
-[![](https://openr.pzhao.org/img/xuer_weidian.png)](https://pzhaonet.github.io/xuer/)
+<a href="https://pzhaonet.github.io/xuer/"><img src="https://openr.pzhao.org/img/xuer_weidian.png"  width="60%" /></a>

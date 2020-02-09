@@ -19,7 +19,7 @@ If you have any suggestions for this project, please feel free to submit an issu
 
 ## The Laiyindata Team
 
-- [ZHAO Peng]((https://pzhaonet.github.io/xuer/))
+- [ZHAO Peng](https://pzhaonet.github.io/xuer/)
 - ZOU Yi
 - WANG Xiaoxiang
 - HAN Lei

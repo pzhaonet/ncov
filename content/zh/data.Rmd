@@ -48,4 +48,4 @@ get_ncov(method = 'api') # 从 api 接口读取
 
 对于欲了解或学习 R 语言的初学者，我们出版了一本入门教材：《学 R：零基础学习 R 语言》（赵鹏，李怡。研究出版社。北京，2018）。点击下面的图片可访问该书主页和免费试读。
 
-[![](https://openr.pzhao.org/img/xuer_weidian.png)](https://pzhaonet.github.io/xuer/)
+<a href="https://pzhaonet.github.io/xuer/"><img src="https://openr.pzhao.org/img/xuer_weidian.png"  width="60%" /></a>
