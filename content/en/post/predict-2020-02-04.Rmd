@@ -32,7 +32,7 @@ On 2020-`r pre$tomorrow` there will be `r format(round(pre$tomorrowNew), scienti
 
 ```{r}
 ncovChina <- ncovChina[rev(order(ncovChina[, 1])), ]
-knitr::kable(ncovChina[, 1:9], format = "html", row.names = FALSE, col.names = c('Date', 'Confirmed', 'Suspected', 'Severe', 'Dead', 'Curee', 'Conf.+Susp.', 'Incr. in Conf.+ Susp', 'Under observation'))
+knitr::kable(ncovChina[, 1:9], format = "html", row.names = FALSE, col.names = c('Date', 'Confirmed', 'Suspected', 'Severe', 'Dead', 'Cured', 'Conf.+Susp.', 'Incr. in Conf.+ Susp.', 'Under Obs.'))
 ```
 
 </small>
