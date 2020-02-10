@@ -26,13 +26,13 @@ If you have any suggestions for this project, please feel free to submit an issu
 
 ## Contact
 
-- <openr(at)pzhao.net>。
+- <openr(at)pzhao.net>
 
 
 ## Acknowledgments
 
 [R ncovr package](https://github.com/pzhaonet/ncovr) is used for data processing and visualization.
 
-The data used on this site come from [BlankerL/DXY-2019-nCoV-Crawler](https://github.com/BlankerL/DXY-2019-nCoV-Crawler) and [JackieZheng/2019-nCoV](https://github.com/JackieZheng/2019-nCoV)。
+The data used on this site come from [BlankerL/DXY-2019-nCoV-Crawler](https://github.com/BlankerL/DXY-2019-nCoV-Crawler) and [JackieZheng/2019-nCoV](https://github.com/JackieZheng/2019-nCoV). The credit of the translation of area/city names from Chinese into English belongs to [brightgems/china_city_dataset](https://github.com/brightgems/china_city_dataset).
 
 This site is built by [R blogdown package](https://bookdown.org/yihui/blogdown/) with [HUGO](https://gohugo.io/), and updated automatically with [Travis-CI](https://travis-ci.org/).

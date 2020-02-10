@@ -54,8 +54,7 @@ The number of suspected cases comes from the National Health and Medical Commiss
 ```{r}
 ncovChina <- get_ncov('china', if_en = TRUE)
 ncovChina <- ncovChina[rev(order(ncovChina[, 1])), ]
-
-knitr::kable(ncovChina[, 1:9], format = "html", row.names = FALSE)
+knitr::kable(ncovChina[, !names(ncovChina) %in% c("Updated", "Remarks")], format = "html", row.names = FALSE)
 ```
 
 </small>
