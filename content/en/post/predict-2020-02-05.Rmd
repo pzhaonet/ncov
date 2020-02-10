@@ -64,7 +64,7 @@ knitr::kable(df_predict[!is.na(df_predict$enddate), c(6, 1, 2, 5, 4)], format = 
 ```
 
 ```{r, results='asis'}
-for(x in unique(ncov$area$provinceShortName)) {
+for(x in unique(ncov$area$provinceShortName[ncov$area$country == '中国'])) {
   cat(unlist(dic_city[match(x, dic_city$Province), 'Province_EN']), ":  \n")
   predict_date(province = x, ncov = ncov, ifplot = TRUE, ifchinese = FALSE)
   cat("  \n")

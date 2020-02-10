@@ -45,6 +45,9 @@ if(method == 'city'){
   if(nrow(x_city) > 0) x <- rbind(x_city[, c('cityName', 'confirmedCount', 'curedCount', 'deadCount', 'city_en')], x)
   cities <- leafletCN::regionNames(mapName = "city")
   x <- x[x$cityName %in% cities, ]
+  require(pinyin)
+  mydic <- pydic('toneless', dic = 'pinyin2')
+  x$city_en[is.na(x$city_en)] <- ncovr:::conv_firstletter(py(x$cityName[is.na(x$city_en)], dic = mydic, sep =''))
 }
 
 prefix <- switch(method, "province" = "Provinces", "city" = "Cities")
