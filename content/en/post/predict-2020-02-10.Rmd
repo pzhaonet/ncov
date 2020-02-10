@@ -1,0 +1,66 @@
+---
+title: 2019-nCoV Epidemic Mitigation Time Forecast (2020-02-10)
+date: 2020-02-10
+slug: predict-2020-02-10
+---
+
+```{r include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, error = FALSE, collapse = TRUE, out.width = "100%")
+Sys.setlocale('LC_CTYPE', 'Chinese')
+```
+
+```{r}
+require(ncovr)
+ncovChina <- get_ncov('china') 
+ncovChina <- ncovChina[ncovChina[, "日期"] <= as.Date('2020-02-10'), ]
+```
+
+## Time trends and model predictions of confirmed cases across the country
+
+```{r}
+predict_date(province = "中国",  ncov = ncovChina)
+pre <- predict_date(province = "中国",  ncov = ncovChina, ifplot = FALSE)
+```
+
+Our model shows that the national epidemic situation will ease on `r pre$enddate` (the number of confirmed cases will not increase significantly).
+
+On 2020-`r pre$tomorrow` there will be `r format(round(pre$tomorrowNew), scientific = FALSE)` new confirmed cases and in total `r format(round(pre$tomorrowcount), scientific = FALSE)` confirmed cases.
+
+## National Epidemic Time Series
+
+<small>
+
+```{r}
+ncovChina <- ncovChina[rev(order(ncovChina[, 1])), ]
+knitr::kable(ncovChina[, 1:9], format = "html", row.names = FALSE, col.names = c('Date', 'Confirmed', 'Suspected', 'Severe', 'Dead', 'Cured', 'Conf.+Susp.', 'Incr. in Conf.+ Susp.', 'Under Obs.'))
+```
+
+</small>
+
+
+```{r}
+ncov <- get_ncov()
+ncov$area$date <- as.Date(ncovr:::conv_time(ncov$area$updateTime))
+ncov$area <- ncov$area[ncov$area$date < as.Date('2020-02-10'), ]
+df_predict <- t(sapply(unique(ncov$area$provinceShortName[ncov$area$country == '中国']), function(x) predict_date(province = x, ncov = ncov, ifplot = FALSE)))
+
+df_predict <- as.data.frame(df_predict)
+df_predict <- df_predict[order(-as.numeric(df_predict$tomorrowNew)), ]
+tomorrow <- df_predict$tomorrow[1]
+```
+
+```{r, results='asis'}
+cat("## 2020-02-10 Epidemic forecast by province")
+```
+
+```{r}
+knitr::kable(df_predict[!is.na(df_predict$enddate), c(1, 2, 5, 4)], format = "html", row.names = FALSE, col.names = c("Provinces", "Epidemic Mitigation Time", paste0(tomorrow, "Daily increase in confirmed"), paste0(tomorrow, "Confirmed in total")))
+```
+
+```{r, results='asis'}
+for(x in unique(ncov$area$provinceShortName)) {
+  cat(x, ":  \n")
+  predict_date(province = x, ncov = ncov, ifplot = TRUE, ifchinese = TRUE)
+  cat("  \n")
+}
+```
