@@ -8,14 +8,21 @@ slug: data
 <p>这里介绍几种获取疫情数据的途径。</p>
 <div id="利用-r-ncovr-包" class="section level2">
 <h2>利用 R ncovr 包</h2>
-<p>R 语言用户可以通过 ncovr 包获取疫情数据，基本囊括了后面介绍的几种格式。</p>
-<pre class="r"><code>install.packages(&#39;remotes&#39;) # 安装 remotes 包
-remotes::install_github(&#39;pzhaonet/ncovr&#39;) # 安装 ncovr 包
-Sys.setlocale(&#39;LC_CTYPE&#39;, &#39;Chinese&#39;) # windows 用户设置中文环境
-require(&quot;ncovr&quot;) # 加载
-get_ncov() # 读取 RDS数据（推荐）
-get_ncov(method = &#39;csv&#39;) # 从 csv 文件读取（推荐）
-get_ncov(method = &#39;api&#39;) # 从 api 接口读取</code></pre>
+<p>R 语言用户可以通过我们开发的 ncovr 包获取疫情数据，基本囊括了后面介绍的几种格式。</p>
+<pre class="r"><code># 安装 remotes 包
+install.packages(&#39;remotes&#39;)
+# 安装 ncovr 包
+remotes::install_github(&#39;pzhaonet/ncovr&#39;) 
+# windows 用户设置中文环境
+Sys.setlocale(&#39;LC_CTYPE&#39;, &#39;Chinese&#39;) 
+# 加载
+require(&quot;ncovr&quot;) 
+# 读取 RDS数据（推荐）
+get_ncov() 
+# 从 csv 文件读取（推荐）
+get_ncov(method = &#39;csv&#39;) 
+# 从 api 接口读取
+get_ncov(method = &#39;api&#39;) </code></pre>
 <p>更多功能请参看函数的帮助信息。</p>
 </div>
 <div id="直接下载" class="section level2">
@@ -30,6 +37,17 @@ get_ncov(method = &#39;api&#39;) # 从 api 接口读取</code></pre>
 <p>上述项目还包含了 json 格式的数据。</p>
 <p>每天全国的数据可以从 <a href="https://github.com/JackieZheng/2019-nCoV/">JackieZheng/2019-nCoV</a>下载 <a href="https://github.com/JackieZheng/2019-nCoV/raw/master/Excel/data.xlsx">Excel 表格</a>。这个项目还提供了同样内容的其他数据格式。</p>
 <p>如果您知道其他的数据获取途径，欢迎告知我们，以便汇总。</p>
+</div>
+<div id="利用-r-ncov2019-包" class="section level2">
+<h2>利用 R nCov2019 包</h2>
+<p>nCov2019 是另一款获取疫情数据和可视化的 R 语言扩展包。</p>
+<pre class="r"><code>remotes::install_github(&quot;GuangchuangYu/nCov2019&quot;)
+library(nCov2019)
+x &lt;- get_nCov2019()
+x
+time(x)
+x[]</code></pre>
+<p>详见该项目的<a href="https://github.com/GuangchuangYu/nCov2019">主页</a>。</p>
 </div>
 <div id="r-语言简介" class="section level2">
 <h2>R 语言简介</h2>

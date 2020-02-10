@@ -78,14 +78,21 @@
 <p>We collect several ways to get the 2019-nCoV epidemic data.</p>
 <div id="use-the-r-ncovr-package" class="section level2">
 <h2>Use the R ncovr package</h2>
-<p>R users can get the epidemic data via the ncovr package, which basically includes the datasets described later.</p>
-<pre class="r"><code>install.packages(&#39;remotes&#39;) # Install the remotes package
-remotes::install_github(&#39;pzhaonet/ncovr&#39;) # Install the ncovr package
-Sys.setlocale(&#39;LC_CTYPE&#39;, &#39;Chinese&#39;) # windows users have to set the Chinese environment
-require(&quot;ncovr&quot;) # Load the ncovr package
-get_ncov() # read RDS data (default；recommended)
-get_ncov(method = &#39;csv&#39;) # read .csv files (recommended)
-get_ncov(method = &#39;api&#39;) # read from api</code></pre>
+<p>R users can get the epidemic data via the ncovr package we develop, which basically includes the datasets described later.</p>
+<pre class="r"><code># Install the remotes package
+install.packages(&#39;remotes&#39;) 
+# Install the ncovr package
+remotes::install_github(&#39;pzhaonet/ncovr&#39;) 
+# windows users have to set the Chinese environment
+Sys.setlocale(&#39;LC_CTYPE&#39;, &#39;Chinese&#39;) 
+# Load the ncovr package
+require(&quot;ncovr&quot;) 
+# read RDS data (default；recommended)
+get_ncov() 
+# read .csv files (recommended)
+get_ncov(method = &#39;csv&#39;) 
+# read from api
+get_ncov(method = &#39;api&#39;) </code></pre>
 <p>Please see the help documents for more details.</p>
 </div>
 <div id="download-directly" class="section level2">
@@ -100,6 +107,17 @@ get_ncov(method = &#39;api&#39;) # read from api</code></pre>
 <p>This repository provides .json files as well.</p>
 <p>An Excel spreadsheet of daily national data can be <a href="https://github.com/JackieZheng/2019-nCoV/raw/master/Excel/data.xlsx">downloaded</a> from the <a href="https://github.com/JackieZheng/2019-nCoV/">JackieZheng/2019-nCoV</a>. This project also provides other data format with the same content.</p>
 <p>It would be appreciated if you let us know other data sources, which will be listed here.</p>
+</div>
+<div id="use-the-r-ncov2019-package" class="section level2">
+<h2>Use the R nCov2019 package</h2>
+<p>nCov2019 is another R package for downloading data.</p>
+<pre class="r"><code>remotes::install_github(&quot;GuangchuangYu/nCov2019&quot;)
+library(nCov2019)
+x &lt;- get_nCov2019()
+x
+time(x)
+x[]</code></pre>
+<p>More details can be found on its <a href="https://github.com/GuangchuangYu/nCov2019">GitHub repo</a>.</p>
 </div>
 <div id="introduction-to-r" class="section level2">
 <h2>Introduction to R</h2>
