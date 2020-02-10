@@ -61,6 +61,15 @@ knitr::kable(ncovChina[, !names(ncovChina) %in% c("Updated", "Remarks")], format
 
 The following pictures are from dxy.cn.
 
-```{r, out.width="100%"}
-knitr::include_graphics(unlist(ncov$dailyPics))
+```{r, out.width="100%", results='asis'}
+figs <- unlist(ncov$dailyPics)
+for(i in 1:length(figs)){
+  cat('<img src="', figs[i], '"  width="100%" />  </br>', sep = '')
+  if (i == 1)  cat('The daily increase in confirmed (red) and suspected (orange) cases.  </br></br>')
+  if (i == 2)  cat('The daily increase in confirmed cases for Wuhan (orange), Hubei (red), and non-Hubei (blue). </br></br>')
+  if (i == 3)  cat('The current  confirmed (red), suspected (orange), observed (green) cases, and the sum of them (blue).  </br></br>')
+  if (i == 4)  cat('The total deaths (black) and cured (green) cases.  </br></br>')
+  if (i == 5)  cat('The total deaths in Hubei (black) and non-Hubei (gray), and the total cured cases in Hubei (light green) and non-Hubei (dark green).  </br></br>')
+  if (i == 6)  cat('The fatality rate across China (brown), Hubei (blue), and non-Hubei (gray).  </br></br>')
+}
 ```
