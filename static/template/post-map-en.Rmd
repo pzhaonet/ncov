@@ -35,12 +35,14 @@ method <- "<<method>>"
 if(method == 'city'){
   x <- x[x$provinceName %in% c("北京", "上海", "重庆", "天津"), ]
   names(x)[1] <- "cityName"
+  names(x)[5] <- "city_en"
+  x$city_en <- unlist(x$city_en)
   x_city <- get_ncov('tidy')$area
   x_city$date <- x_city$updateTime
   x_city <- x_city[rev(order(x_city$date)), ]
   x_city <- x_city[as.Date(x_city$date) <= as.Date("<<date>>"), ]
   x_city <- x_city[!duplicated(x_city$cityName), ]
-  if(nrow(x_city) > 0) x <- rbind(x_city[, c('cityName', 'confirmedCount', 'curedCount', 'deadCount')], x)
+  if(nrow(x_city) > 0) x <- rbind(x_city[, c('cityName', 'confirmedCount', 'curedCount', 'deadCount', 'city_en')], x)
   cities <- leafletCN::regionNames(mapName = "city")
   x <- x[x$cityName %in% cities, ]
 }
