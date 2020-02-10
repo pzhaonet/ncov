@@ -13,16 +13,23 @@ We collect several ways to get the 2019-nCoV epidemic data.
 
 ## Use the R ncovr package
 
-R users can get the epidemic data via the ncovr package, which basically includes the datasets described later.
+R users can get the epidemic data via the ncovr package we develop, which basically includes the datasets described later.
 
 ```r
-install.packages('remotes') # Install the remotes package
-remotes::install_github('pzhaonet/ncovr') # Install the ncovr package
-Sys.setlocale('LC_CTYPE', 'Chinese') # windows users have to set the Chinese environment
-require("ncovr") # Load the ncovr package
-get_ncov() # read RDS data (default；recommended)
-get_ncov(method = 'csv') # read .csv files (recommended)
-get_ncov(method = 'api') # read from api
+# Install the remotes package
+install.packages('remotes') 
+# Install the ncovr package
+remotes::install_github('pzhaonet/ncovr') 
+# windows users have to set the Chinese environment
+Sys.setlocale('LC_CTYPE', 'Chinese') 
+# Load the ncovr package
+require("ncovr") 
+# read RDS data (default；recommended)
+get_ncov() 
+# read .csv files (recommended)
+get_ncov(method = 'csv') 
+# read from api
+get_ncov(method = 'api') 
 ```
 
 Please see the help documents for more details.
@@ -41,6 +48,22 @@ This repository provides .json files as well.
 An Excel spreadsheet of daily national data can be [downloaded](https://github.com/JackieZheng/2019-nCoV/raw/master/Excel/data.xlsx) from the [JackieZheng/2019-nCoV](https://github.com/JackieZheng/2019-nCoV/). This project also provides other data format with the same content.
 
 It would be appreciated if you let us know other data sources, which will be listed here.
+
+
+## Use the R nCov2019 package
+
+nCov2019 is another R package for downloading data.
+
+```r
+remotes::install_github("GuangchuangYu/nCov2019")
+library(nCov2019)
+x <- get_nCov2019()
+x
+time(x)
+x[]
+```
+
+More details can be found on its [GitHub repo](https://github.com/GuangchuangYu/nCov2019).
 
 
 ## Introduction to R

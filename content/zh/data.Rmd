@@ -13,16 +13,23 @@ Sys.setlocale('LC_CTYPE', 'Chinese')
 
 ## 利用 R ncovr 包
 
-R 语言用户可以通过 ncovr 包获取疫情数据，基本囊括了后面介绍的几种格式。
+R 语言用户可以通过我们开发的 ncovr 包获取疫情数据，基本囊括了后面介绍的几种格式。
 
 ```r
-install.packages('remotes') # 安装 remotes 包
-remotes::install_github('pzhaonet/ncovr') # 安装 ncovr 包
-Sys.setlocale('LC_CTYPE', 'Chinese') # windows 用户设置中文环境
-require("ncovr") # 加载
-get_ncov() # 读取 RDS数据（推荐）
-get_ncov(method = 'csv') # 从 csv 文件读取（推荐）
-get_ncov(method = 'api') # 从 api 接口读取
+# 安装 remotes 包
+install.packages('remotes')
+# 安装 ncovr 包
+remotes::install_github('pzhaonet/ncovr') 
+# windows 用户设置中文环境
+Sys.setlocale('LC_CTYPE', 'Chinese') 
+# 加载
+require("ncovr") 
+# 读取 RDS数据（推荐）
+get_ncov() 
+# 从 csv 文件读取（推荐）
+get_ncov(method = 'csv') 
+# 从 api 接口读取
+get_ncov(method = 'api') 
 ```
 
 更多功能请参看函数的帮助信息。
@@ -41,6 +48,21 @@ get_ncov(method = 'api') # 从 api 接口读取
 每天全国的数据可以从 [JackieZheng/2019-nCoV](https://github.com/JackieZheng/2019-nCoV/)下载 [Excel 表格](https://github.com/JackieZheng/2019-nCoV/raw/master/Excel/data.xlsx)。这个项目还提供了同样内容的其他数据格式。
 
 如果您知道其他的数据获取途径，欢迎告知我们，以便汇总。
+
+## 利用 R nCov2019 包
+
+nCov2019 是另一款获取疫情数据和可视化的 R 语言扩展包。
+
+```r
+remotes::install_github("GuangchuangYu/nCov2019")
+library(nCov2019)
+x <- get_nCov2019()
+x
+time(x)
+x[]
+```
+
+详见该项目的[主页](https://github.com/GuangchuangYu/nCov2019)。
 
 ## R 语言简介
 
