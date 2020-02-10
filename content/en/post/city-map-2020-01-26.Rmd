@@ -22,11 +22,12 @@ Confirmed cases. The gray area in the figure indicates the lack of relevant data
 require(ncovr)
 require(leafletCN)
 ncov <- get_ncov()
+ncov$area <- ncov$area[ncov$area$country == '中国', ]
 ncov$area$date <- as.Date(ncovr:::conv_time(ncov$area$updateTime))
 ncov$area <- ncov$area[rev(order(ncov$area$date)), ]
 ncov$area <- ncov$area[ncov$area$date <= as.Date("2020-01-26"), ]
 ncov$area <- ncov$area[!duplicated(ncov$area$provinceName), ]
-x <- ncov$area[, c('provinceShortName', 'confirmedCount', 'curedCount', 'deadCount')]
+x <- ncov$area[, c('provinceShortName', 'confirmedCount', 'curedCount', 'deadCount', 'province_en')]
 names(x)[1] <- 'provinceName'
 
 method <- "city"
@@ -34,12 +35,14 @@ method <- "city"
 if(method == 'city'){
   x <- x[x$provinceName %in% c("北京", "上海", "重庆", "天津"), ]
   names(x)[1] <- "cityName"
+  names(x)[5] <- "city_en"
+  x$city_en <- unlist(x$city_en)
   x_city <- get_ncov('tidy')$area
   x_city$date <- x_city$updateTime
   x_city <- x_city[rev(order(x_city$date)), ]
   x_city <- x_city[as.Date(x_city$date) <= as.Date("2020-01-26"), ]
   x_city <- x_city[!duplicated(x_city$cityName), ]
-  if(nrow(x_city) > 0) x <- rbind(x_city[, c('cityName', 'confirmedCount', 'curedCount', 'deadCount')], x)
+  if(nrow(x_city) > 0) x <- rbind(x_city[, c('cityName', 'confirmedCount', 'curedCount', 'deadCount', 'city_en')], x)
   cities <- leafletCN::regionNames(mapName = "city")
   x <- x[x$cityName %in% cities, ]
 }
@@ -47,7 +50,7 @@ if(method == 'city'){
 prefix <- switch(method, "province" = "Provinces", "city" = "Cities")
 x <- x[order(-x$confirmedCount), ]
 x$rank <- 1:nrow(x)
-x <- x[, c(5,1:4)]
+x <- x[, c(6,5, 1:4)]
 ```
 
 ```{r, results='asis'}
@@ -55,5 +58,5 @@ cat("## 2020-01-26 Epidemic Data Sheet (", prefix, ")")
 ```
 
 ```{r}
-knitr::kable(x, format = "html", row.names = FALSE, col.names = c("Rank", "Name", "Confirmed", "Cured", "Dead"))
+knitr::kable(x, format = "html", row.names = FALSE, col.names = c("Rank", "Area", "Area_cn", "Confirmed", "Cured", "Dead"))
 ```

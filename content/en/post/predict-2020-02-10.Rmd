@@ -56,17 +56,17 @@ tomorrow <- df_predict$tomorrow[1]
 ```
 
 ```{r, results='asis'}
-cat("## <<date>> Epidemic forecast by province")
+cat("## 2020-02-10 Epidemic forecast by province")
 ```
 
 ```{r}
-knitr::kable(df_predict[!is.na(df_predict$enddate), c(6, 1, 2, 5, 4)], format = "html", row.names = FALSE, col.names = c("Area", 'Area_cn', "Epidemic Mitigation Time", paste(tomorrow, "Predicted daily increase in confirmed"), paste(tomorrow, " Predicted confirmed in total")))
+knitr::kable(df_predict[!is.na(df_predict$enddate), c(6, 1, 2, 5, 4)], format = "html", row.names = FALSE, col.names = c("[Area]", '[Area_cn]', "[Epidemic Mitigation Time]", paste0("[", tomorrow, " Prdctd daily incrs conf.]"), paste0("[", tomorrow, " Prdctd conf. in total]")))
 ```
 
 ```{r, results='asis'}
 for(x in unique(ncov$area$provinceShortName)) {
   cat(unlist(dic_city[match(x, dic_city$Province), 'Province_EN']), ":  \n")
-  predict_date(province = x, ncov = ncov, ifplot = TRUE, ifchinese = TRUE)
+  predict_date(province = x, ncov = ncov, ifplot = TRUE, ifchinese = FALSE)
   cat("  \n")
 }
 ```

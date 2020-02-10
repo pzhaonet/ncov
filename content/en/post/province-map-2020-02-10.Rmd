@@ -30,12 +30,13 @@ ncov$area <- ncov$area[!duplicated(ncov$area$provinceName), ]
 x <- ncov$area[, c('provinceShortName', 'confirmedCount', 'curedCount', 'deadCount', 'province_en')]
 names(x)[1] <- 'provinceName'
 
-method <- "city"
+method <- "province"
 
 if(method == 'city'){
   x <- x[x$provinceName %in% c("北京", "上海", "重庆", "天津"), ]
   names(x)[1] <- "cityName"
   names(x)[5] <- "city_en"
+  x$city_en <- unlist(x$city_en)
   x_city <- get_ncov('tidy')$area
   x_city$date <- x_city$updateTime
   x_city <- x_city[rev(order(x_city$date)), ]

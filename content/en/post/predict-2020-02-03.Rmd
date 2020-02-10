@@ -44,8 +44,14 @@ ncov$area$date <- as.Date(ncovr:::conv_time(ncov$area$updateTime))
 ncov$area <- ncov$area[ncov$area$date < as.Date('2020-02-03'), ]
 df_predict <- t(sapply(unique(ncov$area$provinceShortName[ncov$area$country == '中国']), function(x) predict_date(province = x, ncov = ncov, ifplot = FALSE)))
 
+
 df_predict <- as.data.frame(df_predict)
+df_predict$area <- unlist(df_predict$area)
 df_predict <- df_predict[order(-as.numeric(df_predict$tomorrowNew)), ]
+
+dic_city <-  readr::read_csv(system.file('china_city_list.csv', package = 'ncovr'))
+df_predict$area_en <- unlist(dic_city[match(df_predict$area, dic_city$Province), 'Province_EN'])
+
 tomorrow <- df_predict$tomorrow[1]
 ```
 
@@ -54,13 +60,13 @@ cat("## 2020-02-03 Epidemic forecast by province")
 ```
 
 ```{r}
-knitr::kable(df_predict[!is.na(df_predict$enddate), c(1, 2, 5, 4)], format = "html", row.names = FALSE, col.names = c("Provinces", "Epidemic Mitigation Time", paste0(tomorrow, "Daily increase in confirmed"), paste0(tomorrow, "Confirmed in total")))
+knitr::kable(df_predict[!is.na(df_predict$enddate), c(6, 1, 2, 5, 4)], format = "html", row.names = FALSE, col.names = c("[Area]", '[Area_cn]', "[Epidemic Mitigation Time]", paste0("[", tomorrow, " Prdctd daily incrs conf.]"), paste0("[", tomorrow, " Prdctd conf. in total]")))
 ```
 
 ```{r, results='asis'}
 for(x in unique(ncov$area$provinceShortName)) {
-  cat(x, ":  \n")
-  predict_date(province = x, ncov = ncov, ifplot = TRUE, ifchinese = TRUE)
+  cat(unlist(dic_city[match(x, dic_city$Province), 'Province_EN']), ":  \n")
+  predict_date(province = x, ncov = ncov, ifplot = TRUE, ifchinese = FALSE)
   cat("  \n")
 }
 ```
