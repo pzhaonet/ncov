@@ -1,0 +1,1303 @@
+---
+title: 2019-nCoV Epidemic Mitigation Time Forecast (2020-02-11)
+date: 2020-02-11
+slug: predict-2020-02-11
+---
+
+
+
+<div id="time-trends-and-model-predictions-of-confirmed-cases-across-the-country" class="section level2">
+<h2>Time trends and model predictions of confirmed cases across the country</h2>
+<p><img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-3-1.png" width="100%" /></p>
+<p>Our model shows that the national epidemic situation will ease on 02-23 (the number of confirmed cases will not increase significantly).</p>
+<p>On 2020-02-10 there will be 1662 new confirmed cases and in total 41856 confirmed cases.</p>
+</div>
+<div id="national-epidemic-time-series" class="section level2">
+<h2>National Epidemic Time Series</h2>
+<p><small></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Date
+</th>
+<th style="text-align:right;">
+Confirmed
+</th>
+<th style="text-align:right;">
+Suspected
+</th>
+<th style="text-align:right;">
+Severe
+</th>
+<th style="text-align:right;">
+Dead
+</th>
+<th style="text-align:right;">
+Cured
+</th>
+<th style="text-align:right;">
+Conf.+Susp.
+</th>
+<th style="text-align:right;">
+Incr. in Conf.+ Susp.
+</th>
+<th style="text-align:right;">
+Under Obs.
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+2020-02-09
+</td>
+<td style="text-align:right;">
+40171
+</td>
+<td style="text-align:right;">
+35982
+</td>
+<td style="text-align:right;">
+23589
+</td>
+<td style="text-align:right;">
+6484
+</td>
+<td style="text-align:right;">
+908
+</td>
+<td style="text-align:right;">
+3281
+</td>
+<td style="text-align:right;">
+63760
+</td>
+<td style="text-align:right;">
+3062
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-02-08
+</td>
+<td style="text-align:right;">
+37198
+</td>
+<td style="text-align:right;">
+33738
+</td>
+<td style="text-align:right;">
+28942
+</td>
+<td style="text-align:right;">
+6188
+</td>
+<td style="text-align:right;">
+811
+</td>
+<td style="text-align:right;">
+2649
+</td>
+<td style="text-align:right;">
+66140
+</td>
+<td style="text-align:right;">
+2656
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-02-07
+</td>
+<td style="text-align:right;">
+34546
+</td>
+<td style="text-align:right;">
+31774
+</td>
+<td style="text-align:right;">
+27657
+</td>
+<td style="text-align:right;">
+6101
+</td>
+<td style="text-align:right;">
+722
+</td>
+<td style="text-align:right;">
+2050
+</td>
+<td style="text-align:right;">
+62203
+</td>
+<td style="text-align:right;">
+3399
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-02-06
+</td>
+<td style="text-align:right;">
+31161
+</td>
+<td style="text-align:right;">
+28985
+</td>
+<td style="text-align:right;">
+26359
+</td>
+<td style="text-align:right;">
+4821
+</td>
+<td style="text-align:right;">
+636
+</td>
+<td style="text-align:right;">
+1540
+</td>
+<td style="text-align:right;">
+57520
+</td>
+<td style="text-align:right;">
+3143
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-02-05
+</td>
+<td style="text-align:right;">
+28018
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+24702
+</td>
+<td style="text-align:right;">
+3859
+</td>
+<td style="text-align:right;">
+563
+</td>
+<td style="text-align:right;">
+1153
+</td>
+<td style="text-align:right;">
+52720
+</td>
+<td style="text-align:right;">
+3694
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-02-04
+</td>
+<td style="text-align:right;">
+24324
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+23260
+</td>
+<td style="text-align:right;">
+3219
+</td>
+<td style="text-align:right;">
+490
+</td>
+<td style="text-align:right;">
+892
+</td>
+<td style="text-align:right;">
+47584
+</td>
+<td style="text-align:right;">
+3887
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-02-03
+</td>
+<td style="text-align:right;">
+20438
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+23214
+</td>
+<td style="text-align:right;">
+2788
+</td>
+<td style="text-align:right;">
+425
+</td>
+<td style="text-align:right;">
+632
+</td>
+<td style="text-align:right;">
+43652
+</td>
+<td style="text-align:right;">
+3235
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-02-02
+</td>
+<td style="text-align:right;">
+17205
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+21558
+</td>
+<td style="text-align:right;">
+2296
+</td>
+<td style="text-align:right;">
+361
+</td>
+<td style="text-align:right;">
+475
+</td>
+<td style="text-align:right;">
+38763
+</td>
+<td style="text-align:right;">
+2829
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-02-01
+</td>
+<td style="text-align:right;">
+14380
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+19544
+</td>
+<td style="text-align:right;">
+2110
+</td>
+<td style="text-align:right;">
+304
+</td>
+<td style="text-align:right;">
+328
+</td>
+<td style="text-align:right;">
+33924
+</td>
+<td style="text-align:right;">
+2590
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-01-31
+</td>
+<td style="text-align:right;">
+11791
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+17988
+</td>
+<td style="text-align:right;">
+1795
+</td>
+<td style="text-align:right;">
+259
+</td>
+<td style="text-align:right;">
+243
+</td>
+<td style="text-align:right;">
+29779
+</td>
+<td style="text-align:right;">
+2102
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-01-30
+</td>
+<td style="text-align:right;">
+9692
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+15238
+</td>
+<td style="text-align:right;">
+1527
+</td>
+<td style="text-align:right;">
+213
+</td>
+<td style="text-align:right;">
+171
+</td>
+<td style="text-align:right;">
+24930
+</td>
+<td style="text-align:right;">
+1982
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-01-29
+</td>
+<td style="text-align:right;">
+7711
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+12167
+</td>
+<td style="text-align:right;">
+1370
+</td>
+<td style="text-align:right;">
+170
+</td>
+<td style="text-align:right;">
+124
+</td>
+<td style="text-align:right;">
+19878
+</td>
+<td style="text-align:right;">
+1737
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-01-28
+</td>
+<td style="text-align:right;">
+5974
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+9239
+</td>
+<td style="text-align:right;">
+1239
+</td>
+<td style="text-align:right;">
+132
+</td>
+<td style="text-align:right;">
+103
+</td>
+<td style="text-align:right;">
+15213
+</td>
+<td style="text-align:right;">
+1459
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-01-27
+</td>
+<td style="text-align:right;">
+4515
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+6973
+</td>
+<td style="text-align:right;">
+976
+</td>
+<td style="text-align:right;">
+106
+</td>
+<td style="text-align:right;">
+60
+</td>
+<td style="text-align:right;">
+11488
+</td>
+<td style="text-align:right;">
+1771
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-01-26
+</td>
+<td style="text-align:right;">
+2744
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+5794
+</td>
+<td style="text-align:right;">
+461
+</td>
+<td style="text-align:right;">
+80
+</td>
+<td style="text-align:right;">
+51
+</td>
+<td style="text-align:right;">
+8538
+</td>
+<td style="text-align:right;">
+769
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-01-25
+</td>
+<td style="text-align:right;">
+1975
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+2684
+</td>
+<td style="text-align:right;">
+324
+</td>
+<td style="text-align:right;">
+56
+</td>
+<td style="text-align:right;">
+49
+</td>
+<td style="text-align:right;">
+4659
+</td>
+<td style="text-align:right;">
+688
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-01-24
+</td>
+<td style="text-align:right;">
+1287
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+1965
+</td>
+<td style="text-align:right;">
+237
+</td>
+<td style="text-align:right;">
+41
+</td>
+<td style="text-align:right;">
+38
+</td>
+<td style="text-align:right;">
+3252
+</td>
+<td style="text-align:right;">
+444
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-01-23
+</td>
+<td style="text-align:right;">
+830
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+1072
+</td>
+<td style="text-align:right;">
+177
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+34
+</td>
+<td style="text-align:right;">
+1902
+</td>
+<td style="text-align:right;">
+259
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-01-22
+</td>
+<td style="text-align:right;">
+571
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+393
+</td>
+<td style="text-align:right;">
+95
+</td>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:right;">
+49
+</td>
+<td style="text-align:right;">
+964
+</td>
+<td style="text-align:right;">
+131
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-01-21
+</td>
+<td style="text-align:right;">
+440
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+37
+</td>
+<td style="text-align:right;">
+102
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+28
+</td>
+<td style="text-align:right;">
+477
+</td>
+<td style="text-align:right;">
+149
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-01-20
+</td>
+<td style="text-align:right;">
+291
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+54
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+345
+</td>
+<td style="text-align:right;">
+77
+</td>
+</tr>
+</tbody>
+</table>
+<p></small></p>
+</div>
+<div id="epidemic-forecast-by-province" class="section level2">
+<h2>2020-02-11 Epidemic forecast by province</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+[Area]
+</th>
+<th style="text-align:left;">
+[Area_cn]
+</th>
+<th style="text-align:left;">
+[Epidemic Mitigation Time]
+</th>
+<th style="text-align:left;">
+[02-11 Prdctd daily incrs conf.]
+</th>
+<th style="text-align:left;">
+[02-11 Prdctd conf. in total]
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Hubei
+</td>
+<td style="text-align:left;">
+湖北
+</td>
+<td style="text-align:left;">
+02-21
+</td>
+<td style="text-align:left;">
+1486
+</td>
+<td style="text-align:left;">
+33016
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Anhui
+</td>
+<td style="text-align:left;">
+安徽
+</td>
+<td style="text-align:left;">
+02-19
+</td>
+<td style="text-align:left;">
+33
+</td>
+<td style="text-align:left;">
+851
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Henan
+</td>
+<td style="text-align:left;">
+河南
+</td>
+<td style="text-align:left;">
+02-17
+</td>
+<td style="text-align:left;">
+30
+</td>
+<td style="text-align:left;">
+1096
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jiangxi
+</td>
+<td style="text-align:left;">
+江西
+</td>
+<td style="text-align:left;">
+02-18
+</td>
+<td style="text-align:left;">
+23
+</td>
+<td style="text-align:left;">
+769
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Guangdong
+</td>
+<td style="text-align:left;">
+广东
+</td>
+<td style="text-align:left;">
+02-15
+</td>
+<td style="text-align:left;">
+22
+</td>
+<td style="text-align:left;">
+1176
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hunan
+</td>
+<td style="text-align:left;">
+湖南
+</td>
+<td style="text-align:left;">
+02-15
+</td>
+<td style="text-align:left;">
+17
+</td>
+<td style="text-align:left;">
+875
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Heilongjiang
+</td>
+<td style="text-align:left;">
+黑龙江
+</td>
+<td style="text-align:left;">
+02-21
+</td>
+<td style="text-align:left;">
+17
+</td>
+<td style="text-align:left;">
+352
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Shandong
+</td>
+<td style="text-align:left;">
+山东
+</td>
+<td style="text-align:left;">
+02-17
+</td>
+<td style="text-align:left;">
+16
+</td>
+<td style="text-align:left;">
+471
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jiangsu
+</td>
+<td style="text-align:left;">
+江苏
+</td>
+<td style="text-align:left;">
+02-16
+</td>
+<td style="text-align:left;">
+13
+</td>
+<td style="text-align:left;">
+492
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Zhejiang
+</td>
+<td style="text-align:left;">
+浙江
+</td>
+<td style="text-align:left;">
+02-13
+</td>
+<td style="text-align:left;">
+11
+</td>
+<td style="text-align:left;">
+1083
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Beijing
+</td>
+<td style="text-align:left;">
+北京
+</td>
+<td style="text-align:left;">
+02-16
+</td>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+347
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hebei
+</td>
+<td style="text-align:left;">
+河北
+</td>
+<td style="text-align:left;">
+02-17
+</td>
+<td style="text-align:left;">
+8
+</td>
+<td style="text-align:left;">
+219
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sichuan
+</td>
+<td style="text-align:left;">
+四川
+</td>
+<td style="text-align:left;">
+02-14
+</td>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:left;">
+394
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Chongqing
+</td>
+<td style="text-align:left;">
+重庆
+</td>
+<td style="text-align:left;">
+02-12
+</td>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:left;">
+472
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Guangxi
+</td>
+<td style="text-align:left;">
+广西
+</td>
+<td style="text-align:left;">
+02-15
+</td>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:left;">
+202
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hainan
+</td>
+<td style="text-align:left;">
+海南
+</td>
+<td style="text-align:left;">
+02-19
+</td>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:left;">
+144
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Shanxi
+</td>
+<td style="text-align:left;">
+陕西
+</td>
+<td style="text-align:left;">
+02-13
+</td>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+215
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Guizhou
+</td>
+<td style="text-align:left;">
+贵州
+</td>
+<td style="text-align:left;">
+02-21
+</td>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+106
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Shanghai
+</td>
+<td style="text-align:left;">
+上海
+</td>
+<td style="text-align:left;">
+02-12
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+300
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Shanxi
+</td>
+<td style="text-align:left;">
+山西
+</td>
+<td style="text-align:left;">
+02-16
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+117
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Tianjin
+</td>
+<td style="text-align:left;">
+天津
+</td>
+<td style="text-align:left;">
+02-16
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+98
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jilin
+</td>
+<td style="text-align:left;">
+吉林
+</td>
+<td style="text-align:left;">
+02-20
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+81
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Liaoning
+</td>
+<td style="text-align:left;">
+辽宁
+</td>
+<td style="text-align:left;">
+02-12
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+109
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Gansu
+</td>
+<td style="text-align:left;">
+甘肃
+</td>
+<td style="text-align:left;">
+02-13
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+82
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Neimenggu
+</td>
+<td style="text-align:left;">
+内蒙古
+</td>
+<td style="text-align:left;">
+02-16
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+60
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Xinjiang
+</td>
+<td style="text-align:left;">
+新疆
+</td>
+<td style="text-align:left;">
+02-18
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+48
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ningxia
+</td>
+<td style="text-align:left;">
+宁夏
+</td>
+<td style="text-align:left;">
+02-13
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+47
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Qinghai
+</td>
+<td style="text-align:left;">
+青海
+</td>
+<td style="text-align:left;">
+02-14
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+15
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fujian
+</td>
+<td style="text-align:left;">
+福建
+</td>
+<td style="text-align:left;">
+02-11
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+253
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Yunnan
+</td>
+<td style="text-align:left;">
+云南
+</td>
+<td style="text-align:left;">
+02-10
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+142
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Taiwan
+</td>
+<td style="text-align:left;">
+台湾
+</td>
+<td style="text-align:left;">
+02-12
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+14
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Macau
+</td>
+<td style="text-align:left;">
+澳门
+</td>
+<td style="text-align:left;">
+01-30
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+8
+</td>
+</tr>
+</tbody>
+</table>
+<p>Chongqing :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-1.png" width="100%" /><br />
+Hubei :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-2.png" width="100%" /><br />
+Tianjin :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-3.png" width="100%" /><br />
+Zhejiang :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-4.png" width="100%" /><br />
+Jilin :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-5.png" width="100%" /><br />
+Guangxi :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-6.png" width="100%" /><br />
+Fujian :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-7.png" width="100%" /><br />
+Jiangsu :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-8.png" width="100%" /><br />
+Liaoning :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-9.png" width="100%" /><br />
+Jiangxi :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-10.png" width="100%" /><br />
+Hunan :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-11.png" width="100%" /><br />
+Henan :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-12.png" width="100%" /><br />
+Guangdong :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-13.png" width="100%" /><br />
+Shanxi :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-14.png" width="100%" /><br />
+Guizhou :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-15.png" width="100%" /><br />
+Hong Kong :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-16.png" width="100%" /><br />
+Sichuan :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-17.png" width="100%" /><br />
+Hebei :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-18.png" width="100%" /><br />
+Yunnan :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-19.png" width="100%" /><br />
+Shandong :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-20.png" width="100%" /><br />
+Hainan :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-21.png" width="100%" /><br />
+Heilongjiang :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-22.png" width="100%" /><br />
+Anhui :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-23.png" width="100%" /><br />
+Gansu :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-24.png" width="100%" /><br />
+Shanghai :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-25.png" width="100%" /><br />
+Neimenggu :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-26.png" width="100%" /><br />
+Beijing :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-27.png" width="100%" /><br />
+Ningxia :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-28.png" width="100%" /><br />
+Xinjiang :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-29.png" width="100%" /><br />
+Shanxi :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-30.png" width="100%" /><br />
+Taiwan :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-31.png" width="100%" /><br />
+Macau :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-32.png" width="100%" /><br />
+Qinghai :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-33.png" width="100%" /><br />
+Xizang :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-34.png" width="100%" /><br />
+NA :<br />
+<img src="/en/post/predict-2020-02-11_files/figure-html/unnamed-chunk-8-35.png" width="100%" /></p>
+</div>
