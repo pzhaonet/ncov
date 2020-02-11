@@ -858,20 +858,6 @@
   </url>
   
   <url>
-    <loc>https://ncov2020.org/en/data/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://ncov2020.org/data/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ncov2020.org/en/data/"
-                />
-  </url>
-  
-  <url>
     <loc>https://ncov2020.org/en/about/</loc>
     <xhtml:link
                 rel="alternate"
@@ -896,6 +882,20 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ncov2020.org/en/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://ncov2020.org/en/data/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://ncov2020.org/data/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ncov2020.org/en/data/"
                 />
   </url>
   

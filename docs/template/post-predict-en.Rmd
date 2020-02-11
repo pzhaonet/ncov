@@ -1,5 +1,5 @@
 ---
-title: "<<date>>: Epidemic Mitigation Time Forecast (2019-nCoV)"
+title: "<<date>>: Epidemic Mitigation Time Forecast (Covid-19)"
 date: <<date>>
 slug: predict-<<date>>
 ---
