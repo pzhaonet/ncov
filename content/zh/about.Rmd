@@ -35,6 +35,6 @@ knitr::include_graphics('https://raw.githubusercontent.com/pzhaonet/ncov/master/
 
 本站使用 [R ncovr 包](https://github.com/pzhaonet/ncovr)进行数据处理和可视化。
 
-本站采用的数据来自[BlankerL/DXY-2019-nCoV-Crawler](https://github.com/BlankerL/DXY-2019-nCoV-Crawler)和 [JackieZheng/2019-nCoV](https://github.com/JackieZheng/2019-nCoV)。省市名称的中英翻译来自 [brightgems/china_city_dataset](https://github.com/brightgems/china_city_dataset)。
+本站采用的数据来自[BlankerL/DXY-2019-nCoV-Crawler](https://github.com/BlankerL/DXY-2019-nCoV-Crawler)和 [JackieZheng/2019-nCoV](https://github.com/JackieZheng/2019-nCoV)。省市名称的中英翻译来自 [brightgems/china_city_dataset](https://github.com/brightgems/china_city_dataset)以及 [R pinyin 包](https://CRAN.R-project.org/package=pinyin) (Zhao, 2019)。
 
 本站是 [R blogdown 包](https://bookdown.org/yihui/blogdown/)搭建，采用 [HUGO](https://gohugo.io/) 框架，利用 [travis-CI](https://travis-ci.org/) 自动化完成。

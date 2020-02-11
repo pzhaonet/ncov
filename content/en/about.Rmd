@@ -19,10 +19,10 @@ If you have any suggestions for this project, please feel free to submit an issu
 
 ## The Laiyindata Team
 
-- [ZHAO Peng](https://pzhaonet.github.io/xuer/)
-- ZOU Yi
-- WANG Xiaoxiang
-- HAN Lei
+- Dr. [ZHAO Peng](https://pzhaonet.github.io/xuer/)
+- Dr. ZOU Yi
+- Dr. WANG Xiaoxiang
+- Dr. HAN Lei
 
 ## Contact
 
@@ -33,6 +33,6 @@ If you have any suggestions for this project, please feel free to submit an issu
 
 [R ncovr package](https://github.com/pzhaonet/ncovr) is used for data processing and visualization.
 
-The data used on this site come from [BlankerL/DXY-2019-nCoV-Crawler](https://github.com/BlankerL/DXY-2019-nCoV-Crawler) and [JackieZheng/2019-nCoV](https://github.com/JackieZheng/2019-nCoV). The credit of the translation of area/city names from Chinese into English belongs to [brightgems/china_city_dataset](https://github.com/brightgems/china_city_dataset).
+The data used on this site come from [BlankerL/DXY-2019-nCoV-Crawler](https://github.com/BlankerL/DXY-2019-nCoV-Crawler) and [JackieZheng/2019-nCoV](https://github.com/JackieZheng/2019-nCoV). The credit of the translation of area/city names from Chinese into English belongs to [brightgems/china_city_dataset](https://github.com/brightgems/china_city_dataset) and the [R pinyin package](https://CRAN.R-project.org/package=pinyin) (Zhao, 2019).
 
 This site is built by [R blogdown package](https://bookdown.org/yihui/blogdown/) with [HUGO](https://gohugo.io/), and updated automatically with [Travis-CI](https://travis-ci.org/).
