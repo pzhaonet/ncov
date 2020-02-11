@@ -1,5 +1,5 @@
 ---
-title: 2019-nCoV 疫情缓和时间预测(<<date>>)
+title: <<date>>: 疫情缓和时间预测 (2019-nCoV)
 date: <<date>>
 slug: predict-<<date>>
 ---

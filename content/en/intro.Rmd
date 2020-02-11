@@ -8,6 +8,11 @@ knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALS
 Sys.setlocale('LC_CTYPE', 'Chinese')
 ```
 
+
+```{r, out.width='100%'}
+knitr::include_graphics('https://ncov2020.org/animation/map_animation.gif')
+```
+
 ## Introduction of the virus
 
 Virus Type: New Coronavirus 2019-nCoV
@@ -54,7 +59,9 @@ The number of suspected cases comes from the National Health and Medical Commiss
 ```{r}
 ncovChina <- get_ncov('china', if_en = TRUE)
 ncovChina <- ncovChina[rev(order(ncovChina[, 1])), ]
-knitr::kable(ncovChina[, !names(ncovChina) %in% c("Updated", "Remarks")], format = "html", row.names = FALSE)
+ncovChina[, 1] <- format(ncovChina[, 1], '%m-%d')
+# knitr::kable(ncovChina[, !names(ncovChina) %in% c("Updated", "Remarks")], format = "html", row.names = FALSE)
+flextable::flextable(ncovChina[, !names(ncovChina) %in% c("Updated", "Remarks")])
 ```
 
 </small>

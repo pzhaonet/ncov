@@ -8,6 +8,11 @@ knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALS
 Sys.setlocale('LC_CTYPE', 'Chinese')
 ```
 
+
+```{r, out.width='100%'}
+knitr::include_graphics('https://ncov2020.org/animation/map_animation.gif')
+```
+
 ## 病毒简介
 
 ```{r, results='asis'}
@@ -50,7 +55,9 @@ cat(
 ```{r}
 ncovChina <- get_ncov('china')
 ncovChina <- ncovChina[rev(order(ncovChina[, 1])), ]
-knitr::kable(ncovChina[, !names(ncovChina) %in% c("更新时间", "备注")], format = "html", row.names = FALSE)
+ncovChina[, 1] <- format(ncovChina[, 1], '%m-%d')
+# knitr::kable(ncovChina[, !names(ncovChina) %in% c("更新时间", "备注")], format = "html", row.names = FALSE)
+flextable::flextable(ncovChina[, !names(ncovChina) %in% c("更新时间", "备注")])
 ```
 
 </small>
