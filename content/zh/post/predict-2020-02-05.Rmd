@@ -196,7 +196,7 @@ cat("## 2020-02-05 各地区疫情预测表")
 ```
 
 ```{r}
-y <- df_predict[!is.na(df_predict$enddate), c(6, 1, 2, 5, 4)]
+y <- df_predict[!is.na(df_predict$enddate), c(1, 2, 5, 4)]
 
 names(y) <- c("地区", "疫情缓解日期", paste(tomorrow[[1]], "新增确诊人数预测"), paste(tomorrow[[1]], "累计确诊人数预测"))
 flextable::flextable(y)

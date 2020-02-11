@@ -63,5 +63,6 @@ cat("## 2020-02-07 Epidemic Data Sheet (", prefix, ")")
 ```{r}
 # knitr::kable(x, format = "html", row.names = FALSE, col.names = c("Rank", "Area", "Area_cn", "Confirmed", "Cured", "Dead"))
 names(x) <- c("Rank", "Area", "Area_cn", "Confirmed", "Cured", "Dead")
+x$Area <- unlist(x$Area)
 flextable::flextable(x)
 ```
