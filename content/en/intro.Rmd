@@ -1,5 +1,5 @@
 ---
-title: Overview of 2019-nCoV
+title: Overview of Covid-19
 slug: intro
 ---
 
@@ -15,7 +15,7 @@ knitr::include_graphics('https://ncov2020.org/animation/map_animation.gif')
 
 ## Introduction of the virus
 
-Virus Type: New Coronavirus 2019-nCoV
+Virus: New Coronavirus Covid-19
 
 Source of infection: patients who are already with new coronavirus infection. Asymptomatic patients can also be contagious.
 

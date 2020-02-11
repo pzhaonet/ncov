@@ -1,5 +1,5 @@
 ---
-title: 2019-nCoV Epidemic Data Download
+title: Covid-19 Epidemic Data Download
 slug: data
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "<<date>>: <<method-zh>>级疫情地图 (2019-nCoV)"
+title: "<<date>>: <<method-zh>>级疫情地图 (Covid-19)"
 date: <<date>>
 slug: <<method>>-map-<<date>>
 ---
