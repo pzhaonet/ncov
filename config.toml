@@ -14,10 +14,10 @@ DefaultContentLanguage = "zh"
 [languages]
   [languages.en]
     contentDir = "content/en"
-    title = "2019-nCoV: Epidemic Reports"
+    title = "Covid-19: Epidemic Reports"
   [languages.zh]
     contentDir = "content/zh"
-    title = "2019-nCoV：新型冠状病毒疫情报告"
+    title = "Covid-19：新型冠状病毒疫情报告"
     
   [[languages.en.menu.main]]
     name = "Homepage"

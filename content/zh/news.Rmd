@@ -1,5 +1,5 @@
 ---
-title: 2019-nCoV 疫情简讯
+title: Covid-19 疫情简讯
 slug: news
 ---
 
