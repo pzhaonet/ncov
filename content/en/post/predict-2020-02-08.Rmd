@@ -1,5 +1,5 @@
 ---
-title: 2019-nCoV Epidemic Mitigation Time Forecast (2020-02-08)
+title: "2020-02-08: Epidemic Mitigation Time Forecast (2019-nCoV)"
 date: 2020-02-08
 slug: predict-2020-02-08
 ---
@@ -64,8 +64,10 @@ knitr::kable(df_predict[!is.na(df_predict$enddate), c(6, 1, 2, 5, 4)], format = 
 ```
 
 ```{r, results='asis'}
-for(x in unique(ncov$area$provinceShortName[ncov$area$country == '中国'])) {
-  cat(unlist(dic_city[match(x, dic_city$Province), 'Province_EN']), ":  \n")
+Prov <- c("湖北", unique(ncov$area$provinceShortName[ncov$area$country == '中国' & !ncov$area$provinceShortName %in% c('湖北', '待明确地区')]))
+
+for(x in Prov) {
+  cat(x, ":  \n")
   predict_date(province = x, ncov = ncov, ifplot = TRUE, ifchinese = FALSE)
   cat("  \n")
 }

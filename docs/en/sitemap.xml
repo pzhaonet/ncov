@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://ncov2020.org/en/</loc>
+    <lastmod>2020-02-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://ncov2020.org/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ncov2020.org/en/"
+                />
+  </url>
+  
+  <url>
     <loc>https://ncov2020.org/en/en/city-map-2020-02-11/</loc>
     <lastmod>2020-02-11T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -44,21 +59,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ncov2020.org/en/en/predict-2020-02-11/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://ncov2020.org/en/</loc>
-    <lastmod>2020-02-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://ncov2020.org/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ncov2020.org/en/"
                 />
   </url>
   
@@ -393,6 +393,21 @@
   </url>
   
   <url>
+    <loc>https://ncov2020.org/en/en/predict-2020-02-03/</loc>
+    <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://ncov2020.org/zh/predict-2020-02-03/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ncov2020.org/en/en/predict-2020-02-03/"
+                />
+  </url>
+  
+  <url>
     <loc>https://ncov2020.org/en/en/city-map-2020-02-03/</loc>
     <lastmod>2020-02-03T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -423,17 +438,17 @@
   </url>
   
   <url>
-    <loc>https://ncov2020.org/en/en/predict-2020-02-03/</loc>
-    <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+    <loc>https://ncov2020.org/en/en/predict-2020-02-02/</loc>
+    <lastmod>2020-02-02T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://ncov2020.org/zh/predict-2020-02-03/"
+                href="https://ncov2020.org/zh/predict-2020-02-02/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ncov2020.org/en/en/predict-2020-02-03/"
+                href="https://ncov2020.org/en/en/predict-2020-02-02/"
                 />
   </url>
   
@@ -468,17 +483,17 @@
   </url>
   
   <url>
-    <loc>https://ncov2020.org/en/en/predict-2020-02-02/</loc>
-    <lastmod>2020-02-02T00:00:00+00:00</lastmod>
+    <loc>https://ncov2020.org/en/en/predict-2020-02-01/</loc>
+    <lastmod>2020-02-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://ncov2020.org/zh/predict-2020-02-02/"
+                href="https://ncov2020.org/zh/predict-2020-02-01/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ncov2020.org/en/en/predict-2020-02-02/"
+                href="https://ncov2020.org/en/en/predict-2020-02-01/"
                 />
   </url>
   
@@ -509,21 +524,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ncov2020.org/en/en/province-map-2020-02-01/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://ncov2020.org/en/en/predict-2020-02-01/</loc>
-    <lastmod>2020-02-01T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://ncov2020.org/zh/predict-2020-02-01/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ncov2020.org/en/en/predict-2020-02-01/"
                 />
   </url>
   

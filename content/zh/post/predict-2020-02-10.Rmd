@@ -1,5 +1,5 @@
 ---
-title: 2019-nCoV 疫情缓和时间预测(2020-02-10)
+title: "2020-02-10: 疫情缓和时间预测 (2019-nCoV)"
 date: 2020-02-10
 slug: predict-2020-02-10
 ---
@@ -12,8 +12,8 @@ Sys.setlocale('LC_CTYPE', 'Chinese')
 ```{r}
 require(ncovr)
 require(ggplot2)
-#ZouYi Last modified "2020-02-10 23:05:42 CST"
 
+#ZouYi Last modified "2020-02-10 23:05:42 CST"
 #' Predict
 #'
 #' @param province province short name
@@ -30,7 +30,7 @@ require(ggplot2)
 #' predict_date(province = "jiangsuinchinese",  ncov = ncov)
 #' predict_date(province = "meiguoinchinese",  ncov = ncov)
 #' predict_date(province = "zhongguoinchinese",  ncov = ncovChina)
-predict_date <- function(province, ncov = c(ncov,ncovChina), ifplot = TRUE, addtitle = NA, ifchinese = FALSE, fontfamily = NA){
+predict_date <- function(province, ncov = c(ncov,ncovChina), ifplot = TRUE, addtitle = NA, ifchinese = FALSE, fontfamily = NA,PredDate=Sys.Date()){
     dic <- readr::read_csv(system.file('dic.csv', package = 'ncovr'))
     #Dataset for a specific area
     if (province!=dic$zh[1])
@@ -57,7 +57,7 @@ predict_date <- function(province, ncov = c(ncov,ncovChina), ifplot = TRUE, addt
     #No data availalbe for specific date
     RegionDat$Day <- as.numeric(RegionDat$Date-RegionDat$Date[1])+1
     RegionDat$New <- with(RegionDat,confirmedCount-c(0,confirmedCount[-nrow(RegionDat)]))
-    Length <- as.numeric(Sys.Date()-as.Date(RegionDat$Date[1],"%m-%d")+20)#x axis from today to 20 days later
+    Length <- as.numeric(PredDate-as.Date(RegionDat$Date[1],"%m-%d")+20)#x axis from today to 20 days later
     Dseq <- format(seq(RegionDat$Date[1], by = "day", length.out = Length ),"%m-%d")
     
     END <- NA
@@ -86,16 +86,15 @@ predict_date <- function(province, ncov = c(ncov,ncovChina), ifplot = TRUE, addt
         X1 <- RegionDat[complete.cases(RegionDat$confirmedCount),"confirmedCount"]
         Y1 <- predict(md,X1)
         r.sq <- max(cor(X1,Y1),0)^2
-
         #The daily increase case
         Lth <- as.numeric(as.Date(END,"%m-%d")-as.Date(Dseq[1],"%m-%d"))
         newdat <-  data.frame(Date=as.Date(Dseq[1:Lth],"%m-%d"),Pred=1:Lth)
         newdat <- within(newdat, ypred <- predict(md,  list(Day = Pred )))
         newdat$Prednew <- with(newdat,ypred-c(0,ypred[-nrow(newdat)]))
-        newdat$Judge <- ifelse(newdat$Date ==Sys.Date(),"Tmr",ifelse(newdat$Date < Sys.Date(),"Obs","Pre"))
-    if (Sys.Date()+1>as.Date(END,"%m-%d")){NewIncrease <- 0}else
+        newdat$Judge <- ifelse(newdat$Date ==PredDate,"Tmr",ifelse(newdat$Date < PredDate,"Obs","Pre"))
+    if (PredDate+1>as.Date(END,"%m-%d")){NewIncrease <- 0}else
     {NewIncrease <- round( newdat[which(newdat$Judge=="Tmr"),"Prednew"],0)}
-        if (Sys.Date()+2>as.Date(END,"%m-%d")){NewIncrease2 <- 0}else
+        if (PredDate+2>as.Date(END,"%m-%d")){NewIncrease2 <- 0}else
         {NewIncrease2 <- round( newdat[which(newdat$Judge=="Tmr")+1,"Prednew"],0)}
         
     }, error = function(e) {an.error.occured <<- 1})
@@ -110,7 +109,6 @@ predict_date <- function(province, ncov = c(ncov,ncovChina), ifplot = TRUE, addt
           ggtitle(province) #Title of the plot, in Chinese
  #         geom_point(aes(y=New,x=Date,col="日增"),shape=1)+
   #        scale_colour_manual(name = '', values =c('blue','red'))
-
         if(an.error.occured == 0 & r.sq>0.90)
         {
             newdatmg <- merge(newdat,RegionDat,by="Date",all=T)
@@ -139,13 +137,13 @@ predict_date <- function(province, ncov = c(ncov,ncovChina), ifplot = TRUE, addt
                 legend.background = element_rect(fill=NA, size=0.5, colour =NA),
                 legend.position=c(0.75,0.31),
                 legend.justification = c(0,0))+
-          scale_x_date(date_breaks = "1 day", date_labels = "%m-%d",limits=c(as.Date("1-17","%m-%d"),Sys.Date()+20),expand=c(0,0.5))
+          scale_x_date(date_breaks = "1 day", date_labels = "%m-%d",limits=c(as.Date("1-17","%m-%d"),PredDate+20),expand=c(0,0.5))
       print(p)
 #      return(p)
       } else {
         list(area = province,
              enddate = END,
-             tomorrow = Sys.Date(),
+             tomorrow = PredDate,
              tomorrowcount = Predict,
              tomorrowNew=NewIncrease,
              dayafterNew=NewIncrease2)
@@ -159,13 +157,13 @@ ncovChina <- ncovChina[ncovChina[, "日期"] <= as.Date('2020-02-10'), ]
 
 ```{r}
 predict_date(province = "中国",  ncov = ncovChina)
-pre <- predict_date(province = "中国",  ncov = ncovChina, ifplot = FALSE)
+pre <- predict_date(province = "中国",  ncov = ncovChina, ifplot = FALSE, PredDate = as.Date(  '2020-02-10'))
 ```
 
 
 我们的模型显示，全国总体疫情将于 `r pre$enddate` 缓解（确诊病例不再明显增长）。
 
-2020-`r pre$tomorrow` 确诊病例将新增`r format(round(pre$tomorrowNew), scientific = FALSE)`例，累计确诊病例将达到 `r format(round(pre$tomorrowcount), scientific = FALSE)` 例。
+`r pre$tomorrow` 确诊病例将新增`r format(round(pre$tomorrowNew), scientific = FALSE)`例，累计确诊病例将达到 `r format(round(pre$tomorrowcount), scientific = FALSE)` 例。
 
 ## 全国疫情时间序列
 
@@ -183,7 +181,7 @@ knitr::kable(ncovChina[, 1:9], format = "html", row.names = FALSE)
 ncov <- get_ncov()
 ncov$area$date <- as.Date(ncovr:::conv_time(ncov$area$updateTime))
 ncov$area <- ncov$area[ncov$area$date < as.Date('2020-02-10'), ]
-df_predict <- t(sapply(unique(ncov$area$provinceShortName[ncov$area$country == '中国']), function(x) predict_date(province = x, ncov = ncov, ifplot = FALSE)))
+df_predict <- t(sapply(unique(ncov$area$provinceShortName[ncov$area$country == '中国']), function(x) predict_date(province = x, ncov = ncov, ifplot = FALSE, PredDate = as.Date(  '2020-02-10'))))
 
 df_predict <- as.data.frame(df_predict)
 df_predict <- df_predict[order(-as.numeric(df_predict$tomorrowNew)), ]
@@ -199,11 +197,11 @@ knitr::kable(df_predict[!is.na(df_predict$enddate), c(1, 2, 5, 4)], format = "ht
 ```
 
 ```{r, results='asis'}
-Prov <- c("湖北", "湖北以外", unique(ncov$area$provinceShortName[ncov$area$country == '中国' & ncov$area$provinceShortName != '湖北']))
+Prov <- c("湖北", "湖北以外", unique(ncov$area$provinceShortName[ncov$area$country == '中国' & !ncov$area$provinceShortName %in% c('湖北', '待明确地区')]))
 
 for(x in Prov) {
   cat(x, ":  \n")
-    predict_date(province = x,  ncov = ncov)
+    predict_date(province = x,  ncov = ncov, PredDate = as.Date(  '2020-02-10'))
   cat("  \n")
 }
 ```

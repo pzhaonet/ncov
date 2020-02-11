@@ -1,5 +1,5 @@
 ---
-title: 2020-01-23: 省级疫情地图 (2019-nCoV)
+title: "2020-01-23: 省级疫情地图 (2019-nCoV)"
 date: 2020-01-23
 slug: province-map-2020-01-23
 ---
@@ -21,8 +21,8 @@ Sys.setlocale('LC_CTYPE', 'Chinese')
 ```{r}
 require(ncovr)
 require(leafletCN)
-ncov$area <- ncov$area[ncov$area$country == '中国' & ncov$area$provinceName != '待明确地区' , ]
 ncov <- get_ncov()
+ncov$area <- ncov$area[ncov$area$country == '中国' & ncov$area$provinceName != '待明确地区' , ]
 ncov$area$date <- as.Date(ncovr:::conv_time(ncov$area$updateTime))
 ncov$area <- ncov$area[rev(order(ncov$area$date)), ]
 ncov$area <- ncov$area[ncov$area$date <= as.Date("2020-01-23"), ]
