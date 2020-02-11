@@ -171,7 +171,10 @@ pre <- predict_date(province = "中国",  ncov = ncovChina, ifplot = FALSE, Pred
 
 ```{r}
 ncovChina <- ncovChina[rev(order(ncovChina[, 1])), ]
-knitr::kable(ncovChina[, 1:9], format = "html", row.names = FALSE)
+x <- ncovChina[, 1:9]
+flextable::flextable(x)
+
+# knitr::kable(ncovChina[, 1:9], format = "html", row.names = FALSE)
 ```
 
 </small>
@@ -193,7 +196,11 @@ cat("## 2020-02-09 各地区疫情预测表")
 ```
 
 ```{r}
-knitr::kable(df_predict[!is.na(df_predict$enddate), c(1, 2, 5, 4)], format = "html", row.names = FALSE, col.names = c("地区", "疫情缓解日期", paste0(tomorrow, "新增确诊人数预测"), paste0(tomorrow, "累计确诊人数预测")))
+y <- df_predict[!is.na(df_predict$enddate), c(6, 1, 2, 5, 4)]
+
+names(y) <- c("地区", "疫情缓解日期", paste(tomorrow[[1]], "新增确诊人数预测"), paste(tomorrow[[1]], "累计确诊人数预测"))
+flextable::flextable(y)
+
 ```
 
 ```{r, results='asis'}

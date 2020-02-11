@@ -24,7 +24,7 @@ pre <- predict_date(province = "中国",  ncov = ncovChina, ifplot = FALSE)
 
 Our model shows that the national epidemic situation will ease on `r pre$enddate` (the number of confirmed cases will not increase significantly).
 
-On 2020-`r pre$tomorrow` there will be `r format(round(pre$tomorrowNew), scientific = FALSE)` new confirmed cases and in total `r format(round(pre$tomorrowcount), scientific = FALSE)` confirmed cases.
+On `r pre$tomorrow` there will be `r format(round(pre$tomorrowNew), scientific = FALSE)` new confirmed cases and in total `r format(round(pre$tomorrowcount), scientific = FALSE)` confirmed cases.
 
 ## National Epidemic Time Series
 
@@ -32,7 +32,10 @@ On 2020-`r pre$tomorrow` there will be `r format(round(pre$tomorrowNew), scienti
 
 ```{r}
 ncovChina <- ncovChina[rev(order(ncovChina[, 1])), ]
-knitr::kable(ncovChina[, 1:9], format = "html", row.names = FALSE, col.names = c('Date', 'Confirmed', 'Suspected', 'Severe', 'Dead', 'Cured', 'Conf.+Susp.', 'Incr. in Conf.+ Susp.', 'Under Obs.'))
+
+x <- ncovChina[, 1:9]
+names(x) <- c('Date', 'Confirmed', 'Suspected', 'Severe', 'Dead', 'Cured', 'Conf.+Susp.', 'Incr. in Conf.+ Susp.', 'Under Obs.')
+flextable::flextable(x) #, col_keys = )
 ```
 
 </small>
@@ -60,7 +63,10 @@ cat("## 2020-02-09 Epidemic forecast by province")
 ```
 
 ```{r}
-knitr::kable(df_predict[!is.na(df_predict$enddate), c(6, 1, 2, 5, 4)], format = "html", row.names = FALSE, col.names = c("[Area]", '[Area_cn]', "[Epidemic Mitigation Time]", paste0("[", tomorrow, " Prdctd daily incrs conf.]"), paste0("[", tomorrow, " Prdctd conf. in total]")))
+y <- df_predict[!is.na(df_predict$enddate), c(6, 1, 2, 5, 4)]
+
+names(y) <- c("[Area]", '[Area_cn]', "[Epidemic Mitigation Time]", paste0("[", tomorrow[[1]], " Prdctd daily incrs conf.]"), paste0("[", tomorrow[[1]], " Prdctd conf. in total]"))
+flextable::flextable(y)
 ```
 
 ```{r, results='asis'}

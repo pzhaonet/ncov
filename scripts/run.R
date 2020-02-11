@@ -123,7 +123,7 @@ for(i in ncov_dates){
 }
 
 ## Create predict posts ----
-for(i in as.character(seq.Date(Sys.Date() - 7, Sys.Date(), 1))) {
+for(i in as.character(seq.Date(Sys.Date() - 10, Sys.Date(), 1))) {
   for(j in c('zh', 'en')){
     post_predict(date = as.Date(i), language = j)
   }

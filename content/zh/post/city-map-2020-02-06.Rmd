@@ -57,5 +57,6 @@ cat("## 2020-02-06 疫情数据表(", prefix, ")")
 
 ```{r}
 # knitr::kable(x, format = "html", row.names = FALSE, col.names = c("排序", "名称", "确诊", "治愈", "死亡"))
-flextable::flextable(x, col_keys = c("排序", "名称", "确诊", "治愈", "死亡"))
+names(x) <- c("排序", "名称", "确诊", "治愈", "死亡")
+flextable::flextable(x) #, col_keys = )
 ```
