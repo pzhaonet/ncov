@@ -5,6 +5,12 @@ slug: about
 
 This is the website for information of 2019-nCoV outbreak.
 
+## In the news
+
+- [XJTLU: Model predicts date for near-end of new, confirmed 2019-nCoV cases in China](https://www.xjtlu.edu.cn/en/news/2020/02/model-predicts-date-for-near-end-of-new-confirmed-2019-ncov-cases?_ga=2.186199017.1547123512.1581421183-425644583.1571043854):
+
+> “To my knowledge, this is the only such open-access data website for novel coronavirus data that exists in the world,” said Johannes Knops, head of the Department of Health and Environmental Sciences at XJTLU.
+
 ## WeChat official account
 
 ```{r, echo=FALSE, out.width="60%"}

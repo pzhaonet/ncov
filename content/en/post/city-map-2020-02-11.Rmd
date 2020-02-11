@@ -1,5 +1,5 @@
 ---
-title: 2019-nCoV Epidemic Map (cities) 2020-02-11
+title: 2020-02-11: Epidemic Map for cities (2019-nCoV)
 date: 2020-02-11
 slug: city-map-2020-02-11
 ---
@@ -22,7 +22,7 @@ Confirmed cases. The gray area in the figure indicates the lack of relevant data
 require(ncovr)
 require(leafletCN)
 ncov <- get_ncov()
-ncov$area <- ncov$area[ncov$area$country == '中国', ]
+ncov$area <- ncov$area[ncov$area$country == '中国' & ncov$area$provinceName != '待明确地区' , ]
 ncov$area$date <- as.Date(ncovr:::conv_time(ncov$area$updateTime))
 ncov$area <- ncov$area[rev(order(ncov$area$date)), ]
 ncov$area <- ncov$area[ncov$area$date <= as.Date("2020-02-11"), ]
@@ -61,5 +61,6 @@ cat("## 2020-02-11 Epidemic Data Sheet (", prefix, ")")
 ```
 
 ```{r}
-knitr::kable(x, format = "html", row.names = FALSE, col.names = c("Rank", "Area", "Area_cn", "Confirmed", "Cured", "Dead"))
+# knitr::kable(x, format = "html", row.names = FALSE, col.names = c("Rank", "Area", "Area_cn", "Confirmed", "Cured", "Dead"))
+flextable::flextable(x, col_keys = c("Rank", "Area", "Area_cn", "Confirmed", "Cured", "Dead"))
 ```

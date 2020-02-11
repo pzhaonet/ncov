@@ -1,5 +1,5 @@
 ---
-title: 2019-nCoV 疫情地图(市级)2020-02-05
+title: 2020-02-05: 市级疫情地图 (2019-nCoV)
 date: 2020-02-05
 slug: city-map-2020-02-05
 ---
@@ -21,6 +21,7 @@ Sys.setlocale('LC_CTYPE', 'Chinese')
 ```{r}
 require(ncovr)
 require(leafletCN)
+ncov$area <- ncov$area[ncov$area$country == '中国' & ncov$area$provinceName != '待明确地区' , ]
 ncov <- get_ncov()
 ncov$area$date <- as.Date(ncovr:::conv_time(ncov$area$updateTime))
 ncov$area <- ncov$area[rev(order(ncov$area$date)), ]
@@ -55,5 +56,6 @@ cat("## 2020-02-05 疫情数据表(", prefix, ")")
 ```
 
 ```{r}
-knitr::kable(x, format = "html", row.names = FALSE, col.names = c("排序", "名称", "确诊", "治愈", "死亡"))
+# knitr::kable(x, format = "html", row.names = FALSE, col.names = c("排序", "名称", "确诊", "治愈", "死亡"))
+flextable::flextable(x, col_keys = c("排序", "名称", "确诊", "治愈", "死亡"))
 ```
