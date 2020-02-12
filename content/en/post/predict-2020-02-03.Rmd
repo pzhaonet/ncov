@@ -167,11 +167,13 @@ On `r pre$tomorrow` there will be `r format(round(pre$tomorrowNew), scientific =
 <small>
 
 ```{r}
-ncovChina <- ncovChina[rev(order(ncovChina[, 1])), ]
 
-x <- ncovChina[, 1:9]
-names(x) <- c('Date', 'Confirmed', 'Suspected', 'Severe', 'Dead', 'Cured', 'Conf.+Susp.', 'Incr. in Conf.+ Susp.', 'Under Obs.')
-flextable::flextable(x) #, col_keys = )
+ncovChina <- get_ncov('china', if_en = TRUE)
+ncovChina <- ncovChina[rev(order(ncovChina[, 1])), ]
+ncovChina[, 1] <- format(ncovChina[, 1], '%m-%d')
+# knitr::kable(ncovChina[, !names(ncovChina) %in% c("Updated", "Remarks")], format = "html", row.names = FALSE)
+
+flextable::flextable(ncovChina[, !names(ncovChina) %in% c("Updated", "Remarks")])
 ```
 
 </small>
