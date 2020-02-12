@@ -296,7 +296,7 @@ predict_date <- function(province, ncov = c(ncov,ncovChina), ifplot = TRUE, addt
     }
 }
 ncovChina <- get_ncov('china') 
-ncovChina <- ncovChina[ncovChina[, "日期"] <= as.Date('2020-02-12'), ]
+ncovChina <- ncovChina[ncovChina[, "日期"] <= as.Date('<<date>>'), ]
 ```
 
 ## 全国确诊病例时间趋势图和模型预测
@@ -304,7 +304,7 @@ ncovChina <- ncovChina[ncovChina[, "日期"] <= as.Date('2020-02-12'), ]
 ```{r}
 require(ggplot2)
 
-if(TRUE) {
+if(as.Date('<<date>>') < as.Date('2020-02-12')) {
   predict_date(province = "中国",  ncov = ncovChina)
 } else{
 
