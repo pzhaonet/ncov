@@ -3,8 +3,53 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://ncov2020.org/zh/city-map-2020-02-12/</loc>
+    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ncov2020.org/en/en/city-map-2020-02-12/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://ncov2020.org/zh/city-map-2020-02-12/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://ncov2020.org/zh/predict-2020-02-12/</loc>
+    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ncov2020.org/en/en/predict-2020-02-12/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://ncov2020.org/zh/predict-2020-02-12/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://ncov2020.org/zh/province-map-2020-02-12/</loc>
+    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ncov2020.org/en/en/province-map-2020-02-12/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://ncov2020.org/zh/province-map-2020-02-12/"
+                />
+  </url>
+  
+  <url>
     <loc>https://ncov2020.org/</loc>
-    <lastmod>2020-02-11T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -14,6 +59,21 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://ncov2020.org/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://ncov2020.org/post/</loc>
+    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ncov2020.org/en/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://ncov2020.org/post/"
                 />
   </url>
   
@@ -59,21 +119,6 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://ncov2020.org/zh/province-map-2020-02-11/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://ncov2020.org/post/</loc>
-    <lastmod>2020-02-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ncov2020.org/en/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://ncov2020.org/post/"
                 />
   </url>
   
@@ -858,24 +903,6 @@
   </url>
   
   <url>
-    <loc>https://ncov2020.org/data/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ncov2020.org/en/data/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://ncov2020.org/data/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://ncov2020.org/news/</loc>
-  </url>
-  
-  <url>
     <loc>https://ncov2020.org/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -886,6 +913,20 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://ncov2020.org/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://ncov2020.org/data/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ncov2020.org/en/data/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://ncov2020.org/data/"
                 />
   </url>
   
@@ -901,6 +942,10 @@
                 hreflang="zh"
                 href="https://ncov2020.org/intro/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://ncov2020.org/news/</loc>
   </url>
   
   <url>
