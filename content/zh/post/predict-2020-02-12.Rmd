@@ -304,6 +304,9 @@ ncovChina <- ncovChina[ncovChina[, "日期"] <= as.Date('2020-02-12'), ]
 ```{r}
 require(ggplot2)
 
+if(TRUE) {
+  predict_date(province = "中国",  ncov = ncovChina)
+} else{
 
 #nCov prediction, new model
 #Yi Zou
@@ -430,12 +433,12 @@ legend("topright", legend=c("Observed","Predicted"), col="black", pch = c(1,19),
 legend("top", legend=c("Model fit","Predicted"), col=c("black","black"), lty = 1:2, cex=0.6, bty='n')
 box()
 
-text(0.5*xmax,0.1*a,paste("laiyindata"),col=rgb(red = 0, green = 0, blue =0, alpha = 0.05),srt = 30,cex=4,adj=0)
+text(0.5*xmax,0.1*a,paste("laiyindata"),col=rgb(red = 0, green = 0, blue =0, alpha = 0.05),srt = 30,cex=4,adj=0)}
 ```
 
 
 ```{r}
-pre <- predict_date(province = "中国",  ncov = ncovChina, ifplot = FALSE, PredDate = as.Date(  '2020-02-12'))
+pre <- predict_date(province = "中国",  ncov = ncovChina, ifplot = FALSE, PredDate = as.Date('2020-02-12'))
 ```
 
 
