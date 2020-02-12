@@ -1,9 +1,5 @@
 ---
-<<<<<<< HEAD
 title: CoVid-19 疫情概览
-=======
-title: Covid-19 疫情概览
->>>>>>> 48e53ac336010e242516e3f1eeae963555c4dbf1
 slug: intro
 ---
 
