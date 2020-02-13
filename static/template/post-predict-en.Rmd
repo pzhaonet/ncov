@@ -21,7 +21,7 @@ ncovChina <- ncovChina[ncovChina[, "日期"] < as.Date('<<date>>'), ]
 ```{r}
 
 if(as.Date('<<date>>') < as.Date('2020-02-12')) {
-  predict_date(province = "中国",  ncov = ncovChina)
+  predict_date(province = "中国",  ncov = ncovChina, PredDate = as.Date('<<date>>'))
 } else{
 
 #nCov prediction, new model
