@@ -300,7 +300,7 @@ pre <- predict_date(province = "中国",  ncov = ncovChina, ifplot = FALSE, Pred
 ```{r, results='asis'}
 if(as.Date('2020-02-04') < as.Date('2020-02-13')){
   cat("我们的模型显示，全国总体疫情将于", pre$enddate, "缓解（确诊病例不再明显增长）。  \\n\\n", 
-      pre$tomorrow,  "确诊病例将新增", format(round(pre$tomorrowNew), scientific = FALSE), "例，累计确诊病例将达到", format(round(pre$tomorrowcount), scientific = FALSE), "例。"
+      as.character(pre$tomorrow),  "确诊病例将新增", format(round(pre$tomorrowNew), scientific = FALSE), "例，累计确诊病例将达到", format(round(pre$tomorrowcount), scientific = FALSE), "例。"
   )
 } else {
   cat("由于部分地区增加了临床诊断作为确诊依据，自2月13日起，我们的模型将采用“确诊+疑似”病例代替原来“确诊”病例作为我们的变量。")
@@ -315,8 +315,9 @@ if(as.Date('2020-02-04') < as.Date('2020-02-13')){
 
 ```{r}
 ncovChina <- ncovChina[rev(order(ncovChina[, 1])), ]
-x <- ncovChina[, 1:9]
-flextable::flextable(x)
+ncovChina[, 1] <- format(ncovChina[, 1], '%m-%d')
+
+flextable::flextable(ncovChina[, !names(ncovChina) %in% c("更新时间", "备注")])
 
 # knitr::kable(ncovChina[, 1:9], format = "html", row.names = FALSE)
 ```

@@ -165,7 +165,7 @@ pre <- predict_date(province = "中国",  ncov = ncovChina, ifplot = FALSE)
 ```{r, results='asis'}
 if(as.Date('2020-02-09') < as.Date('2020-02-13')){
   cat("Our model shows that the national epidemic situation will ease on", pre$enddate, "(the number of confirmed cases will not increase significantly).  \\n\\n On", 
-      pre$tomorrow,  "there will be", format(round(pre$tomorrowNew), scientific = FALSE), "new confirmed cases and in total", format(round(pre$tomorrowcount), scientific = FALSE), "confirmed cases."
+      as.character(pre$tomorrow),  "there will be", format(round(pre$tomorrowNew), scientific = FALSE), "new confirmed cases and in total", format(round(pre$tomorrowcount), scientific = FALSE), "confirmed cases."
   )
 } else {
   cat('Due to the adding of clinical diagnosis to confirm cases, since February 13, our model will use the "confirmed + suspected" cases instead of the original "confirmed" cases as our variables.')
@@ -178,6 +178,7 @@ if(as.Date('2020-02-09') < as.Date('2020-02-13')){
 <small>
 
 ```{r}
+ncovChina <- get_ncov('china', if_en = TRUE) 
 ncovChina <- ncovChina[rev(order(ncovChina[, 1])), ]
 ncovChina[, 1] <- format(ncovChina[, 1], '%m-%d')
 # knitr::kable(ncovChina[, !names(ncovChina) %in% c("Updated", "Remarks")], format = "html", row.names = FALSE)
