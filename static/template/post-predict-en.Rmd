@@ -167,8 +167,6 @@ On `r pre$tomorrow` there will be `r format(round(pre$tomorrowNew), scientific =
 <small>
 
 ```{r}
-
-ncovChina <- get_ncov('china', if_en = TRUE)
 ncovChina <- ncovChina[rev(order(ncovChina[, 1])), ]
 ncovChina[, 1] <- format(ncovChina[, 1], '%m-%d')
 # knitr::kable(ncovChina[, !names(ncovChina) %in% c("Updated", "Remarks")], format = "html", row.names = FALSE)
@@ -216,3 +214,5 @@ for(x in Prov) {
   cat("  \n")
 }
 ```
+
+This model prediction is provided by Dr. Yi Zou.
