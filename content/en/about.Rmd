@@ -25,7 +25,7 @@ If you have any suggestions for this project, please feel free to submit an issu
 
 ## The Laiyindata Team
 
-- Dr. [ZHAO Peng](https://pzhaonet.github.io/xuer/): database construction, website building and maintainence, data visulization
+- Dr. [ZHAO Peng](https://pzhaonet.github.io/xuer/): database construction, website building and maintainence, data visualization
 - Dr. ZOU Yi: prediction model development
 - Dr. WANG Xiaoxiang: Brand and activity planning, writing
 - Dr. HAN Lei: International interface
