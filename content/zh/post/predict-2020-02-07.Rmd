@@ -294,12 +294,20 @@ text(0.5*xmax,0.1*a,paste("laiyindata"),col=rgb(red = 0, green = 0, blue =0, alp
 
 ```{r}
 pre <- predict_date(province = "中国",  ncov = ncovChina, ifplot = FALSE, PredDate =  as.Date('2020-02-07'))
+
+```
+
+```{r, results='asis'}
+if(as.Date('2020-02-07') < as.Date('2020-02-13')){
+  cat("我们的模型显示，全国总体疫情将于", pre$enddate, "缓解（确诊病例不再明显增长）。  \\n\\n", 
+      pre$tomorrow,  "确诊病例将新增", format(round(pre$tomorrowNew), scientific = FALSE), "例，累计确诊病例将达到", format(round(pre$tomorrowcount), scientific = FALSE), "例。"
+  )
+} else {
+  cat("由于部分地区增加了临床诊断作为确诊依据，自2月13日起，我们的模型将采用“确诊+疑似”病例代替原来“确诊”病例作为我们的变量。")
+}
 ```
 
 
-我们的模型显示，全国总体疫情将于 `r pre$enddate` 缓解（确诊病例不再明显增长）。
-
-`r pre$tomorrow` 确诊病例将新增`r format(round(pre$tomorrowNew), scientific = FALSE)`例，累计确诊病例将达到 `r format(round(pre$tomorrowcount), scientific = FALSE)` 例。
 
 ## 全国疫情时间序列
 
