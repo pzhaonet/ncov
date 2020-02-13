@@ -21,7 +21,7 @@ ncovChina <- ncovChina[ncovChina[, "日期"] < as.Date('<<date>>'), ]
 ```{r}
 
 if(as.Date('<<date>>') < as.Date('2020-02-12')) {
-  predict_date(province = "中国",  ncov = ncovChina, PredDate = as.Date('<<date>>'))
+  predict_date(province = "中国",  ncov = ncovChina, predDate = as.Date('<<date>>'))
 } else{
 
 #nCov prediction, new model
@@ -212,7 +212,7 @@ Prov <- c("湖北", unique(ncov$area$provinceShortName[ncov$area$country == '中
 
 for(x in Prov) {
   cat(unlist(dic_city[match(x, dic_city$Province), 'Province_EN']), ":  \n", sep = '')
-  predict_date(province = x, ncov = ncov, ifplot = TRUE, ifchinese = FALSE)
+  predict_date(province = x, ncov = ncov, ifplot = TRUE, ifchinese = FALSE, predDate = as.Date('<<date>>'))
   cat("  \n")
 }
 ```
