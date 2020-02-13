@@ -67,7 +67,7 @@ for(i in ncov_dates){
   
   # province 
   filename <- paste0("leafmap-province-", i, ".html")
-  # if(!file.exists(filename)){
+  if(!file.exists(filename)){
     leafMap <- plot_map(
       x = y, 
       key = "confirmedCount", 
@@ -77,12 +77,13 @@ for(i in ncov_dates){
       filter = '待明确地区'
     )
     saveWidget(leafMap, filename)
-  # }
+  }
 
   # city
   filename <- paste0("leafmap-city-", i, ".html")
   
-  x_city <- ncov_tidy$area[ncov_tidy$area$date <= as.Date(i), ]
+  if(!file.exists(filename)){
+    x_city <- ncov_tidy$area[ncov_tidy$area$date <= as.Date(i), ]
   x_city <- x_city[as.Date(x_city$date) <= as.Date("2020-02-07"), ]
   x_city <- x_city[!duplicated(x_city$cityName), ]
   names(x_city)[1] <- 'provinceName'
@@ -93,7 +94,6 @@ for(i in ncov_dates){
   x_cities <- x[x$provinceName %in% cities, ]
   x_cities$key <- x_cities$confirmedCount
   
-  if(!file.exists(filename)){
     x_cities$key_log <- log10(x_cities$key)
     x_cities$key_log[x_cities$key == 0] <- NA
     leafMap <- geojsonMap_legendless(dat = as.data.frame(x_cities), 
