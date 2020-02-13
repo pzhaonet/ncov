@@ -59,7 +59,8 @@ ncov_dates <- as.character(unique(ncov$area$date))
 oldwd <- getwd()
 setwd('static/leaflet')
 
-for(i in ncov_dates){
+# i <- ncov_dates[1]
+for(i in ncov_dates[1:3]){
   y <- ncov$area[ncov$area$date <= as.Date(i), ]
   y <- y[!duplicated(y$provinceName), ]
   x <- y[, c('provinceShortName', 'confirmedCount', 'curedCount', 'deadCount')]
@@ -67,7 +68,7 @@ for(i in ncov_dates){
   
   # province 
   filename <- paste0("leafmap-province-", i, ".html")
-  if(!file.exists(filename)){
+  # if(!file.exists(filename)){
     leafMap <- plot_map(
       x = y, 
       key = "confirmedCount", 
@@ -77,12 +78,12 @@ for(i in ncov_dates){
       filter = '待明确地区'
     )
     saveWidget(leafMap, filename)
-  }
+  # }
 
   # city
   filename <- paste0("leafmap-city-", i, ".html")
   
-  if(!file.exists(filename)){
+  # if(!file.exists(filename)){
     x_city <- ncov_tidy$area[ncov_tidy$area$date <= as.Date(i), ]
   x_city <- x_city[as.Date(x_city$date) <= as.Date("2020-02-07"), ]
   x_city <- x_city[!duplicated(x_city$cityName), ]
@@ -106,7 +107,7 @@ for(i in ncov_dates){
                          title = paste0("确诊病例(", i, ")"), labFormat = leaflet::labelFormat(digits = 0, 
                                                                                            transform = function(x) 10^x), opacity = 1)
     saveWidget(leafMap, filename)
-  }
+  # }
 }
 setwd(oldwd)
 
@@ -115,7 +116,7 @@ if(!dir.exists('content/en/')) dir.create('content/en/')
 if(!dir.exists('content/en/post/')) dir.create('content/en/post/')
 if(!dir.exists('content/zh/')) dir.create('content/zh/')
 if(!dir.exists('content/zh/post/')) dir.create('content/zh/post/')
-for(i in ncov_dates){
+for(i in ncov_dates[1:3]){
   for(j in c('zh', 'en')){
   post_map(method = 'province', date = i, language = j)
   post_map(method = 'city', date = i, language = j)
@@ -123,7 +124,7 @@ for(i in ncov_dates){
 }
 
 ## Create predict posts ----
-for(i in as.character(seq.Date(Sys.Date() - 10, Sys.Date(), 1))) {
+for(i in as.character(seq.Date(Sys.Date() - 2, Sys.Date(), 1))) {
   for(j in c('zh', 'en')){
     post_predict(date = as.Date(i), language = j)
   }
@@ -132,3 +133,7 @@ for(i in as.character(seq.Date(Sys.Date() - 10, Sys.Date(), 1))) {
 ## Build site ----
 blogdown::install_hugo()
 blogdown::build_site()
+
+file.remove(list.files('content/en/post/', pattern = '.*.Rmd', full.names = TRUE))
+file.remove(list.files('content/zh/post/', pattern = '.*.Rmd', full.names = TRUE))
+
