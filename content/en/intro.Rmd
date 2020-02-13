@@ -15,7 +15,7 @@ knitr::include_graphics('https://ncov2020.org/animation/map_animation.gif')
 
 ## Introduction of the virus
 
-Virus: New Coronavirus Covid-19
+Disease: New Coronavirus Covid-19
 
 Source of infection: patients who are already with new coronavirus infection. Asymptomatic patients can also be contagious.
 

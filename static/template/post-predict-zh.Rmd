@@ -150,7 +150,7 @@ predict_date <- function(province, ncov = c(ncov,ncovChina), ifplot = TRUE, addt
     }
 }
 ncovChina <- get_ncov('china') 
-ncovChina <- ncovChina[ncovChina[, "日期"] <= as.Date('<<date>>'), ]
+ncovChina <- ncovChina[ncovChina[, "日期"] < as.Date('<<date>>'), ]
 ```
 
 ## 全国确诊病例时间趋势图和模型预测
@@ -164,7 +164,7 @@ if(as.Date('<<date>>') < as.Date('2020-02-12')) {
 #nCov prediction, new model
 #Yi Zou
 #Last modified: "2020-02-12 21:04:50 CST"
-PredDate <- format(as.Date('<<date>>') + 1,"%m-%d") #*****Set the date you want to predict
+PredDate <- format(as.Date('<<date>>'),"%m-%d") #*****Set the date you want to predict
 
 #Libarary and data
 library(mgcv)
