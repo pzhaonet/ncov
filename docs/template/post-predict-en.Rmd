@@ -12,7 +12,7 @@ Sys.setlocale('LC_CTYPE', 'Chinese')
 ```{r}
 require(ncovr)
 ncovChina <- get_ncov('china') 
-ncovChina <- ncovChina[ncovChina[, "日期"] <= as.Date('<<date>>'), ]
+ncovChina <- ncovChina[ncovChina[, "日期"] < as.Date('<<date>>'), ]
 ```
 
 ## Time trends and model predictions of confirmed cases across the country
@@ -21,17 +21,17 @@ ncovChina <- ncovChina[ncovChina[, "日期"] <= as.Date('<<date>>'), ]
 ```{r}
 
 if(as.Date('<<date>>') < as.Date('2020-02-12')) {
-  predict_date(province = "中国",  ncov = ncovChina)
+  predict_date(province = "中国",  ncov = ncovChina, predDate = as.Date('<<date>>'))
 } else{
 
 #nCov prediction, new model
 #Yi Zou
-#Last modified: "2020-02-12 21:04:50 CST"
-PredDate <- format(as.Date('<<date>>') + 1,"%m-%d") #*****Set the date you want to predict
+#Last modified: "2020-02-13 17:37:03 CST"
+PredDate <- format(as.Date('2020-02-13') ,"%m-%d") #*****Set the date you want to predict
 
 #Libarary and data
 library(mgcv)
-DtChina_all <- ncovChina[ncovChina[, "日期"] <= as.Date('<<date>>'), ]
+DtChina_all <- ncovChina[ncovChina[, "日期"] <= as.Date('2020-02-13'), ]
 
 DtChina <- DtChina_all[,c(1,2,4,6,7)]
 names (DtChina) <- c("Date","Confirmed","Suspected","Death","Cured")
@@ -52,7 +52,7 @@ Dat$NewDeath <- with(Dat,Death-c(0,Death[-nrow(Dat)]))
 Dat$Total <- Dat$Confirmed + Dat$Suspected 
 
 #Fit the model with 3-parameter logistic regression
-Dat$Ymod <- Dat$Confirmed #Model varialbe, may change to "Total"
+Dat$Ymod <- Dat$Total #Model varialbe, may change to "Total"
 
 #Other data  
 Dat$Sick <- with(Dat, Ymod - Death - Cured)
@@ -83,7 +83,8 @@ mdDc <-gam(RateD~s(Day),data= Dat[-(1:5),]) #Perfect model fitting
 
 
 #New data frame
-Pred=1:100
+ND <- as.numeric(Sys.Date()-as.Date("2020-01-17",format="%Y-%m-%d")+15)
+Pred=1:ND
 newdat <- data.frame(Pred)
 newdat$Date <- format(seq(Dat$Date[1], by = "day", length.out = length(Pred) ),"%m-%d")
 newdat$Judge <- ifelse(newdat$Date ==PredDate,"Tmr",ifelse(newdat$Date < PredDate,"Obs","Pre"))
@@ -92,7 +93,8 @@ newdat$pYmod <- predict(md,  list(Day = Pred ))
 newdat$pDaily <- with(newdat,pYmod -c(0,pYmod [-nrow(newdat)]))
 newdat$pDailyCured <-  predict(mdNc,  list(Day = Pred ))
 newdat$pTotalCured <-  cumsum(newdat$pDailyCured)
-newdat$pRateD <-  predict(mdDc,  list(Day = Pred )) #The rate, slightly decrease
+#    newdat$pRateD <-  predict(mdDc,  list(Day = Pred )) #The rate, slightly decrease
+pRateD <- Mrd#Option 2 for daily death rate, fixed 
 newdat$pSickMD <- with(newdat,(pYmod -  pTotalCured)/(1+Pred*pRateD))#Sick and Total Death
 newdat$pDailyDeath <- with(newdat,pSickMD*pRateD)
 newdat$pTotalDeath <- cumsum(newdat$pDailyDeath)
@@ -106,7 +108,7 @@ with(Dat,plot(y=Ymod,x=Day,xlim=c(0,max(newdat[,"pSick">0]$Pred)),ylim=c(0,1.2*a
 with(Dat,points(y=New,x=Day,col="blue",pch=1))
 with(Dat,points(y=Cured,x=Day,col="green",pch=1))
 with(Dat,points(y=Sick,x=Day,col="orange",pch=1))
-#    with(Dat,points(y=Death,x=Day,col="grey",pch=1))
+    with(Dat,points(y=Death,x=Day,col="grey",pch=1))
 with(Dat,points(y=NewCured,x=Day,col="purple",pch=1))
 axis(2, cex.axis = 0.6,las=1)
 
@@ -119,7 +121,7 @@ with(newdat_l,lines(x=Pred,y=pDaily,col="blue",lty=1))
 with(newdat_l,lines(x=Pred,y=pSick,col="orange",lty=1))
 with(newdat_l,lines(x=Pred,y=pTotalCured,col="green",lty=1))
 with(newdat_l,lines(x=Pred,y=pDailyCured,col="purple",lty=1))
-#   with(newdat_l,lines(x=Pred,y=pTotalDeath,col="grey",lty=1))
+   with(newdat_l,lines(x=Pred,y=pTotalDeath,col="grey",lty=1))
 
 #After PreDate
 newdat_l <- subset(newdat,Judge=="Pre")
@@ -128,13 +130,13 @@ with(newdat_l,lines(x=Pred,y=pDaily,col="blue",lty=2))
 with(newdat_l,lines(x=Pred,y=pSick,col="orange",lty=2))
 with(newdat_l,lines(x=Pred,y=pTotalCured,col="green",lty=2))
 with(newdat_l,lines(x=Pred,y=pDailyCured,col="purple",lty=2))
-#   with(newdat_l,lines(x=Pred,y=pTotalDeath,col="grey",lty=2))
+   with(newdat_l,lines(x=Pred,y=pTotalDeath,col="grey",lty=2))
 
 #Predation point
 newdat_l <- subset(newdat,Judge=="Tmr")
 with(newdat_l,points(x=Pred,y=pYmod,col="red",pch=19))
 with(newdat_l,points(x=Pred,y=pDaily,col="blue",pch=19))
-#   with(newdat_l,points(x=Pred,y=pTotalDeath,col="grey",pch=19))
+  with(newdat_l,points(x=Pred,y=pTotalDeath,col="grey",pch=19))
 with(newdat_l,points(x=Pred,y=pSick,col="orange",pch=19))
 with(newdat_l,points(x=Pred,y=pTotalCured,col="green",pch=19))
 with(newdat_l,points(x=Pred,y=pDailyCured,col="purple",pch=19))
@@ -144,7 +146,7 @@ with(newdat_l,points(x=Pred,y=pDailyCured,col="purple",pch=19))
 axis(1, at=newdat$Pred[seq(1, nrow(newdat), by = 2)] , labels=newdat$Date[seq(1, nrow(newdat), by = 2)],cex.axis = 0.5,las=2)
 
 #Legend
-legend("topleft", legend=c("Total infected","Daily increase","Total recover","Daily recover","Active infected"), col=c("red", "blue","green","purple","orange"), pch = 1, cex=0.6, bty='n')
+legend("topleft", legend=c("Confirmed & suspected ","Daily increase","Total recover","Daily recover","Current active","Total death"), col=c("red", "blue","green","purple","orange","grey"), pch = 1, cex=0.6, bty='n')
 legend("topright", legend=c("Observed","Predicted"), col="black", pch = c(1,19), cex=0.6, bty='n')
 legend("top", legend=c("Model fit","Predicted"), col=c("black","black"), lty = 1:2, cex=0.6, bty='n')
 box()
@@ -167,8 +169,6 @@ On `r pre$tomorrow` there will be `r format(round(pre$tomorrowNew), scientific =
 <small>
 
 ```{r}
-
-ncovChina <- get_ncov('china', if_en = TRUE)
 ncovChina <- ncovChina[rev(order(ncovChina[, 1])), ]
 ncovChina[, 1] <- format(ncovChina[, 1], '%m-%d')
 # knitr::kable(ncovChina[, !names(ncovChina) %in% c("Updated", "Remarks")], format = "html", row.names = FALSE)
@@ -212,7 +212,9 @@ Prov <- c("湖北", unique(ncov$area$provinceShortName[ncov$area$country == '中
 
 for(x in Prov) {
   cat(unlist(dic_city[match(x, dic_city$Province), 'Province_EN']), ":  \n", sep = '')
-  predict_date(province = x, ncov = ncov, ifplot = TRUE, ifchinese = FALSE)
+  predict_date(province = x, ncov = ncov, ifplot = TRUE, ifchinese = FALSE, predDate = as.Date('<<date>>'))
   cat("  \n")
 }
 ```
+
+This model prediction is provided by Dr. Yi Zou.

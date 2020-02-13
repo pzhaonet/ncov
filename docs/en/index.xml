@@ -17,7 +17,7 @@
       <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-02-13/</guid>
-      <description>Updated: 2020-02-13 20:16:09 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:16:10 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-13 Epidemic Data Sheet ( Cities ) Rank
@@ -36,7 +36,7 @@ Wuhan
 Xiaogan
 孝感
 2874
-207
+209
 49
 3
 Huanggang
@@ -58,7 +58,7 @@ Jingzhou
       <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-02-13/</guid>
-      <description>Updated: 2020-02-13 20:18:45 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:18:57 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-13 Epidemic Data Sheet ( Provinces ) Rank
@@ -102,14 +102,21 @@ Zhejiang
       <description>Time trends and model predictions of confirmed cases across the country Our model shows that the national epidemic situation will ease on 03-01 (the number of confirmed cases will not increase significantly).
 On 2020-02-13 there will be 2890 new confirmed cases and in total 55543 confirmed cases.
  National Epidemic Time Series 
-Date
-Total Conf.
-Crnt Conf.
-Crnt Susp.
-Crnt Sevr.
-Total Death.
-Total Cured
-Total Conf.+Susp.</description>
+日期
+累计确诊
+现有确诊（含重症）
+现有疑似
+现有重症
+累计死亡
+累计治愈
+累计确诊+现有疑似
+新增确诊
+新增疑似
+新增(疑似+确诊)
+死亡/确诊
+观察中
+更新时间
+备注</description>
     </item>
     
     <item>
@@ -118,7 +125,7 @@ Total Conf.+Susp.</description>
       <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-02-12/</guid>
-      <description>Updated: 2020-02-13 20:16:03 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:16:04 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-12 Epidemic Data Sheet ( Cities ) Rank
@@ -159,7 +166,7 @@ Jingzhou
       <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-02-12/</guid>
-      <description>Updated: 2020-02-13 20:18:43 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:18:55 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-12 Epidemic Data Sheet ( Provinces ) Rank
@@ -200,17 +207,24 @@ Zhejiang
       <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/predict-2020-02-12/</guid>
-      <description>Time trends and model predictions of confirmed cases across the country Our model shows that the national epidemic situation will ease on 03-01 (the number of confirmed cases will not increase significantly).
-On 2020-02-13 there will be 2890 new confirmed cases and in total 55543 confirmed cases.
+      <description>Time trends and model predictions of confirmed cases across the country Our model shows that the national epidemic situation will ease on 02-24 (the number of confirmed cases will not increase significantly).
+On 2020-02-13 there will be 1183 new confirmed cases and in total 45781 confirmed cases.
  National Epidemic Time Series 
-Date
-Total Conf.
-Crnt Conf.
-Crnt Susp.
-Crnt Sevr.
-Total Death.
-Total Cured
-Total Conf.+Susp.</description>
+日期
+累计确诊
+现有确诊（含重症）
+现有疑似
+现有重症
+累计死亡
+累计治愈
+累计确诊+现有疑似
+新增确诊
+新增疑似
+新增(疑似+确诊)
+死亡/确诊
+观察中
+更新时间
+备注</description>
     </item>
     
     <item>
@@ -219,7 +233,7 @@ Total Conf.+Susp.</description>
       <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-02-11/</guid>
-      <description>Updated: 2020-02-13 20:15:58 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:15:59 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-11 Epidemic Data Sheet ( Cities ) Rank
@@ -260,7 +274,7 @@ Suizhou
       <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-02-11/</guid>
-      <description>Updated: 2020-02-13 20:18:41 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:18:52 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-11 Epidemic Data Sheet ( Provinces ) Rank
@@ -301,17 +315,24 @@ Henan
       <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/predict-2020-02-11/</guid>
-      <description>Time trends and model predictions of confirmed cases across the country Our model shows that the national epidemic situation will ease on 02-24 (the number of confirmed cases will not increase significantly).
-On 2020-02-13 there will be 1183 new confirmed cases and in total 45781 confirmed cases.
+      <description>Time trends and model predictions of confirmed cases across the country Our model shows that the national epidemic situation will ease on 02-23 (the number of confirmed cases will not increase significantly).
+On 2020-02-13 there will be 1127 new confirmed cases and in total 44004 confirmed cases.
  National Epidemic Time Series 
-Date
-Total Conf.
-Crnt Conf.
-Crnt Susp.
-Crnt Sevr.
-Total Death.
-Total Cured
-Total Conf.+Susp.</description>
+日期
+累计确诊
+现有确诊（含重症）
+现有疑似
+现有重症
+累计死亡
+累计治愈
+累计确诊+现有疑似
+新增确诊
+新增疑似
+新增(疑似+确诊)
+死亡/确诊
+观察中
+更新时间
+备注</description>
     </item>
     
     <item>
@@ -320,7 +341,7 @@ Total Conf.+Susp.</description>
       <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-02-10/</guid>
-      <description>Updated: 2020-02-13 20:15:53 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:15:53 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-10 Epidemic Data Sheet ( Cities ) Rank
@@ -361,7 +382,7 @@ Suizhou
       <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-02-10/</guid>
-      <description>Updated: 2020-02-13 20:18:40 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:18:50 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-10 Epidemic Data Sheet ( Provinces ) Rank
@@ -403,16 +424,23 @@ Henan
       
       <guid>https://ncov2020.org/en/en/predict-2020-02-10/</guid>
       <description>Time trends and model predictions of confirmed cases across the country Our model shows that the national epidemic situation will ease on 02-23 (the number of confirmed cases will not increase significantly).
-On 2020-02-13 there will be 1127 new confirmed cases and in total 44004 confirmed cases.
+On 2020-02-13 there will be 1048 new confirmed cases and in total 41856 confirmed cases.
  National Epidemic Time Series 
-Date
-Total Conf.
-Crnt Conf.
-Crnt Susp.
-Crnt Sevr.
-Total Death.
-Total Cured
-Total Conf.+Susp.</description>
+日期
+累计确诊
+现有确诊（含重症）
+现有疑似
+现有重症
+累计死亡
+累计治愈
+累计确诊+现有疑似
+新增确诊
+新增疑似
+新增(疑似+确诊)
+死亡/确诊
+观察中
+更新时间
+备注</description>
     </item>
     
     <item>
@@ -421,7 +449,7 @@ Total Conf.+Susp.</description>
       <pubDate>Sun, 09 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-02-09/</guid>
-      <description>Updated: 2020-02-13 20:15:47 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:15:47 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-09 Epidemic Data Sheet ( Cities ) Rank
@@ -462,7 +490,7 @@ Suizhou
       <pubDate>Sun, 09 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-02-09/</guid>
-      <description>Updated: 2020-02-13 20:18:38 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:18:48 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-09 Epidemic Data Sheet ( Provinces ) Rank
@@ -504,16 +532,23 @@ Henan
       
       <guid>https://ncov2020.org/en/en/predict-2020-02-09/</guid>
       <description>Time trends and model predictions of confirmed cases across the country Our model shows that the national epidemic situation will ease on 02-23 (the number of confirmed cases will not increase significantly).
-On 2020-02-13 there will be 1048 new confirmed cases and in total 41856 confirmed cases.
+On 2020-02-13 there will be 960 new confirmed cases and in total 39411 confirmed cases.
  National Epidemic Time Series 
-Date
-Total Conf.
-Crnt Conf.
-Crnt Susp.
-Crnt Sevr.
-Total Death.
-Total Cured
-Total Conf.+Susp.</description>
+日期
+累计确诊
+现有确诊（含重症）
+现有疑似
+现有重症
+累计死亡
+累计治愈
+累计确诊+现有疑似
+新增确诊
+新增疑似
+新增(疑似+确诊)
+死亡/确诊
+观察中
+更新时间
+备注</description>
     </item>
     
     <item>
@@ -522,7 +557,7 @@ Total Conf.+Susp.</description>
       <pubDate>Sat, 08 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-02-08/</guid>
-      <description>Updated: 2020-02-13 20:15:42 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:15:41 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-08 Epidemic Data Sheet ( Cities ) Rank
@@ -563,7 +598,7 @@ Jingzhou
       <pubDate>Sat, 08 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-02-08/</guid>
-      <description>Updated: 2020-02-13 20:18:36 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:18:46 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-08 Epidemic Data Sheet ( Provinces ) Rank
@@ -605,16 +640,23 @@ Henan
       
       <guid>https://ncov2020.org/en/en/predict-2020-02-08/</guid>
       <description>Time trends and model predictions of confirmed cases across the country Our model shows that the national epidemic situation will ease on 02-23 (the number of confirmed cases will not increase significantly).
-On 2020-02-13 there will be 960 new confirmed cases and in total 39411 confirmed cases.
+On 2020-02-13 there will be 928 new confirmed cases and in total 36965 confirmed cases.
  National Epidemic Time Series 
-Date
-Total Conf.
-Crnt Conf.
-Crnt Susp.
-Crnt Sevr.
-Total Death.
-Total Cured
-Total Conf.+Susp.</description>
+日期
+累计确诊
+现有确诊（含重症）
+现有疑似
+现有重症
+累计死亡
+累计治愈
+累计确诊+现有疑似
+新增确诊
+新增疑似
+新增(疑似+确诊)
+死亡/确诊
+观察中
+更新时间
+备注</description>
     </item>
     
     <item>
@@ -623,7 +665,7 @@ Total Conf.+Susp.</description>
       <pubDate>Fri, 07 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-02-07/</guid>
-      <description>Updated: 2020-02-13 20:15:37 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:15:35 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-07 Epidemic Data Sheet ( Cities ) Rank
@@ -664,7 +706,7 @@ Suizhou
       <pubDate>Fri, 07 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-02-07/</guid>
-      <description>Updated: 2020-02-13 20:18:34 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:18:44 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-07 Epidemic Data Sheet ( Provinces ) Rank
@@ -705,17 +747,24 @@ Henan
       <pubDate>Fri, 07 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/predict-2020-02-07/</guid>
-      <description>Time trends and model predictions of confirmed cases across the country Our model shows that the national epidemic situation will ease on 02-23 (the number of confirmed cases will not increase significantly).
-On 2020-02-13 there will be 928 new confirmed cases and in total 36965 confirmed cases.
+      <description>Time trends and model predictions of confirmed cases across the country Our model shows that the national epidemic situation will ease on 02-22 (the number of confirmed cases will not increase significantly).
+On 2020-02-13 there will be 817 new confirmed cases and in total 33879 confirmed cases.
  National Epidemic Time Series 
-Date
-Total Conf.
-Crnt Conf.
-Crnt Susp.
-Crnt Sevr.
-Total Death.
-Total Cured
-Total Conf.+Susp.</description>
+日期
+累计确诊
+现有确诊（含重症）
+现有疑似
+现有重症
+累计死亡
+累计治愈
+累计确诊+现有疑似
+新增确诊
+新增疑似
+新增(疑似+确诊)
+死亡/确诊
+观察中
+更新时间
+备注</description>
     </item>
     
     <item>
@@ -724,7 +773,7 @@ Total Conf.+Susp.</description>
       <pubDate>Thu, 06 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-02-06/</guid>
-      <description>Updated: 2020-02-13 20:15:31 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:15:29 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-06 Epidemic Data Sheet ( Cities ) Rank
@@ -765,7 +814,7 @@ Suizhou
       <pubDate>Thu, 06 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-02-06/</guid>
-      <description>Updated: 2020-02-13 20:18:31 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:18:42 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-06 Epidemic Data Sheet ( Provinces ) Rank
@@ -807,16 +856,23 @@ Henan
       
       <guid>https://ncov2020.org/en/en/predict-2020-02-06/</guid>
       <description>Time trends and model predictions of confirmed cases across the country Our model shows that the national epidemic situation will ease on 02-22 (the number of confirmed cases will not increase significantly).
-On 2020-02-13 there will be 817 new confirmed cases and in total 33879 confirmed cases.
+On 2020-02-13 there will be 726 new confirmed cases and in total 30691 confirmed cases.
  National Epidemic Time Series 
-Date
-Total Conf.
-Crnt Conf.
-Crnt Susp.
-Crnt Sevr.
-Total Death.
-Total Cured
-Total Conf.+Susp.</description>
+日期
+累计确诊
+现有确诊（含重症）
+现有疑似
+现有重症
+累计死亡
+累计治愈
+累计确诊+现有疑似
+新增确诊
+新增疑似
+新增(疑似+确诊)
+死亡/确诊
+观察中
+更新时间
+备注</description>
     </item>
     
     <item>
@@ -825,7 +881,7 @@ Total Conf.+Susp.</description>
       <pubDate>Wed, 05 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-02-05/</guid>
-      <description>Updated: 2020-02-13 20:15:26 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:15:23 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-05 Epidemic Data Sheet ( Cities ) Rank
@@ -866,7 +922,7 @@ Suizhou
       <pubDate>Wed, 05 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-02-05/</guid>
-      <description>Updated: 2020-02-13 20:18:29 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:18:40 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-05 Epidemic Data Sheet ( Provinces ) Rank
@@ -907,17 +963,24 @@ Henan
       <pubDate>Wed, 05 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/predict-2020-02-05/</guid>
-      <description>Time trends and model predictions of confirmed cases across the country Our model shows that the national epidemic situation will ease on 02-22 (the number of confirmed cases will not increase significantly).
-On 2020-02-13 there will be 726 new confirmed cases and in total 30691 confirmed cases.
+      <description>Time trends and model predictions of confirmed cases across the country Our model shows that the national epidemic situation will ease on 02-20 (the number of confirmed cases will not increase significantly).
+On 2020-02-13 there will be 462 new confirmed cases and in total 26674 confirmed cases.
  National Epidemic Time Series 
-Date
-Total Conf.
-Crnt Conf.
-Crnt Susp.
-Crnt Sevr.
-Total Death.
-Total Cured
-Total Conf.+Susp.</description>
+日期
+累计确诊
+现有确诊（含重症）
+现有疑似
+现有重症
+累计死亡
+累计治愈
+累计确诊+现有疑似
+新增确诊
+新增疑似
+新增(疑似+确诊)
+死亡/确诊
+观察中
+更新时间
+备注</description>
     </item>
     
     <item>
@@ -926,7 +989,7 @@ Total Conf.+Susp.</description>
       <pubDate>Tue, 04 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-02-04/</guid>
-      <description>Updated: 2020-02-13 20:15:20 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:15:17 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-04 Epidemic Data Sheet ( Cities ) Rank
@@ -967,7 +1030,7 @@ Xiangyang
       <pubDate>Tue, 04 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-02-04/</guid>
-      <description>Updated: 2020-02-13 20:18:28 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:18:38 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-04 Epidemic Data Sheet ( Provinces ) Rank
@@ -1008,17 +1071,24 @@ Henan
       <pubDate>Tue, 04 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/predict-2020-02-04/</guid>
-      <description>Time trends and model predictions of confirmed cases across the country Our model shows that the national epidemic situation will ease on 02-20 (the number of confirmed cases will not increase significantly).
-On 2020-02-13 there will be 462 new confirmed cases and in total 26674 confirmed cases.
+      <description>Time trends and model predictions of confirmed cases across the country Our model shows that the national epidemic situation will ease on 02-18 (the number of confirmed cases will not increase significantly).
+On 2020-02-13 there will be 205 new confirmed cases and in total 22471 confirmed cases.
  National Epidemic Time Series 
-Date
-Total Conf.
-Crnt Conf.
-Crnt Susp.
-Crnt Sevr.
-Total Death.
-Total Cured
-Total Conf.+Susp.</description>
+日期
+累计确诊
+现有确诊（含重症）
+现有疑似
+现有重症
+累计死亡
+累计治愈
+累计确诊+现有疑似
+新增确诊
+新增疑似
+新增(疑似+确诊)
+死亡/确诊
+观察中
+更新时间
+备注</description>
     </item>
     
     <item>
@@ -1027,7 +1097,7 @@ Total Conf.+Susp.</description>
       <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-02-03/</guid>
-      <description>Updated: 2020-02-13 20:15:15 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:15:11 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-03 Epidemic Data Sheet ( Cities ) Rank
@@ -1068,7 +1138,7 @@ Suizhou
       <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-02-03/</guid>
-      <description>Updated: 2020-02-13 20:18:25 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:18:35 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-03 Epidemic Data Sheet ( Provinces ) Rank
@@ -1109,17 +1179,24 @@ Henan
       <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/predict-2020-02-03/</guid>
-      <description>Time trends and model predictions of confirmed cases across the country Our model shows that the national epidemic situation will ease on 02-18 (the number of confirmed cases will not increase significantly).
-On 2020-02-13 there will be 205 new confirmed cases and in total 22471 confirmed cases.
+      <description>Time trends and model predictions of confirmed cases across the country Our model shows that the national epidemic situation will ease on 02-16 (the number of confirmed cases will not increase significantly).
+On 2020-02-13 there will be 93 new confirmed cases and in total 19038 confirmed cases.
  National Epidemic Time Series 
-Date
-Total Conf.
-Crnt Conf.
-Crnt Susp.
-Crnt Sevr.
-Total Death.
-Total Cured
-Total Conf.+Susp.</description>
+日期
+累计确诊
+现有确诊（含重症）
+现有疑似
+现有重症
+累计死亡
+累计治愈
+累计确诊+现有疑似
+新增确诊
+新增疑似
+新增(疑似+确诊)
+死亡/确诊
+观察中
+更新时间
+备注</description>
     </item>
     
     <item>
@@ -1128,7 +1205,7 @@ Total Conf.+Susp.</description>
       <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-02-02/</guid>
-      <description>Updated: 2020-02-13 20:15:09 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:15:05 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-02 Epidemic Data Sheet ( Cities ) Rank
@@ -1169,7 +1246,7 @@ Xiangyang
       <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-02-02/</guid>
-      <description>Updated: 2020-02-13 20:18:24 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:18:33 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-02 Epidemic Data Sheet ( Provinces ) Rank
@@ -1229,7 +1306,7 @@ Total Conf.+Susp.</description>
       <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-02-01/</guid>
-      <description>Updated: 2020-02-13 20:15:04 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:14:59 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-01 Epidemic Data Sheet ( Cities ) Rank
@@ -1270,7 +1347,7 @@ Xiangyang
       <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-02-01/</guid>
-      <description>Updated: 2020-02-13 20:18:21 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:18:31 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-01 Epidemic Data Sheet ( Provinces ) Rank
@@ -1333,7 +1410,7 @@ Under Obs.
       <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-01-31/</guid>
-      <description>Updated: 2020-02-13 20:14:59 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:14:54 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-01-31 Epidemic Data Sheet ( Cities ) Rank
@@ -1374,7 +1451,7 @@ Xiangyang
       <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-01-31/</guid>
-      <description>Updated: 2020-02-13 20:18:19 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:18:29 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-01-31 Epidemic Data Sheet ( Provinces ) Rank
@@ -1415,7 +1492,7 @@ Henan
       <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-01-30/</guid>
-      <description>Updated: 2020-02-13 20:14:54 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:14:48 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-01-30 Epidemic Data Sheet ( Cities ) Rank
@@ -1456,7 +1533,7 @@ Xiangyang
       <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-01-30/</guid>
-      <description>Updated: 2020-02-13 20:18:18 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:18:27 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-01-30 Epidemic Data Sheet ( Provinces ) Rank
@@ -1497,7 +1574,7 @@ Henan
       <pubDate>Wed, 29 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-01-29/</guid>
-      <description>Updated: 2020-02-13 20:14:49 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:14:42 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-01-29 Epidemic Data Sheet ( Cities ) Rank
@@ -1538,7 +1615,7 @@ Jingmen
       <pubDate>Wed, 29 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-01-29/</guid>
-      <description>Updated: 2020-02-13 20:18:16 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:18:24 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-01-29 Epidemic Data Sheet ( Provinces ) Rank
@@ -1579,7 +1656,7 @@ Hunan
       <pubDate>Tue, 28 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-01-28/</guid>
-      <description>Updated: 2020-02-13 20:14:44 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:14:37 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-01-28 Epidemic Data Sheet ( Cities ) Rank
@@ -1620,7 +1697,7 @@ Jingmen
       <pubDate>Tue, 28 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-01-28/</guid>
-      <description>Updated: 2020-02-13 20:18:14 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:18:22 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-01-28 Epidemic Data Sheet ( Provinces ) Rank
@@ -1661,7 +1738,7 @@ Henan
       <pubDate>Mon, 27 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-01-27/</guid>
-      <description>Updated: 2020-02-13 20:14:39 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:14:31 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-01-27 Epidemic Data Sheet ( Cities ) Rank
@@ -1702,7 +1779,7 @@ Xiaogan
       <pubDate>Mon, 27 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-01-27/</guid>
-      <description>Updated: 2020-02-13 20:18:12 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:18:20 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-01-27 Epidemic Data Sheet ( Provinces ) Rank
@@ -1743,7 +1820,7 @@ Zhejiang
       <pubDate>Sun, 26 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-01-26/</guid>
-      <description>Updated: 2020-02-13 20:14:34 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:14:25 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-01-26 Epidemic Data Sheet ( Cities ) Rank
@@ -1784,7 +1861,7 @@ Jingmen
       <pubDate>Sun, 26 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-01-26/</guid>
-      <description>Updated: 2020-02-13 20:18:10 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:18:18 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-01-26 Epidemic Data Sheet ( Provinces ) Rank
@@ -1825,7 +1902,7 @@ Hunan
       <pubDate>Sat, 25 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-01-25/</guid>
-      <description>Updated: 2020-02-13 20:14:29 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:14:20 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-01-25 Epidemic Data Sheet ( Cities ) Rank
@@ -1866,7 +1943,7 @@ Beijing
       <pubDate>Sat, 25 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-01-25/</guid>
-      <description>Updated: 2020-02-13 20:18:08 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:18:16 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-01-25 Epidemic Data Sheet ( Provinces ) Rank
@@ -1907,7 +1984,7 @@ Guangdong
       <pubDate>Fri, 24 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-01-24/</guid>
-      <description>Updated: 2020-02-13 20:14:24 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:14:14 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-01-24 Epidemic Data Sheet ( Cities ) Rank
@@ -1948,7 +2025,7 @@ Xiaogan
       <pubDate>Fri, 24 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-01-24/</guid>
-      <description>Updated: 2020-02-13 20:18:06 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:18:13 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-01-24 Epidemic Data Sheet ( Provinces ) Rank
@@ -1989,7 +2066,7 @@ Chongqing
       <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-01-23/</guid>
-      <description>Updated: 2020-02-13 20:14:19 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:14:09 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-01-23 Epidemic Data Sheet ( Cities ) Rank
@@ -2030,7 +2107,7 @@ Chongqing
       <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-01-23/</guid>
-      <description>Updated: 2020-02-13 20:18:04 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:18:11 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-01-23 Epidemic Data Sheet ( Provinces ) Rank
@@ -2071,7 +2148,7 @@ Beijing
       <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-01-22/</guid>
-      <description>Updated: 2020-02-13 20:14:15 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:14:05 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-01-22 Epidemic Data Sheet ( Cities ) Rank
@@ -2112,7 +2189,7 @@ Tianjin
       <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-01-22/</guid>
-      <description>Updated: 2020-02-13 20:18:02 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:18:09 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-01-22 Epidemic Data Sheet ( Provinces ) Rank
@@ -2153,7 +2230,7 @@ Beijing
       <pubDate>Tue, 21 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-01-21/</guid>
-      <description>Updated: 2020-02-13 20:14:11 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:14:01 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-01-21 Epidemic Data Sheet ( Cities ) Rank
@@ -2194,7 +2271,7 @@ Tianjin
       <pubDate>Tue, 21 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-01-21/</guid>
-      <description>Updated: 2020-02-13 20:18:00 (UTC+08:00)
+      <description>Updated: 2020-02-13 23:18:07 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-01-21 Epidemic Data Sheet ( Provinces ) Rank
@@ -2257,7 +2334,7 @@ Use the R ncovr package R users can get the epidemic data via the ncovr package 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/intro/</guid>
-      <description>Introduction of the virus Virus: New Coronavirus Covid-19
+      <description>Introduction of the virus Disease: New Coronavirus Covid-19
 Source of infection: patients who are already with new coronavirus infection. Asymptomatic patients can also be contagious.
 Ways of Transmission: Respiratory droplets and contact transmission are the main ways of transmission. Other transmission ways such as aerosol and digestive tract are yet to be confirmed.
 Vulnerable population: Generally susceptible to all population. Elderly people and those with chronic diseases are more sick after infection.</description>
