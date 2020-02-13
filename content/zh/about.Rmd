@@ -28,10 +28,10 @@ knitr::include_graphics('https://raw.githubusercontent.com/pzhaonet/ncov/master/
 
 莱茵数据在线：
 
-- [赵鹏](https://pzhaonet.github.io/xuer/)
-- 邹怡
-- 王小享
-- 韩蕾
+- [赵鹏](https://pzhaonet.github.io/xuer/)：数据库构建，网站搭建和维护，数据可视化
+- 邹怡：预测模型研发
+- 王小享：策划，文字
+- 韩蕾：英文界面
 
 ## 联系邮箱
 
