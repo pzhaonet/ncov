@@ -13,6 +13,10 @@ require(ncovr)
 ncov <- get_ncov('csv', 'news')$news
 ncov$title <- gsub('\u00A0', ' ', ncov$title)
 ncov$summary <- gsub('\u00A0', ' ', ncov$summary)
+ncov$summary <- gsub('begin-->', '', ncov$summary)
+ncov$summary <- gsub('end-->', '', ncov$summary)
+ncov$summary <- gsub(' ', '', ncov$summary)
+
 ncov <- ncov[!duplicated(ncov$title) & !duplicated(ncov$summary), ]
 cat(paste0('## [', ncov$title, '](', ncov$sourceUrl, ')  \n\n',
            ncov$pubDate, ' ',
