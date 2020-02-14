@@ -7,7 +7,7 @@ This is the website for information of 2019-nCoV outbreak.
 
 ## On the media
 
-- [China Daily: US stocks rally, but latest figures show virus surge]
+- [China Daily: US stocks rally, but latest figures show virus surge](https://www.chinadaily.com.cn/a/202002/13/WS5e457070a310128217277670.html)
 
 > They created a website to provide scientists, journalists and other researchers open access to data from across China on novel coronavirus and daily statistical modeling. "We hope that through the integration of information, we can provide more people with data sharing and fight the epidemic together," Zou said. 
 
@@ -49,4 +49,4 @@ If you have any suggestions for this project, please feel free to submit an issu
 
 The data used on this site come from [BlankerL/DXY-2019-nCoV-Crawler](https://github.com/BlankerL/DXY-2019-nCoV-Crawler) and [JackieZheng/2019-nCoV](https://github.com/JackieZheng/2019-nCoV). The credit of the translation of area/city names from Chinese into English belongs to [brightgems/china_city_dataset](https://github.com/brightgems/china_city_dataset) and the [R pinyin package](https://CRAN.R-project.org/package=pinyin) (Zhao, 2019).
 
-This site is built by [R blogdown package](https://bookdown.org/yihui/blogdown/) with [HUGO](https://gohugo.io/), and updated automatically with [Travis-CI](https://travis-ci.org/).
+This site is built by [R blogdown package](https://bookdown.org/yihui/blogdown/) with [HUGO](https://gohugo.io/), hosted on [GitHub](http://github.com/) and [Netlify](https://www.netlify.com/), and updated automatically with the support of [Travis-CI](https://travis-ci.org/).

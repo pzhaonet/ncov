@@ -7,7 +7,7 @@ slug: about
 
 ## 媒体报道
 
-- [China Daily: US stocks rally, but latest figures show virus surge]
+- [China Daily: US stocks rally, but latest figures show virus surge](https://www.chinadaily.com.cn/a/202002/13/WS5e457070a310128217277670.html)
 
 > They created a website to provide scientists, journalists and other researchers open access to data from across China on novel coronavirus and daily statistical modeling. "We hope that through the integration of information, we can provide more people with data sharing and fight the epidemic together," Zou said. 
 
@@ -38,7 +38,7 @@ knitr::include_graphics('https://raw.githubusercontent.com/pzhaonet/ncov/master/
 
 - [赵鹏](https://pzhaonet.github.io/xuer/)：数据库构建，网站搭建和维护，数据可视化
 - 邹怡：预测模型研发
-- 王小享：策划，文字
+- 王小享：策划，文字设计
 - 韩蕾：英文界面
 
 ## 联系邮箱
@@ -52,4 +52,4 @@ knitr::include_graphics('https://raw.githubusercontent.com/pzhaonet/ncov/master/
 
 本站采用的数据来自[BlankerL/DXY-2019-nCoV-Crawler](https://github.com/BlankerL/DXY-2019-nCoV-Crawler)和 [JackieZheng/2019-nCoV](https://github.com/JackieZheng/2019-nCoV)。省市名称的中英翻译来自 [brightgems/china_city_dataset](https://github.com/brightgems/china_city_dataset)以及 [R pinyin 包](https://CRAN.R-project.org/package=pinyin) (Zhao, 2019)。
 
-本站是 [R blogdown 包](https://bookdown.org/yihui/blogdown/)搭建，采用 [HUGO](https://gohugo.io/) 框架，利用 [travis-CI](https://travis-ci.org/) 自动化完成。
+本站是 [R blogdown 包](https://bookdown.org/yihui/blogdown/)搭建，采用 [HUGO](https://gohugo.io/) 框架，托管在 [GitHub](http://github.com/) 和 [Netlify](https://www.netlify.com/)，利用 [Travis-CI](https://travis-ci.org/) 自动化完成。
