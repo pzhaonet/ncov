@@ -17,7 +17,7 @@
       <pubDate>Sat, 15 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-02-15/</guid>
-      <description>Updated: 2020-02-16 02:23:43 (UTC+08:00)
+      <description>Updated: 2020-02-16 04:10:40 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-15 Epidemic Data Sheet ( Cities ) Rank
@@ -58,7 +58,7 @@ Jingzhou
       <pubDate>Sat, 15 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-02-15/</guid>
-      <description>Updated: 2020-02-16 02:24:20 (UTC+08:00)
+      <description>Updated: 2020-02-16 04:11:17 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-15 Epidemic Data Sheet ( Provinces ) Rank
@@ -99,19 +99,8 @@ Zhejiang
       <pubDate>Sat, 15 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/predict-2020-02-15/</guid>
-      <description>Time trends and model predictions of confirmed cases across the country Due to the adding of clinical diagnosis to confirm cases, since February 13, our model will use the “confirmed + suspected” cases instead of the original “confirmed” cases as our variables.
- National Epidemic Time Series 
-Date
-Total Conf.
-Crnt Conf.
-Crnt Susp.
-Crnt Sevr.
-Total Death.
-Total Cured
-Total Conf.+Susp.
-Incrs Conf.
-Incrs Susp.
-Incrs Susp.</description>
+      <description>Time trends and model predictions of confirmed cases across the country Due to the adding of clinical diagnosis to confirm cases, since February 13, our model will use the “confirmed + suspected” cases instead of the original “confirmed” cases as our variables. Data from February 09, 10 and 11 were removed from the model because cases were underreported and then included all at once on February 12.
+ National Epidemic Time Series</description>
     </item>
     
     <item>
@@ -120,7 +109,7 @@ Incrs Susp.</description>
       <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-02-14/</guid>
-      <description>Updated: 2020-02-16 02:23:37 (UTC+08:00)
+      <description>Updated: 2020-02-16 04:10:35 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-14 Epidemic Data Sheet ( Cities ) Rank
@@ -161,7 +150,7 @@ Jingzhou
       <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-02-14/</guid>
-      <description>Updated: 2020-02-16 02:24:18 (UTC+08:00)
+      <description>Updated: 2020-02-16 04:11:15 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-14 Epidemic Data Sheet ( Provinces ) Rank
@@ -202,19 +191,8 @@ Zhejiang
       <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/predict-2020-02-14/</guid>
-      <description>Time trends and model predictions of confirmed cases across the country Due to the adding of clinical diagnosis to confirm cases, since February 13, our model will use the “confirmed + suspected” cases instead of the original “confirmed” cases as our variables.
- National Epidemic Time Series 
-Date
-Total Conf.
-Crnt Conf.
-Crnt Susp.
-Crnt Sevr.
-Total Death.
-Total Cured
-Total Conf.+Susp.
-Incrs Conf.
-Incrs Susp.
-Incrs Susp.</description>
+      <description>Time trends and model predictions of confirmed cases across the country Due to the adding of clinical diagnosis to confirm cases, since February 13, our model will use the “confirmed + suspected” cases instead of the original “confirmed” cases as our variables. Data from February 09, 10 and 11 were removed from the model because cases were underreported and then included all at once on February 12.
+ National Epidemic Time Series</description>
     </item>
     
     <item>
@@ -223,7 +201,7 @@ Incrs Susp.</description>
       <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-02-13/</guid>
-      <description>Updated: 2020-02-16 02:23:32 (UTC+08:00)
+      <description>Updated: 2020-02-16 04:10:29 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-13 Epidemic Data Sheet ( Cities ) Rank
@@ -264,7 +242,7 @@ Jingzhou
       <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-02-13/</guid>
-      <description>Updated: 2020-02-16 02:24:16 (UTC+08:00)
+      <description>Updated: 2020-02-16 04:11:13 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-13 Epidemic Data Sheet ( Provinces ) Rank
@@ -305,19 +283,8 @@ Zhejiang
       <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/predict-2020-02-13/</guid>
-      <description>Time trends and model predictions of confirmed cases across the country Due to the adding of clinical diagnosis to confirm cases, since February 13, our model will use the “confirmed + suspected” cases instead of the original “confirmed” cases as our variables.
- National Epidemic Time Series 
-Date
-Total Conf.
-Crnt Conf.
-Crnt Susp.
-Crnt Sevr.
-Total Death.
-Total Cured
-Total Conf.+Susp.
-Incrs Conf.
-Incrs Susp.
-Incrs Susp.</description>
+      <description>Time trends and model predictions of confirmed cases across the country Due to the adding of clinical diagnosis to confirm cases, since February 13, our model will use the “confirmed + suspected” cases instead of the original “confirmed” cases as our variables. Data from February 09, 10 and 11 were removed from the model because cases were underreported and then included all at once on February 12.
+ National Epidemic Time Series</description>
     </item>
     
     <item>

@@ -173,7 +173,7 @@ if(as.Date('2020-02-13') < as.Date('2020-02-13')){
       as.character(pre$tomorrow),  "there will be", format(round(pre$tomorrowNew), scientific = FALSE), "new confirmed cases and in total", format(round(pre$tomorrowcount), scientific = FALSE), "confirmed cases."
   )
 } else {
-  cat('Due to the adding of clinical diagnosis to confirm cases, since February 13, our model will use the "confirmed + suspected" cases instead of the original "confirmed" cases as our variables.')
+  cat('Due to the adding of clinical diagnosis to confirm cases, since February 13, our model will use the “confirmed + suspected” cases instead of the original “confirmed” cases as our variables. Data from February 09, 10 and 11 were removed from the model because cases were underreported and then included all at once on February 12. ')
 }
 ```
 
