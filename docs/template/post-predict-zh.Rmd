@@ -157,18 +157,18 @@ ncovChina <- ncovChina[ncovChina[, "日期"] < as.Date('<<date>>'), ]
 
 ```{r}
 
-if(as.Date('<<date>>') < as.Date('2020-02-12')) {
+if(as.Date('<<date>>') < as.Date('2020-02-13')) {
   predict_date(province = "中国",  ncov = ncovChina, PredDate = as.Date('<<date>>'))
 } else{
 
 #nCov prediction, new model
 #Yi Zou
 #Last modified: "2020-02-13 17:37:03 CST"
-PredDate <- format(as.Date('2020-02-13') ,"%m-%d") #*****Set the date you want to predict
+PredDate <- format(as.Date('<<date>>') ,"%m-%d") #*****Set the date you want to predict
 
 #Libarary and data
 library(mgcv)
-DtChina_all <- ncovChina[ncovChina[, "日期"] <= as.Date('2020-02-13'), ]
+DtChina_all <- ncovChina[ncovChina[, "日期"] < as.Date('<<date>>'), ]
 
 DtChina <- DtChina_all[,c(1,2,4,6,7)]
 names (DtChina) <- c("Date","Confirmed","Suspected","Death","Cured")
