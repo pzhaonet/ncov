@@ -9,12 +9,18 @@ require(htmltools)
 Sys.setlocale('LC_CTYPE', 'Chinese')
 
 ## backup data
-ncov <- get_ncov(port = c('area?latest=0', 'overall', 'provinceName', 'news', 'rumors'), method = 'api')
-names(ncov)[1] <- 'area'
-ncov_tidy <- ncovr:::conv_ncov(ncov)
-if(!dir.exists('static/data-download')) dir.create('static/data-download')
-saveRDS(ncov_tidy, 'static/data-download/ncov_tidy.RDS')
-saveRDS(ncov, 'static/data-download/ncov.RDS')
+mytry <- try(ncov <- get_ncov(port = 'overall', method = 'api'))
+if(class(mytry) != "try-error"){
+  ncov <- get_ncov(port = c('area?latest=0', 'overall', 'provinceName', 'news', 'rumors'), method = 'api')
+  names(ncov)[1] <- 'area'
+  ncov_tidy <- ncovr:::conv_ncov(ncov)
+  if(!dir.exists('static/data-download')) dir.create('static/data-download')
+  saveRDS(ncov_tidy, 'static/data-download/ncov_tidy.RDS')
+  saveRDS(ncov, 'static/data-download/ncov.RDS')
+} else{
+  ncov <- get_ncov()
+  ncov_tidy <- ncovr:::conv_ncov(ncov)
+}
 
 
 ## Create map post ----
@@ -47,7 +53,6 @@ post_predict <- function(date, language = c('en', 'zh')){
 }
 
 ## Get data ----
-# ncov <- get_ncov()
 ncov$area$date <- as.Date(ncovr:::conv_time(ncov$area$updateTime))
 ncov$area <- ncov$area[rev(order(ncov$area$date)), ]
 ncov_tidy$area$date <- as.Date(ncov_tidy$area$updateTime)
@@ -134,6 +139,6 @@ for(i in as.character(seq.Date(Sys.Date() - 2, Sys.Date(), 1))) {
 blogdown::install_hugo()
 blogdown::build_site()
 
-file.remove(list.files('content/en/post/', pattern = '.*.Rmd', full.names = TRUE))
-file.remove(list.files('content/zh/post/', pattern = '.*.Rmd', full.names = TRUE))
+# file.remove(list.files('content/en/post/', pattern = '.*.Rmd', full.names = TRUE))
+# file.remove(list.files('content/zh/post/', pattern = '.*.Rmd', full.names = TRUE))
 

@@ -65,14 +65,15 @@ Mrd <- mean(Dat$RateD[-(1:15)],na.rm=T)#The daily death:current sick ratio is ab
 
 
 #Model for Ymod (confirmed)
-md <- nls(Ymod~SSlogis(Day, Asym, xmid, scal),data= Dat )
+# md <- nls(Ymod~SSlogis(Day, Asym, xmid, scal),data= Dat )
+md <- nls(Ymod~SSlogis(Day, Asym, xmid, scal),data= Dat[-(24:26),] )
 Coe <- summary(md)$coefficients
 a <- Coe[1,1]
 xmax <-  2*Coe[2,1]
 
 #Fit the model for NewCured (Daily cured)
-mdNc <- nls(NewCured~SSlogis(Day, Asym, xmid, scal),data= Dat )
-
+# mdNc <- nls(NewCured~SSlogis(Day, Asym, xmid, scal),data= Dat )
+mdNc <- nls(NewCured~SSlogis(Day, Asym, xmid, scal),data= Dat[-(24:26),] )
 
 
 #Fit the model for Daily death rate
@@ -105,11 +106,11 @@ newdat <- droplevels(subset(newdat,pSick>0))
 #Plot the data
 par(mgp = c(2.5, 0.6, 0))
 with(Dat,plot(y=Ymod,x=Day,xlim=c(0,max(newdat[,"pSick">0]$Pred)),ylim=c(0,1.2*a),ylab="Number of cases",xlab="",bty='n',xaxt = "n",col="red",pch=1,yaxt = "n"));title("China")
-with(Dat,points(y=New,x=Day,col="blue",pch=1))
 with(Dat,points(y=Cured,x=Day,col="green",pch=1))
 with(Dat,points(y=Sick,x=Day,col="orange",pch=1))
     with(Dat,points(y=Death,x=Day,col="grey",pch=1))
 with(Dat,points(y=NewCured,x=Day,col="purple",pch=1))
+with(Dat,points(y=New,x=Day,col="blue",pch=1))
 axis(2, cex.axis = 0.6,las=1)
 
 #Plot the prediction line
@@ -146,7 +147,9 @@ with(newdat_l,points(x=Pred,y=pDailyCured,col="purple",pch=19))
 axis(1, at=newdat$Pred[seq(1, nrow(newdat), by = 2)] , labels=newdat$Date[seq(1, nrow(newdat), by = 2)],cex.axis = 0.5,las=2)
 
 #Legend
-legend("topleft", legend=c("Confirmed & suspected ","Daily increase","Total recover","Daily recover","Current active","Total death"), col=c("red", "blue","green","purple","orange","grey"), pch = 1, cex=0.6, bty='n')
+# legend("topleft", legend=c("Confirmed & suspected ","Daily increase","Total recover","Daily recover","Current active","Total death"), col=c("red", "blue","green","purple","orange","grey"), pch = 1, cex=0.6, bty='n')
+legend("topleft", legend=c("Confirmed & Suspected","Current Active (Confirmed & Suspected)","Daily Increase","Total Recover","Daily Recover","Total Death"), col=c("red", "orange","blue","green","purple","grey"), pch = 1, cex=0.6, bty='n')
+
 legend("topright", legend=c("Observed","Predicted"), col="black", pch = c(1,19), cex=0.6, bty='n')
 legend("top", legend=c("Model fit","Predicted"), col=c("black","black"), lty = 1:2, cex=0.6, bty='n')
 box()
