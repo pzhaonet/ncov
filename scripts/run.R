@@ -18,8 +18,8 @@ if(class(mytry) != "try-error"){
   saveRDS(ncov_tidy, 'static/data-download/ncov_tidy.RDS')
   saveRDS(ncov, 'static/data-download/ncov.RDS')
 } else{
-  ncov <- get_ncov()
-  ncov_tidy <- ncovr:::conv_ncov(ncov)
+  ncov <- readRDS('static/data-download/ncov.RDS')
+  ncov_tidy <- readRDS('static/data-download/ncov_tidy.RDS')
 }
 
 
