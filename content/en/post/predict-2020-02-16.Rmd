@@ -198,7 +198,7 @@ flextable::flextable(ncovChina[, !names(ncovChina) %in% c("Updated", "Remarks")]
 ncov <- get_ncov()
 ncov$area$date <- as.Date(ncovr:::conv_time(ncov$area$updateTime))
 ncov$area <- ncov$area[ncov$area$date < as.Date('2020-02-16'), ]
-df_predict <- t(sapply(unique(ncov$area$provinceShortName[ncov$area$country == '中国']), function(x) predict_date(province = x, ncov = ncov, ifplot = FALSE)))
+df_predict <- t(sapply(unique(ncov$area$provinceShortName[ncov$area$countryName == '中国']), function(x) predict_date(province = x, ncov = ncov, ifplot = FALSE)))
 
 
 df_predict <- as.data.frame(df_predict)
@@ -223,7 +223,7 @@ flextable::flextable(y)
 ```
 
 ```{r, results='asis'}
-Prov <- c("湖北", unique(ncov$area$provinceShortName[ncov$area$country == '中国' & !ncov$area$provinceShortName %in% c('湖北', '待明确地区')]))
+Prov <- c("湖北", unique(ncov$area$provinceShortName[ncov$area$countryName == '中国' & !ncov$area$provinceShortName %in% c('湖北', '待明确地区')]))
 
 for(x in Prov) {
   cat(unlist(dic_city[match(x, dic_city$Province), 'Province_EN']), ":  \n", sep = '')
