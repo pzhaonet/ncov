@@ -62,8 +62,13 @@ flextable::flextable(ncovChina[, !names(ncovChina) %in% c("更新时间", "备�
 
 </small>
 
-以下图片来自丁香园：
+```{r, results='asis'}
+if('dailyPics' %in% names(ncov)) cat('以下图片来自丁香园：')
+```
+
+
 
 ```{r, out.width="100%"}
-knitr::include_graphics(unlist(ncov$dailyPics))
+if('dailyPics' %in% names(ncov))
+  knitr::include_graphics(unlist(ncov$dailyPics))
 ```

@@ -66,10 +66,16 @@ flextable::flextable(ncovChina[, !names(ncovChina) %in% c("Updated", "Remarks")]
 
 </small>
 
-The following pictures are from dxy.cn.
+
+```{r, results='asis'}
+if('dailyPics' %in% names(ncov)) cat('The following pictures are from dxy.cn.')
+```
+
 
 ```{r, out.width="100%", results='asis'}
-figs <- unlist(ncov$dailyPics)
+
+if('dailyPics' %in% names(ncov)){
+  figs <- unlist(ncov$dailyPics)
 for(i in 1:length(figs)){
   cat('<img src="', figs[i], '"  width="100%" />  </br>', sep = '')
   if (i == 1)  cat('The daily increase in confirmed (red) and suspected (orange) cases.  </br></br>')
@@ -78,5 +84,6 @@ for(i in 1:length(figs)){
   if (i == 4)  cat('The total deaths (black) and cured (green) cases.  </br></br>')
   if (i == 5)  cat('The total deaths in Hubei (black) and non-Hubei (gray), and the total cured cases in Hubei (light green) and non-Hubei (dark green).  </br></br>')
   if (i == 6)  cat('The fatality rate across China (brown), Hubei (blue), and non-Hubei (gray).  </br></br>')
+}
 }
 ```
