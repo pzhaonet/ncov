@@ -22,7 +22,7 @@ Confirmed cases. The gray area in the figure indicates the lack of relevant data
 require(ncovr)
 require(leafletCN)
 ncov <- get_ncov()
-ncov$area <- ncov$area[ncov$area$country == '中国' & ncov$area$provinceName != '待明确地区' , ]
+ncov$area <- ncov$area[ncov$area$countryName == '中国' & ncov$area$provinceName != '待明确地区' , ]
 ncov$area$date <- as.Date(ncovr:::conv_time(ncov$area$updateTime))
 ncov$area <- ncov$area[rev(order(ncov$area$date)), ]
 ncov$area <- ncov$area[ncov$area$date <= as.Date("<<date>>"), ]
