@@ -5,6 +5,30 @@ slug: about
 
 This is the website for information of 2019-nCoV outbreak.
 
+
+## WeChat official account
+
+```{r, echo=FALSE, out.width="60%"}
+knitr::include_graphics('https://raw.githubusercontent.com/pzhaonet/ncov/master/static/wechat.jpg')
+```
+
+## Project Homepage
+
+If you have any suggestions for this project, please feel free to submit an issue to the project homepage:
+
+- <https://github.com/pzhaonet/ncov>
+
+## The Laiyindata Team
+
+- Dr. [ZHAO Peng](https://pzhaonet.github.io/xuer/): database construction, website building and maintainence, data visualization
+- Dr. ZOU Yi: prediction model development
+- Dr. WANG Xiaoxiang: Brand and activity planning, copywriting
+- Dr. HAN Lei: International interface
+
+## Contact
+
+- <openr(at)pzhao.net>
+
 ## On the media
 
 
@@ -31,30 +55,6 @@ This is the website for information of 2019-nCoV outbreak.
 - [西交利物浦大学：促进全球科研信息共享 西浦学者搭建“一站式”新冠病毒疫情网站](https://www.xjtlu.edu.cn/zh/news/2020/02/xinguanbingduxinxiwangzhan):
 
 > 健康与环境科学系主任Johannes Knops教授表示，“对于全球需要针对新冠疫情获取研究数据的科研工作者和新闻机构来说，该网站提供了非常有价值的资源。就我所知，这是目前世界上唯一一个关于新冠病毒疫情的开放获取数据网站。”
-
-## WeChat official account
-
-```{r, echo=FALSE, out.width="60%"}
-knitr::include_graphics('https://raw.githubusercontent.com/pzhaonet/ncov/master/static/wechat.jpg')
-```
-
-## Project Homepage
-
-If you have any suggestions for this project, please feel free to submit an issue to the project homepage:
-
-- <https://github.com/pzhaonet/ncov>
-
-## The Laiyindata Team
-
-- Dr. [ZHAO Peng](https://pzhaonet.github.io/xuer/): database construction, website building and maintainence, data visualization
-- Dr. ZOU Yi: prediction model development
-- Dr. WANG Xiaoxiang: Brand and activity planning, copywriting
-- Dr. HAN Lei: International interface
-
-## Contact
-
-- <openr(at)pzhao.net>
-
 
 ## Acknowledgments
 
