@@ -17,7 +17,7 @@
       <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/zh/city-map-2020-02-17/</guid>
-      <description>更新时间：2020-02-18 05:20:04 (北京时间)
+      <description>更新时间：2020-02-18 05:42:41 (北京时间)
  图中灰色区域表示缺少该区域城市的相关数据。
 点击这里全屏显示。
 2020-02-17 疫情数据表( 市 ) 排序
@@ -159,7 +159,7 @@
       <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/zh/province-map-2020-02-17/</guid>
-      <description>更新时间：2020-02-18 05:21:44 (北京时间)
+      <description>更新时间：2020-02-18 05:44:24 (北京时间)
  图中灰色区域表示缺少该区域城市的相关数据。
 点击这里全屏显示。
 2020-02-17 疫情数据表( 省 ) 排序
@@ -228,7 +228,7 @@
       <pubDate>Sun, 16 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/zh/city-map-2020-02-16/</guid>
-      <description>更新时间：2020-02-18 05:19:59 (北京时间)
+      <description>更新时间：2020-02-18 05:42:37 (北京时间)
  图中灰色区域表示缺少该区域城市的相关数据。
 点击这里全屏显示。
 2020-02-16 疫情数据表( 市 ) 排序
@@ -370,7 +370,7 @@
       <pubDate>Sun, 16 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/zh/province-map-2020-02-16/</guid>
-      <description>更新时间：2020-02-18 05:21:42 (北京时间)
+      <description>更新时间：2020-02-18 05:44:22 (北京时间)
  图中灰色区域表示缺少该区域城市的相关数据。
 点击这里全屏显示。
 2020-02-16 疫情数据表( 省 ) 排序
@@ -439,7 +439,7 @@
       <pubDate>Sat, 15 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/zh/city-map-2020-02-15/</guid>
-      <description>更新时间：2020-02-18 05:19:54 (北京时间)
+      <description>更新时间：2020-02-18 05:42:32 (北京时间)
  图中灰色区域表示缺少该区域城市的相关数据。
 点击这里全屏显示。
 2020-02-15 疫情数据表( 市 ) 排序
@@ -581,7 +581,7 @@
       <pubDate>Sat, 15 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/zh/province-map-2020-02-15/</guid>
-      <description>更新时间：2020-02-18 05:21:40 (北京时间)
+      <description>更新时间：2020-02-18 05:44:20 (北京时间)
  图中灰色区域表示缺少该区域城市的相关数据。
 点击这里全屏显示。
 2020-02-15 疫情数据表( 省 ) 排序
@@ -650,7 +650,7 @@
       <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/zh/city-map-2020-02-14/</guid>
-      <description>更新时间：2020-02-18 05:19:49 (北京时间)
+      <description>更新时间：2020-02-18 05:42:27 (北京时间)
  图中灰色区域表示缺少该区域城市的相关数据。
 点击这里全屏显示。
 2020-02-14 疫情数据表( 市 ) 排序
@@ -792,7 +792,7 @@
       <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/zh/province-map-2020-02-14/</guid>
-      <description>更新时间：2020-02-18 05:21:38 (北京时间)
+      <description>更新时间：2020-02-18 05:44:18 (北京时间)
  图中灰色区域表示缺少该区域城市的相关数据。
 点击这里全屏显示。
 2020-02-14 疫情数据表( 省 ) 排序
@@ -5064,9 +5064,11 @@ NA</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/about/</guid>
-      <description>感谢您的关注。这是我们搭建的一个新型冠状病毒（Covid-19）疫情信息的网站。
-媒体报道  China Daily: US stocks rally, but latest figures show virus surge   They created a website to provide scientists, journalists and other researchers open access to data from across China on novel coronavirus and daily statistical modeling. “We hope that through the integration of information, we can provide more people with data sharing and fight the epidemic together,” Zou said.
-  South China Morning Post: Coronavirus illness given official name Covid-19 as hopes rise that cases could peak soon   One open-access data model published on Monday by scientists at Xian Jiaotong-Liverpool University in eastern Jiangsu province also predicted a sharp decline in new confirmed infections next week before falling close to zero by February 23.</description>
+      <description>感谢您的关注。这是我们搭建的一个新型冠状病毒疾病（Covid-19）疫情信息的网站。
+微信公众号  项目主页 如果您对这个项目有任何建议，欢迎在项目主页上提交。项目主页是：
+ https://github.com/pzhaonet/ncov   项目成员 莱茵数据在线：
+ 赵鹏：数据库构建，网站搭建和维护，数据可视化 邹怡：预测模型研发 王小享：策划，文字设计 韩蕾：英文界面   联系邮箱  &amp;lt;openr(at)pzhao.net&amp;gt;。   媒体报道  XJTLU: Model indicates current COVID-19 infections in China already declining:   The new data uses the combination of confirmed and suspected cases for all dates in the model, recalculating the cumulative total for all dates starting at the disease outbreak.
+  西交利物浦大学：模型显示当前中国新冠病毒病例数量呈下降趋势:   新数据使用模型中所有日期的确诊病例和疑似病例的组合，重新计算从疫情爆发开始以来的累计总数。</description>
     </item>
     
     <item>

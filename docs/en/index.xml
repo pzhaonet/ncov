@@ -17,7 +17,7 @@
       <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-02-17/</guid>
-      <description>Updated: 2020-02-18 05:18:51 (UTC+08:00)
+      <description>Updated: 2020-02-18 05:41:27 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-17 Epidemic Data Sheet ( Cities ) Rank
@@ -58,7 +58,7 @@ Jingzhou
       <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-02-17/</guid>
-      <description>Updated: 2020-02-18 05:19:39 (UTC+08:00)
+      <description>Updated: 2020-02-18 05:42:17 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-17 Epidemic Data Sheet ( Provinces ) Rank
@@ -109,7 +109,7 @@ Zhejiang
       <pubDate>Sun, 16 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-02-16/</guid>
-      <description>Updated: 2020-02-18 05:18:46 (UTC+08:00)
+      <description>Updated: 2020-02-18 05:41:22 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-16 Epidemic Data Sheet ( Cities ) Rank
@@ -150,7 +150,7 @@ Jingzhou
       <pubDate>Sun, 16 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-02-16/</guid>
-      <description>Updated: 2020-02-18 05:19:37 (UTC+08:00)
+      <description>Updated: 2020-02-18 05:42:15 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-16 Epidemic Data Sheet ( Provinces ) Rank
@@ -201,7 +201,7 @@ Zhejiang
       <pubDate>Sat, 15 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-02-15/</guid>
-      <description>Updated: 2020-02-18 05:18:40 (UTC+08:00)
+      <description>Updated: 2020-02-18 05:41:16 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-15 Epidemic Data Sheet ( Cities ) Rank
@@ -242,7 +242,7 @@ Jingzhou
       <pubDate>Sat, 15 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-02-15/</guid>
-      <description>Updated: 2020-02-18 05:19:35 (UTC+08:00)
+      <description>Updated: 2020-02-18 05:42:13 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-15 Epidemic Data Sheet ( Provinces ) Rank
@@ -293,7 +293,7 @@ Zhejiang
       <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-02-14/</guid>
-      <description>Updated: 2020-02-18 05:18:35 (UTC+08:00)
+      <description>Updated: 2020-02-18 05:41:11 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-14 Epidemic Data Sheet ( Cities ) Rank
@@ -334,7 +334,7 @@ Jingzhou
       <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-02-14/</guid>
-      <description>Updated: 2020-02-18 05:19:33 (UTC+08:00)
+      <description>Updated: 2020-02-18 05:42:10 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-14 Epidemic Data Sheet ( Provinces ) Rank
@@ -2585,7 +2585,8 @@ Shanghai
       
       <guid>https://ncov2020.org/en/about/</guid>
       <description>This is the website for information of 2019-nCoV outbreak.
-On the media  China Daily: US stocks rally, but latest figures show virus surge   They created a website to provide scientists, journalists and other researchers open access to data from across China on novel coronavirus and daily statistical modeling. “We hope that through the integration of information, we can provide more people with data sharing and fight the epidemic together,” Zou said.</description>
+WeChat official account  Project Homepage If you have any suggestions for this project, please feel free to submit an issue to the project homepage:
+ https://github.com/pzhaonet/ncov   The Laiyindata Team  Dr. ZHAO Peng: database construction, website building and maintainence, data visualization Dr. ZOU Yi: prediction model development Dr. WANG Xiaoxiang: Brand and activity planning, copywriting Dr. HAN Lei: International interface   Contact  &amp;lt;openr(at)pzhao.</description>
     </item>
     
     <item>
