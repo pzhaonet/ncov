@@ -7,6 +7,15 @@ This is the website for information of 2019-nCoV outbreak.
 
 ## On the media
 
+
+- [XJTLU: Model indicates current COVID-19 infections in China already declining](https://www.xjtlu.edu.cn/en/news/2020/02/model-indicates-current-covid-19-infections-in-china-already-declining):
+
+> The new data uses the combination of confirmed and suspected cases for all dates in the model, recalculating the cumulative total for all dates starting at the disease outbreak.
+
+- [西交利物浦大学：模型显示当前中国新冠病毒病例数量呈下降趋势](https://www.xjtlu.edu.cn/zh/news/2020/02/yiqingchengxiajiangqushi):
+
+> 新数据使用模型中所有日期的确诊病例和疑似病例的组合，重新计算从疫情爆发开始以来的累计总数。
+
 - [China Daily: US stocks rally, but latest figures show virus surge](https://www.chinadaily.com.cn/a/202002/13/WS5e457070a310128217277670.html)
 
 > They created a website to provide scientists, journalists and other researchers open access to data from across China on novel coronavirus and daily statistical modeling. "We hope that through the integration of information, we can provide more people with data sharing and fight the epidemic together," Zou said. 
