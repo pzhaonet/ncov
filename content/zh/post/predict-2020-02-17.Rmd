@@ -40,9 +40,13 @@ predict_date <- function(province, ncov = c(ncov,ncovChina), ifplot = TRUE, addt
         Area$Date <- format(Area$updateTime,"%m-%d")
         Region_all <- c("湖北以外",unique(Area$provinceShortName))
         Region_name <- Region_all[match(province, Region_all)]#Match regional name
-        if (Region_name=="湖北以外"){Region <- subset(Area,provinceShortName!="湖北")}else
-        {Region <- subset(Area,provinceShortName==Region_name)}
-        RegionDat <- aggregate(confirmedCount~Date,data=Region,max)
+          if(Region_name=="湖北以外"){
+            Region_sub <- subset(Area,provinceShortName!="湖北"&countryEnglishName=="China")
+            RegionDat_max <- aggregate(confirmedCount~Date+provinceShortName,data=Region_sub,max) 
+            RegionDat <- aggregate(confirmedCount~Date,data=RegionDat_max,sum)
+            }else
+        {Region <- subset(Area,provinceShortName==Region_name)
+        RegionDat <- aggregate(confirmedCount~Date,data=Region,max)}
         RegionDat$Date <- as.Date(RegionDat$Date,"%m-%d")
         RegionDat <- RegionDat[RegionDat$Date<Sys.Date(),]
     }
