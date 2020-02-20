@@ -3,6 +3,51 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://ncov2020.org/zh/predict-2020-02-20/</loc>
+    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ncov2020.org/en/en/predict-2020-02-20/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://ncov2020.org/zh/predict-2020-02-20/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://ncov2020.org/</loc>
+    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ncov2020.org/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://ncov2020.org/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://ncov2020.org/post/</loc>
+    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ncov2020.org/en/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://ncov2020.org/post/"
+                />
+  </url>
+  
+  <url>
     <loc>https://ncov2020.org/zh/city-map-2020-02-19/</loc>
     <lastmod>2020-02-19T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -44,36 +89,6 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://ncov2020.org/zh/province-map-2020-02-19/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://ncov2020.org/</loc>
-    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ncov2020.org/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://ncov2020.org/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://ncov2020.org/post/</loc>
-    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ncov2020.org/en/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://ncov2020.org/post/"
                 />
   </url>
   
