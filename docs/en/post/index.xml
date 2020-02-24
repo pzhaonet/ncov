@@ -6,10 +6,102 @@
     <description>Recent content in Posts on Covid-19: Epidemic Reports</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 23 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 24 Feb 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ncov2020.org/en/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2020-02-24: Epidemic Map for cities (Covid-19)</title>
+      <link>https://ncov2020.org/en/en/city-map-2020-02-24/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ncov2020.org/en/en/city-map-2020-02-24/</guid>
+      <description>Updated: 2020-02-24 08:11:56 (UTC+08:00)
+ Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
+Click here for full screen display.
+2020-02-24 Epidemic Data Sheet ( Cities ) Rank
+Area
+Area_cn
+Confirmed
+Cured
+Dead
+1
+Wuhan
+武汉
+46201
+8189
+1856
+2
+Xiaogan
+孝感
+3443
+1078
+102
+3
+Huanggang
+黄冈
+2904
+1540
+98
+4
+Jingzhou
+荆州
+1574
+681
+41</description>
+    </item>
+    
+    <item>
+      <title>2020-02-24: Epidemic Map for provinces (Covid-19)</title>
+      <link>https://ncov2020.org/en/en/province-map-2020-02-24/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ncov2020.org/en/en/province-map-2020-02-24/</guid>
+      <description>Updated: 2020-02-24 08:14:01 (UTC+08:00)
+ Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
+Click here for full screen display.
+2020-02-24 Epidemic Data Sheet ( Provinces ) Rank
+Area
+Area_cn
+Confirmed
+Cured
+Dead
+1
+Hubei
+湖北
+64084
+15303
+2346
+2
+Guangdong
+广东
+1342
+740
+6
+3
+Henan
+河南
+1271
+861
+19
+4
+Zhejiang
+浙江
+1205
+729
+1</description>
+    </item>
+    
+    <item>
+      <title>2020-02-24: Epidemic Mitigation Time Forecast (Covid-19)</title>
+      <link>https://ncov2020.org/en/en/predict-2020-02-24/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ncov2020.org/en/en/predict-2020-02-24/</guid>
+      <description>Time trends and model predictions of confirmed cases across the country Due to the adding of clinical diagnosis to confirm cases, since February 13, our model will use the “confirmed + suspected” cases instead of the original “confirmed” cases as our variables. Data from February 09, 10 and 11 were removed from the model because cases were underreported and then included all at once on February 12.
+ National Epidemic Time Series</description>
+    </item>
     
     <item>
       <title>2020-02-23: Epidemic Map for cities (Covid-19)</title>
@@ -17,7 +109,7 @@
       <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-02-23/</guid>
-      <description>Updated: 2020-02-24 07:51:38 (UTC+08:00)
+      <description>Updated: 2020-02-24 08:11:51 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-23 Epidemic Data Sheet ( Cities ) Rank
@@ -58,7 +150,7 @@ Jingzhou
       <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-02-23/</guid>
-      <description>Updated: 2020-02-24 07:53:30 (UTC+08:00)
+      <description>Updated: 2020-02-24 08:13:59 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-23 Epidemic Data Sheet ( Provinces ) Rank
@@ -109,7 +201,7 @@ Zhejiang
       <pubDate>Sat, 22 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-02-22/</guid>
-      <description>Updated: 2020-02-24 07:51:33 (UTC+08:00)
+      <description>Updated: 2020-02-24 08:11:45 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-22 Epidemic Data Sheet ( Cities ) Rank
@@ -150,7 +242,7 @@ Jingzhou
       <pubDate>Sat, 22 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-02-22/</guid>
-      <description>Updated: 2020-02-24 07:53:28 (UTC+08:00)
+      <description>Updated: 2020-02-24 08:13:57 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-22 Epidemic Data Sheet ( Provinces ) Rank
@@ -201,7 +293,7 @@ Zhejiang
       <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-02-21/</guid>
-      <description>Updated: 2020-02-24 07:51:28 (UTC+08:00)
+      <description>Updated: 2020-02-24 08:11:40 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-21 Epidemic Data Sheet ( Cities ) Rank
@@ -242,7 +334,7 @@ Jingzhou
       <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-02-21/</guid>
-      <description>Updated: 2020-02-24 07:53:26 (UTC+08:00)
+      <description>Updated: 2020-02-24 08:13:55 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-21 Epidemic Data Sheet ( Provinces ) Rank
@@ -293,7 +385,7 @@ Zhejiang
       <pubDate>Thu, 20 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-02-20/</guid>
-      <description>Updated: 2020-02-24 07:51:23 (UTC+08:00)
+      <description>Updated: 2020-02-24 08:11:35 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-20 Epidemic Data Sheet ( Cities ) Rank
@@ -334,7 +426,7 @@ Jingzhou
       <pubDate>Thu, 20 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-02-20/</guid>
-      <description>Updated: 2020-02-24 07:53:24 (UTC+08:00)
+      <description>Updated: 2020-02-24 08:13:53 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-20 Epidemic Data Sheet ( Provinces ) Rank
@@ -385,7 +477,7 @@ Zhejiang
       <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-02-19/</guid>
-      <description>Updated: 2020-02-24 07:51:17 (UTC+08:00)
+      <description>Updated: 2020-02-24 08:11:29 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-19 Epidemic Data Sheet ( Cities ) Rank
@@ -426,7 +518,7 @@ Jingzhou
       <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-02-19/</guid>
-      <description>Updated: 2020-02-24 07:53:22 (UTC+08:00)
+      <description>Updated: 2020-02-24 08:13:51 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-19 Epidemic Data Sheet ( Provinces ) Rank
@@ -477,7 +569,7 @@ Zhejiang
       <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-02-18/</guid>
-      <description>Updated: 2020-02-24 07:51:12 (UTC+08:00)
+      <description>Updated: 2020-02-24 08:11:24 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-18 Epidemic Data Sheet ( Cities ) Rank
@@ -518,7 +610,7 @@ Jingzhou
       <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-02-18/</guid>
-      <description>Updated: 2020-02-24 07:53:20 (UTC+08:00)
+      <description>Updated: 2020-02-24 08:13:49 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-18 Epidemic Data Sheet ( Provinces ) Rank
@@ -569,7 +661,7 @@ Zhejiang
       <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-02-17/</guid>
-      <description>Updated: 2020-02-24 07:51:07 (UTC+08:00)
+      <description>Updated: 2020-02-24 08:11:18 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-17 Epidemic Data Sheet ( Cities ) Rank
@@ -610,7 +702,7 @@ Jingzhou
       <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-02-17/</guid>
-      <description>Updated: 2020-02-24 07:53:18 (UTC+08:00)
+      <description>Updated: 2020-02-24 08:13:47 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-17 Epidemic Data Sheet ( Provinces ) Rank
@@ -661,7 +753,7 @@ Zhejiang
       <pubDate>Sun, 16 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-02-16/</guid>
-      <description>Updated: 2020-02-24 07:51:02 (UTC+08:00)
+      <description>Updated: 2020-02-24 08:11:13 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-16 Epidemic Data Sheet ( Cities ) Rank
@@ -702,7 +794,7 @@ Jingzhou
       <pubDate>Sun, 16 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-02-16/</guid>
-      <description>Updated: 2020-02-24 07:53:16 (UTC+08:00)
+      <description>Updated: 2020-02-24 08:13:45 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-16 Epidemic Data Sheet ( Provinces ) Rank
@@ -753,7 +845,7 @@ Zhejiang
       <pubDate>Sat, 15 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-02-15/</guid>
-      <description>Updated: 2020-02-24 07:50:57 (UTC+08:00)
+      <description>Updated: 2020-02-24 08:11:08 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-15 Epidemic Data Sheet ( Cities ) Rank
@@ -794,7 +886,7 @@ Jingzhou
       <pubDate>Sat, 15 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-02-15/</guid>
-      <description>Updated: 2020-02-24 07:53:14 (UTC+08:00)
+      <description>Updated: 2020-02-24 08:13:43 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-15 Epidemic Data Sheet ( Provinces ) Rank
@@ -845,7 +937,7 @@ Zhejiang
       <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/city-map-2020-02-14/</guid>
-      <description>Updated: 2020-02-24 07:50:51 (UTC+08:00)
+      <description>Updated: 2020-02-24 08:11:02 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-14 Epidemic Data Sheet ( Cities ) Rank
@@ -886,7 +978,7 @@ Jingzhou
       <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/en/en/province-map-2020-02-14/</guid>
-      <description>Updated: 2020-02-24 07:53:12 (UTC+08:00)
+      <description>Updated: 2020-02-24 08:13:41 (UTC+08:00)
  Confirmed cases. The gray area in the figure indicates the lack of relevant data of the cities in this area.
 Click here for full screen display.
 2020-02-14 Epidemic Data Sheet ( Provinces ) Rank
