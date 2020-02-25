@@ -33,6 +33,9 @@ knitr::include_graphics('https://raw.githubusercontent.com/pzhaonet/ncov/master/
 
 ## 媒体报道
 
+- [扬子晚报：促进全球科研信息共享 西浦学者搭建“一站式”新冠肺炎疫情网站](https://www.yangtse.com/zncontent/270655.html):
+
+> 西交利物浦大学健康与环境科学系的研究人员用短短数天时间搭建起一个“一站式”的新冠肺炎疫情信息网站，该网站从权威渠道实时抓取信息，并为全球访客提供可便捷下载的疫情数据包。
 
 - [XJTLU: Model indicates current COVID-19 infections in China already declining](https://www.xjtlu.edu.cn/en/news/2020/02/model-indicates-current-covid-19-infections-in-china-already-declining):
 
