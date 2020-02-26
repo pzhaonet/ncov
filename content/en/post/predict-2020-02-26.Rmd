@@ -26,7 +26,7 @@ if(as.Date('2020-02-26') < as.Date('2020-02-13')) {
 
 #nCov prediction, new model
 #Yi Zou
-#Last modified: "2020-02-13 17:37:03 CST"
+#Last modified: ""2020-02-26 14:33:59 CST""
 PredDate <- format(as.Date('2020-02-26') ,"%m-%d") #*****Set the date you want to predict
 
 #Libarary and data
@@ -92,16 +92,38 @@ newdat$Judge <- ifelse(newdat$Date ==PredDate,"Tmr",ifelse(newdat$Date < PredDat
 
 newdat$pYmod <- predict(md,  list(Day = Pred ))
 newdat$pDaily <- with(newdat,pYmod -c(0,pYmod [-nrow(newdat)]))
-newdat$pDailyCured <-  predict(mdNc,  list(Day = Pred ))
-newdat$pTotalCured <-  cumsum(newdat$pDailyCured)
-#    newdat$pRateD <-  predict(mdDc,  list(Day = Pred )) #The rate, slightly decrease
-pRateD <- Mrd#Option 2 for daily death rate, fixed 
-newdat$pSickMD <- with(newdat,(pYmod -  pTotalCured)/(1+Pred*pRateD))#Sick and Total Death
-newdat$pDailyDeath <- with(newdat,pSickMD*pRateD)
-newdat$pTotalDeath <- cumsum(newdat$pDailyDeath)
-newdat$pSick <-  with(newdat,pYmod -  pTotalCured-pTotalDeath)
-newdat <- droplevels(subset(newdat,pSick>0))
-# with(newdat,pDailyDeath/pSick)
+
+
+#-----------Another way to calculate current sick 2020-02-26
+     #Fit the model for Daily death rate
+     mdDc <-gam(RateD~s(Day),data= Dat[-(1:5),]) #Perfect model fitting
+     
+     #fit the model for deaily cured rate
+     fitdc <- nls(RateC~SSlogis(Day, Asym, xmid, scal),data= Dat[-c(1:8,24:26),] )
+     ac <-  summary(fitdc)$coefficients[1,1]
+     bc <-  summary(fitdc)$coefficients[2,1]
+     cc <-  summary(fitdc)$coefficients[3,1]
+     
+     Fun <- (1+Mrd+ac/(1+exp((bc-Pred)/cc)))#Fixed daily death rate
+     #Fun <- 1+predict(mdDc, list(Day = Pred))+predict(fitdc,list(Day = Pred))#changing death rate
+     
+     pSick <- vector()
+     pSick[1] <-  newdat$ pYmod[1] / Fun[1]
+     for (i in 2:length(newdat$pYmod))
+    {
+    pSick[i] <- (newdat$pDaily[i]+pSick[i-1])/Fun[i]
+     }
+     newdat$pSick <- pSick
+     newdat$pDailyCured <- newdat$pSick*ac/(1+exp((bc-Pred)/cc))
+     newdat$pTotalCured <-  cumsum(newdat$pDailyCured)
+     #newdat$pDailyDeath <- newdat$pSick*predict(mdDc, list(Day = Pred)) #For changing daily death rate
+     newdat$pDailyDeath <- newdat$pSick*Mrd #Fixed daily death rate
+     newdat$pTotalDeath <- cumsum(newdat$pDailyDeath)
+     newdat$pRateC <- with (newdat, pDailyCured/pSick)
+     newdat$pRateD <- with (newdat, pDailyDeath/pSick)
+     newdat$pRateTC <- with (newdat, pTotalCured/pYmod)
+     newdat$pRateTD <- with (newdat, pTotalDeath/pYmod)
+#------------------------------------------------------------
 
 #Plot the data
 par(mgp = c(2.5, 0.6, 0))
