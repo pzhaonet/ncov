@@ -4,7 +4,7 @@ file.remove(list.files('content/zh/post/', pattern = '.*.Rmd', full.names = TRUE
 # Functions ----
 
 ## Packages ----
-install.packages("static/rpkg/ncovr_0.0.8.tar.gz", repos = NULL, type = "source")
+install.packages("static/rpkg/ncovr_0.0.9.tar.gz", repos = NULL, type = "source")
 # remotes::install_github('pzhaonet/ncovr')
 require(ncovr)
 require(leafletCN)
