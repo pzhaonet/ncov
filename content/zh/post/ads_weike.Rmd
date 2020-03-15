@@ -6,5 +6,5 @@ categories: market
 ---
 
 ```{r, fig.align='center', out.width="100%"}
-knitr::include_graphics("/ads/weike1.jpg")
+knitr::include_graphics("https://github.com/pzhaonet/ncov/raw/master/static/ads/weike1.jpg")
 ```

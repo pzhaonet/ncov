@@ -16,7 +16,7 @@ slug: market
 有意在本网站添加产品信息的朋友，可扫微信二维码添加：
 
 ```{r, echo=FALSE, fig.align='center'}
-knitr::include_graphics("/ads/oe_wechat.png")
+knitr::include_graphics("https://github.com/pzhaonet/ncov/raw/master/static/ads/oe_wechat.png")
 ```
 
 
