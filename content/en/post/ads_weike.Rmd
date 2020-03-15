@@ -15,7 +15,7 @@ Contact information:
 
 ```{r, fig.align='center', echo=FALSE,eval=TRUE, out.width="60%"}
 knitr::include_graphics("https://github.com/pzhaonet/ncov/raw/master/static/shared/weike2.png")
-knitr::include_graphics("https://github.com/pzhaonet/ncov/raw/master/static/shared/weike3.jpg")
+knitr::include_graphics("https://github.com/pzhaonet/ncov/raw/master/static/shared/weike3.png")
 ```
 
 These instruments can be used in hospitals, disease control centers, pharmaceutical factories, schools, shopping malls and any other public place.
