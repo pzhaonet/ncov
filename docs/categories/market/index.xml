@@ -17,11 +17,10 @@
       <pubDate>Sat, 14 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/zh/yueqian/</guid>
-      <description>  联系电话：(+86) 020-61038926
+      <description>联系电话：(+86) 020-61038926
  网站：http://open.gec-lab.com
  微信公众号：
-  knitr::include_graphics(&amp;quot;https://github.com/pzhaonet/ncov/raw/master/static/ads/yueqian_wechat.png&amp;quot;) 产品适合在人员众多的公共场所进行体温快速筛查，一旦发现被检查者的温度异常，电脑端的软件会自动报警。详情可参考下图：
-knitr::include_graphics(&amp;quot;https://github.com/pzhaonet/ncov/raw/master/static/ads/yueqian1.png&amp;quot;) knitr::include_graphics(&amp;quot;https://github.com/pzhaonet/ncov/raw/master/static/ads/yueqian2.png&amp;quot;) </description>
+  产品适合在人员众多的公共场所进行体温快速筛查，一旦发现被检查者的温度异常，电脑端的软件会自动报警。详情可参考下图：</description>
     </item>
     
     <item>
@@ -30,7 +29,7 @@ knitr::include_graphics(&amp;quot;https://github.com/pzhaonet/ncov/raw/master/st
       <pubDate>Sat, 14 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ncov2020.org/zh/weike/</guid>
-      <description> knitr::include_graphics(&amp;quot;https://github.com/pzhaonet/ncov/raw/master/static/ads/weike1.jpg&amp;quot;) </description>
+      <description> </description>
     </item>
     
   </channel>
