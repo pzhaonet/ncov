@@ -2,7 +2,7 @@
 title: "Yueqian Technology Co., Ltd：Infrared temperature measurement and screening terminal"
 date: 2020-03-14
 slug: yueqian
-categories: market
+tags: shared
 ---
 
 
@@ -12,13 +12,13 @@ categories: market
 
 - Wechat QR code：
 
-```{r, fig.align='center', echo=FALSE,eval=TRUE}
-knitr::include_graphics("https://github.com/pzhaonet/ncov/raw/master/static/ads/yueqian_wechat.png")
+```{r, fig.align='center', echo=FALSE,eval=TRUE,out.width="60%"}
+knitr::include_graphics("https://github.com/pzhaonet/ncov/raw/master/static/shared/yueqian_wechat.png")
 ```
 
 The product is suitable for rapid body temperature screening in public places with a large number of personnel. Once an abnormal temperature is found in the inspected person, the software on the computer side will automatically alarm. For details, refer to the following figure (only in Chinese) or contact the producer directly.
 
 ```{r, fig.align='center', out.width="100%", echo=FALSE,eval=TRUE}
-knitr::include_graphics("https://github.com/pzhaonet/ncov/raw/master/static/ads/yueqian1.png")
-knitr::include_graphics("https://github.com/pzhaonet/ncov/raw/master/static/ads/yueqian2.png")
+knitr::include_graphics("https://github.com/pzhaonet/ncov/raw/master/static/shared/yueqian1.png")
+knitr::include_graphics("https://github.com/pzhaonet/ncov/raw/master/static/shared/yueqian2.png")
 ```

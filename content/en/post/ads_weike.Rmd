@@ -2,7 +2,7 @@
 title: "Weike Medicine Inc.: Hydrogen peroxide sterilizer"
 date: 2020-03-14
 slug: weike
-categories: market
+tags: shared
 ---
 
 Contact information:
@@ -13,9 +13,9 @@ Contact information:
 
 - Website: <www.zjweike.com>
 
-```{r, fig.align='center', echo=FALSE,eval=TRUE}
-knitr::include_graphics("https://github.com/pzhaonet/ncov/raw/master/static/ads/weike2.jpg")
-knitr::include_graphics("https://github.com/pzhaonet/ncov/raw/master/static/ads/weike3.jpg")
+```{r, fig.align='center', echo=FALSE,eval=TRUE, out.width="60%"}
+knitr::include_graphics("https://github.com/pzhaonet/ncov/raw/master/static/shared/weike2.png")
+knitr::include_graphics("https://github.com/pzhaonet/ncov/raw/master/static/shared/weike3.jpg")
 ```
 
 These instruments can be used in hospitals, disease control centers, pharmaceutical factories, schools, shopping malls and any other public place.

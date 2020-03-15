@@ -2,7 +2,7 @@
 title: "广东粤嵌科技：红外测温筛查终端"
 date: 2020-03-14
 slug: yueqian
-categories: market
+tags: shared
 ---
 
 
@@ -12,13 +12,13 @@ categories: market
 
 - 微信公众号：
 
-```{r, fig.align='center', echo=FALSE,eval=TRUE}
-knitr::include_graphics("https://github.com/pzhaonet/ncov/raw/master/static/ads/yueqian_wechat.png")
+```{r, fig.align='center', echo=FALSE,eval=TRUE, out.width="60%"}
+knitr::include_graphics("https://github.com/pzhaonet/ncov/raw/master/static/shared/yueqian_wechat.png")
 ```
 
 产品适合在人员众多的公共场所进行体温快速筛查，一旦发现被检查者的温度异常，电脑端的软件会自动报警。详情可参考下图：
 
 ```{r, fig.align='center', out.width="100%", echo=FALSE,eval=TRUE}
-knitr::include_graphics("https://github.com/pzhaonet/ncov/raw/master/static/ads/yueqian1.png")
-knitr::include_graphics("https://github.com/pzhaonet/ncov/raw/master/static/ads/yueqian2.png")
+knitr::include_graphics("https://github.com/pzhaonet/ncov/raw/master/static/shared/yueqian1.png")
+knitr::include_graphics("https://github.com/pzhaonet/ncov/raw/master/static/shared/yueqian2.png")
 ```

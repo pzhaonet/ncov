@@ -33,7 +33,7 @@ DefaultContentLanguage = "zh"
     weight = 60
   [[languages.en.menu.main]]
     name = "Market"
-    url = "/en/market/"
+    url = "/en/tags/shared/"
     weight = 65
   [[languages.en.menu.main]]
     name = "About"
@@ -65,8 +65,8 @@ DefaultContentLanguage = "zh"
     url = "/data/"
     weight = 60
   [[languages.zh.menu.main]]
-    name = "物资交换"
-    url = "/market/"
+    name = "防疫物资"
+    url = "/tags/shared/"
     weight = 65
   [[languages.zh.menu.main]]
     name = "关于本站"

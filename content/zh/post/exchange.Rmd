@@ -1,6 +1,9 @@
 ---
 title: 物资信息
-slug: market
+date: 2020-03-15
+slug: exchange
+tags: shared
+weight: 1
 ---
 
 一方有难，八方资源。
@@ -15,9 +18,9 @@ slug: market
 
 有意在本网站添加产品信息的朋友，可扫微信二维码添加：
 
-```{r, echo=FALSE, fig.align='center', eval=TRUE}
-knitr::include_graphics("https://github.com/pzhaonet/ncov/raw/master/static/ads/oe_wechat.png")
+```{r, echo=FALSE, fig.align='center', eval=TRUE, out.width="60%"}
+knitr::include_graphics("https://github.com/pzhaonet/ncov/raw/master/static/shared/oe_wechat.png")
 ```
 
 
-或者发送信息至邮箱：<original_entropy@163.com>
+或者发送信息至邮箱：<original_entropy@163.com>.
