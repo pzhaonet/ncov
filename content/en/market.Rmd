@@ -16,7 +16,7 @@ We are not Alibaba. We are the media for supply and demand of epidemic preventio
 Friends interested in adding product information to this website can scan the WeChat QR code to add:
 
 ```{r, echo=FALSE, fig.align='center'}
-knitr::include_graphics("static/ads/oe_wechat.png")
+knitr::include_graphics("ads/oe_wechat.png")
 ```
 
 

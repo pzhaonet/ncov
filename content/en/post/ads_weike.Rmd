@@ -14,8 +14,8 @@ Contact information:
 - Website: <www.zjweike.com>
 
 ```{r, fig.align='center'}
-knitr::include_graphics("static/ads/weike2.jpg")
-knitr::include_graphics("static/ads/weike3.jpg")
+knitr::include_graphics("ads/weike2.jpg")
+knitr::include_graphics("ads/weike3.jpg")
 ```
 
 These instruments can be used in hospitals, disease control centers, pharmaceutical factories, schools, shopping malls and any other public place.
