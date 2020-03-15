@@ -1,0 +1,23 @@
+---
+title: Market
+slug: market
+---
+
+Difficulties on one side, resources from all sides.
+
+At present, the epidemic of COVID-19 is outbreaking globally. Epidemic prevention materials in some places are seriously lacking, and they need to be imported from other parts of the world.
+
+At the same time, some medical material manufacturers have not found a corresponding market.
+
+Our website launches this section of "Epidemic Materials Information" to facilitate the smooth flow of information for buyers and sellers.
+
+We are not Alibaba. We are the media for supply and demand of epidemic prevention materials.
+
+Friends interested in adding product information to this website can scan the WeChat QR code to add:
+
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics("static/ads/oe_wechat.png")
+```
+
+
+Or send a message to the mailbox: <original_entropy@163.com>.

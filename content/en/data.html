@@ -1,0 +1,57 @@
+---
+title: Covid-19 Epidemic Data Download
+slug: data
+---
+
+
+
+<p>We collect several ways to get the 2019-nCoV epidemic data.</p>
+<div id="use-the-r-ncovr-package" class="section level2">
+<h2>Use the R ncovr package</h2>
+<p>R users can get the epidemic data via the ncovr package we develop, which basically includes the datasets described later.</p>
+<pre class="r"><code># Install the remotes package
+install.packages(&#39;remotes&#39;) 
+# Install the ncovr package
+remotes::install_github(&#39;pzhaonet/ncovr&#39;) 
+# windows users have to set the Chinese environment
+Sys.setlocale(&#39;LC_CTYPE&#39;, &#39;Chinese&#39;) 
+# Load the ncovr package
+require(&quot;ncovr&quot;) 
+# read RDS data (default；recommended)
+get_ncov() 
+# read .csv files (recommended)
+get_ncov(method = &#39;csv&#39;) 
+# read from api
+get_ncov(method = &#39;api&#39;) </code></pre>
+<p>Please see the help documents for more details.</p>
+</div>
+<div id="download-directly" class="section level2">
+<h2>Download directly</h2>
+<p>Non-R users can download the .csv files directly from the repository <a href="https://github.com/BlankerL/DXY-2019-nCoV-Data">BlankerL/DXY-2019-nCoV-Data</a>, and then open it with tools such as Excel.</p>
+<ul>
+<li><a href="https://raw.githubusercontent.com/BlankerL/DXY-2019-nCoV-Data/master/csv/DXYArea.csv">Epidemic data for all areas</a></li>
+<li><a href="https://raw.githubusercontent.com/BlankerL/DXY-2019-nCoV-Data/master/csv/DXYOverall.csv">Overall</a></li>
+<li><a href="https://raw.githubusercontent.com/BlankerL/DXY-2019-nCoV-Data/master/csv/DXYNews.csv">News</a></li>
+<li><a href="https://raw.githubusercontent.com/BlankerL/DXY-2019-nCoV-Data/master/csv/DXYRumors.csv">Rumors</a></li>
+</ul>
+<p>This repository provides .json files as well.</p>
+<p>An Excel spreadsheet of daily national data can be <a href="https://github.com/JackieZheng/2019-nCoV/raw/master/Excel/data.xlsx">downloaded</a> from the <a href="https://github.com/JackieZheng/2019-nCoV/">JackieZheng/2019-nCoV</a>. This project also provides other data format with the same content.</p>
+<p>It would be appreciated if you let us know other data sources, which will be listed here.</p>
+</div>
+<div id="use-the-r-ncov2019-package" class="section level2">
+<h2>Use the R nCov2019 package</h2>
+<p>nCov2019 is another R package for downloading data.</p>
+<pre class="r"><code>remotes::install_github(&quot;GuangchuangYu/nCov2019&quot;)
+library(nCov2019)
+x &lt;- get_nCov2019()
+x
+time(x)
+x[]</code></pre>
+<p>More details can be found on its <a href="https://github.com/GuangchuangYu/nCov2019">GitHub repo</a>.</p>
+</div>
+<div id="introduction-to-r" class="section level2">
+<h2>Introduction to R</h2>
+<p>R is a free and open-source software package. We use R for data collection, cleaning, and visualization, as well as developing models, building this website, and automatically updating.</p>
+<p>For R beginners, we published a book <em>Learning R: from the very beginning</em> (Peng Zhao and Yi Li. Research Press,2018. In Chinese). Click the following image and visit the homepage and read sample chapters for free.</p>
+<p><a href="https://pzhaonet.github.io/xuer/"><img src="https://openr.pzhao.org/img/xuer_weidian.png"  width="100%" /></a></p>
+</div>

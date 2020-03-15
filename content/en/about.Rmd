@@ -1,0 +1,68 @@
+---
+title: About
+slug: about
+---
+
+This is the website for information of 2019-nCoV outbreak.
+
+
+## WeChat official account
+
+```{r, echo=FALSE, out.width="60%"}
+knitr::include_graphics('https://raw.githubusercontent.com/pzhaonet/ncov/master/static/wechat.jpg')
+```
+
+## Project Homepage
+
+If you have any suggestions for this project, please feel free to submit an issue to the project homepage:
+
+- <https://github.com/pzhaonet/ncov>
+
+## The Laiyindata Team
+
+- Dr. [ZHAO Peng](https://pzhaonet.github.io/xuer/): database construction, website building and maintainence, data visualization
+- Dr. ZOU Yi: prediction model development
+- Dr. WANG Xiaoxiang: Brand and activity planning, copywriting
+- Dr. HAN Lei: International interface
+
+## Contact
+
+- <openr(at)pzhao.net>
+
+## On the media
+
+- [扬子晚报：促进全球科研信息共享 西浦学者搭建“一站式”新冠肺炎疫情网站](https://www.yangtse.com/zncontent/270655.html):
+
+> 西交利物浦大学健康与环境科学系的研究人员用短短数天时间搭建起一个“一站式”的新冠肺炎疫情信息网站，该网站从权威渠道实时抓取信息，并为全球访客提供可便捷下载的疫情数据包。
+
+- [XJTLU: Model indicates current COVID-19 infections in China already declining](https://www.xjtlu.edu.cn/en/news/2020/02/model-indicates-current-covid-19-infections-in-china-already-declining):
+
+> The new data uses the combination of confirmed and suspected cases for all dates in the model, recalculating the cumulative total for all dates starting at the disease outbreak.
+
+- [西交利物浦大学：模型显示当前中国新冠病毒病例数量呈下降趋势](https://www.xjtlu.edu.cn/zh/news/2020/02/yiqingchengxiajiangqushi):
+
+> 新数据使用模型中所有日期的确诊病例和疑似病例的组合，重新计算从疫情爆发开始以来的累计总数。
+
+- [China Daily: US stocks rally, but latest figures show virus surge](https://www.chinadaily.com.cn/a/202002/13/WS5e457070a310128217277670.html)
+
+> They created a website to provide scientists, journalists and other researchers open access to data from across China on novel coronavirus and daily statistical modeling. "We hope that through the integration of information, we can provide more people with data sharing and fight the epidemic together," Zou said. 
+
+- [South China Morning Post: Coronavirus illness given official name Covid-19 as hopes rise that cases could peak soon](https://www.scmp.com/news/china/society/article/3050090/deadly-coronavirus-renamed-covid-19-hopes-rise-disease-will-peak)
+
+> One open-access data model published on Monday by scientists at Xian Jiaotong-Liverpool University in eastern Jiangsu province also predicted a sharp decline in new confirmed infections next week before falling close to zero by February 23. However, the researchers warned there were many factors that could influence the model.
+
+- [XJTLU: Model predicts date for near-end of new, confirmed 2019-nCoV cases in China](https://www.xjtlu.edu.cn/en/news/2020/02/model-predicts-date-for-near-end-of-new-confirmed-2019-ncov-cases?_ga=2.186199017.1547123512.1581421183-425644583.1571043854)
+
+> “To my knowledge, this is the only such open-access data website for novel coronavirus data that exists in the world,” said Johannes Knops, head of the Department of Health and Environmental Sciences at XJTLU.
+
+- [西交利物浦大学：促进全球科研信息共享 西浦学者搭建“一站式”新冠病毒疫情网站](https://www.xjtlu.edu.cn/zh/news/2020/02/xinguanbingduxinxiwangzhan):
+
+> 健康与环境科学系主任Johannes Knops教授表示，“对于全球需要针对新冠疫情获取研究数据的科研工作者和新闻机构来说，该网站提供了非常有价值的资源。就我所知，这是目前世界上唯一一个关于新冠病毒疫情的开放获取数据网站。”
+
+## Acknowledgments
+
+[R ncovr package](https://github.com/pzhaonet/ncovr) is used for data processing and visualization.
+
+The data used on this site come from [BlankerL/DXY-2019-nCoV-Crawler](https://github.com/BlankerL/DXY-2019-nCoV-Crawler) and [JackieZheng/2019-nCoV](https://github.com/JackieZheng/2019-nCoV). The credit of the translation of area/city names from Chinese into English belongs to [brightgems/china_city_dataset](https://github.com/brightgems/china_city_dataset) and the [R pinyin package](https://CRAN.R-project.org/package=pinyin) (Zhao, 2019).
+
+This site is built by [R blogdown package](https://bookdown.org/yihui/blogdown/) with [HUGO](https://gohugo.io/), hosted on [GitHub](http://github.com/) and [Netlify](https://www.netlify.com/), and updated automatically with the support of [Travis-CI](https://travis-ci.org/).

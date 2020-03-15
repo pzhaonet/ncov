@@ -1,0 +1,74 @@
+---
+title: CoVid-19 疫情概览
+slug: intro
+---
+
+```{r include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, error = FALSE)
+Sys.setlocale('LC_CTYPE', 'Chinese')
+```
+
+
+```{r, out.width='100%'}
+knitr::include_graphics('https://ncov2020.org/animation/map_animation.gif')
+```
+
+## 病毒简介
+
+```{r, results='asis'}
+require(ncovr)
+ncov <- get_ncov()
+ncov <- ncov$overall
+cat(
+  ncov$note1, "  \n\n",
+  ncov$note2, "  \n\n",
+  ncov$note3, "  \n\n",
+  ncov$remark1, "  \n\n",
+  ncov$remark2, "  \n\n",
+  ncov$remark3, "  \n\n"
+  )
+```
+
+## 最新数据
+
+```{r, results='asis'}
+cat(
+  '确诊：', ncov$confirmedCount,  "  \n\n",
+  '疑似：', ncov$suspectedCount,  "  \n\n",
+  '治愈：', ncov$curedCount,  "  \n\n",
+  '死亡：', ncov$deadCount,  "  \n\n",
+  '严重：', ncov$seriousCount,  "  \n\n",
+  '日增确诊：', ncov$confirmedIncr,  "  \n\n",
+  '日增疑似：', ncov$suspectedIncr,  "  \n\n",
+  '日增治愈：', ncov$curedIncr,  "  \n\n",
+  '日增死亡：', ncov$deadIncr,  "  \n\n",
+  '日增严重：', ncov$seriousIncr,  "  \n\n",
+  '更新时间：', as.character(ncovr:::conv_time(ncov$updateTime)), "  \n\n",
+  ncov$generalRemark, '。'
+)
+```
+
+## 全国疫情时间序列
+
+<small>
+
+```{r}
+ncovChina <- get_ncov('china')
+ncovChina <- ncovChina[rev(order(ncovChina[, 1])), ]
+ncovChina[, 1] <- format(ncovChina[, 1], '%m-%d')
+# knitr::kable(ncovChina[, !names(ncovChina) %in% c("更新时间", "备注")], format = "html", row.names = FALSE)
+flextable::flextable(ncovChina[, !names(ncovChina) %in% c("更新时间", "备注")])
+```
+
+</small>
+
+```{r, results='asis'}
+if('dailyPics' %in% names(ncov)) cat('以下图片来自丁香园：')
+```
+
+
+
+```{r, out.width="100%"}
+if('dailyPics' %in% names(ncov))
+  knitr::include_graphics(unlist(ncov$dailyPics))
+```
