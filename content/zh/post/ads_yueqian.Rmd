@@ -13,12 +13,12 @@ categories: market
 - 微信公众号：
 
 ```{r, fig.align='center'}
-knitr::include_graphics("static/ads/yueqian_wechat.png")
+knitr::include_graphics("/ads/yueqian_wechat.png")
 ```
 
 产品适合在人员众多的公共场所进行体温快速筛查，一旦发现被检查者的温度异常，电脑端的软件会自动报警。详情可参考下图：
 
 ```{r, fig.align='center', out.width="100%"}
-knitr::include_graphics("ads/yueqian1.png")
-knitr::include_graphics("ads/yueqian2.png")
+knitr::include_graphics("/ads/yueqian1.png")
+knitr::include_graphics("/ads/yueqian2.png")
 ```

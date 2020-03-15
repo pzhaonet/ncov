@@ -14,18 +14,21 @@ require(dplyr)
 Sys.setlocale('LC_CTYPE', 'Chinese')
 
 ## backup data
-mytry <- try(ncov <- get_ncov(port = 'overall', method = 'api'))
-if(class(mytry) != "try-error"){
-  ncov <- get_ncov(port = c('area?latest=0', 'overall', 'provinceName', 'news', 'rumors'), method = 'api')
-  names(ncov)[1] <- 'area'
-  ncov_tidy <- ncovr:::conv_ncov(ncov)
-  if(!dir.exists('static/data-download')) dir.create('static/data-download')
-  saveRDS(ncov_tidy, 'static/data-download/ncov_tidy.RDS')
-  saveRDS(ncov, 'static/data-download/ncov.RDS')
-} else{
-  ncov <- readRDS('static/data-download/ncov.RDS')
-  ncov_tidy <- readRDS('static/data-download/ncov_tidy.RDS')
-}
+# mytry <- try(ncov <- get_ncov(port = 'overall', method = 'api'))
+# if(class(mytry) != "try-error"){
+#   ncov <- get_ncov(port = c('area?latest=0', 'overall', 'provinceName', 'news', 'rumors'), method = 'api')
+#   names(ncov)[1] <- 'area'
+#   ncov_tidy <- ncovr:::conv_ncov(ncov)
+#   if(!dir.exists('static/data-download')) dir.create('static/data-download')
+#   saveRDS(ncov_tidy, 'static/data-download/ncov_tidy.RDS')
+#   saveRDS(ncov, 'static/data-download/ncov.RDS')
+# } else{
+#   ncov <- readRDS('static/data-download/ncov.RDS')
+#   ncov_tidy <- readRDS('static/data-download/ncov_tidy.RDS')
+# }
+
+ncov <- get_ncov(method = "csv")
+saveRDS(ncov, 'static/data-download/ncov.RDS')
 
 
 ## Create map post ----

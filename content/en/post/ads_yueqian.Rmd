@@ -13,12 +13,12 @@ categories: market
 - Wechat QR code：
 
 ```{r, fig.align='center'}
-knitr::include_graphics("ads/yueqian_wechat.png")
+knitr::include_graphics("/ads/yueqian_wechat.png")
 ```
 
 The product is suitable for rapid body temperature screening in public places with a large number of personnel. Once an abnormal temperature is found in the inspected person, the software on the computer side will automatically alarm. For details, refer to the following figure (only in Chinese) or contact the producer directly.
 
 ```{r, fig.align='center', out.width="100%"}
-knitr::include_graphics("ads/yueqian1.png")
-knitr::include_graphics("ads/yueqian2.png")
+knitr::include_graphics("/ads/yueqian1.png")
+knitr::include_graphics("/ads/yueqian2.png")
 ```
