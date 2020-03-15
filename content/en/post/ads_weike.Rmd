@@ -13,7 +13,7 @@ Contact information:
 
 - Website: <www.zjweike.com>
 
-```{r, fig.align='center'}
+```{r, fig.align='center', echo=FALSE,eval=TRUE}
 knitr::include_graphics("https://github.com/pzhaonet/ncov/raw/master/static/ads/weike2.jpg")
 knitr::include_graphics("https://github.com/pzhaonet/ncov/raw/master/static/ads/weike3.jpg")
 ```

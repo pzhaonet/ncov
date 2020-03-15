@@ -5,6 +5,6 @@ slug: weike
 categories: market
 ---
 
-```{r, fig.align='center', out.width="100%"}
+```{r, fig.align='center', out.width="100%", echo=FALSE,eval=TRUE}
 knitr::include_graphics("https://github.com/pzhaonet/ncov/raw/master/static/ads/weike1.jpg")
 ```
