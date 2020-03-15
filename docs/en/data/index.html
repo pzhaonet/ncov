@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.67.0" />
+
+
+<title>Covid-19 Epidemic Data Download - Covid-19: Epidemic Reports</title>
+<meta property="og:title" content="Covid-19 Epidemic Data Download - Covid-19: Epidemic Reports">
+
+
+  <link href='https://ncov2020.org/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="pzhao.org">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/en/">Homepage</a></li>
+    
+    <li><a href="/en/intro/">Overview</a></li>
+    
+    <li><a href="/en/data/">Data</a></li>
+    
+    <li><a href="/en/market/">Market</a></li>
+    
+    <li><a href="/en/about/">About</a></li>
+    
+    <li><a href="/zh/">中文</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+
+    <h1 class="article-title">Covid-19 Epidemic Data Download</h1>
+
+    
+
+    <div class="article-content">
+      
+
+
+<p>We collect several ways to get the 2019-nCoV epidemic data.</p>
+<div id="use-the-r-ncovr-package" class="section level2">
+<h2>Use the R ncovr package</h2>
+<p>R users can get the epidemic data via the ncovr package we develop, which basically includes the datasets described later.</p>
+<pre class="r"><code># Install the remotes package
+install.packages(&#39;remotes&#39;) 
+# Install the ncovr package
+remotes::install_github(&#39;pzhaonet/ncovr&#39;) 
+# windows users have to set the Chinese environment
+Sys.setlocale(&#39;LC_CTYPE&#39;, &#39;Chinese&#39;) 
+# Load the ncovr package
+require(&quot;ncovr&quot;) 
+# read RDS data (default；recommended)
+get_ncov() 
+# read .csv files (recommended)
+get_ncov(method = &#39;csv&#39;) 
+# read from api
+get_ncov(method = &#39;api&#39;) </code></pre>
+<p>Please see the help documents for more details.</p>
+</div>
+<div id="download-directly" class="section level2">
+<h2>Download directly</h2>
+<p>Non-R users can download the .csv files directly from the repository <a href="https://github.com/BlankerL/DXY-2019-nCoV-Data">BlankerL/DXY-2019-nCoV-Data</a>, and then open it with tools such as Excel.</p>
+<ul>
+<li><a href="https://raw.githubusercontent.com/BlankerL/DXY-2019-nCoV-Data/master/csv/DXYArea.csv">Epidemic data for all areas</a></li>
+<li><a href="https://raw.githubusercontent.com/BlankerL/DXY-2019-nCoV-Data/master/csv/DXYOverall.csv">Overall</a></li>
+<li><a href="https://raw.githubusercontent.com/BlankerL/DXY-2019-nCoV-Data/master/csv/DXYNews.csv">News</a></li>
+<li><a href="https://raw.githubusercontent.com/BlankerL/DXY-2019-nCoV-Data/master/csv/DXYRumors.csv">Rumors</a></li>
+</ul>
+<p>This repository provides .json files as well.</p>
+<p>An Excel spreadsheet of daily national data can be <a href="https://github.com/JackieZheng/2019-nCoV/raw/master/Excel/data.xlsx">downloaded</a> from the <a href="https://github.com/JackieZheng/2019-nCoV/">JackieZheng/2019-nCoV</a>. This project also provides other data format with the same content.</p>
+<p>It would be appreciated if you let us know other data sources, which will be listed here.</p>
+</div>
+<div id="use-the-r-ncov2019-package" class="section level2">
+<h2>Use the R nCov2019 package</h2>
+<p>nCov2019 is another R package for downloading data.</p>
+<pre class="r"><code>remotes::install_github(&quot;GuangchuangYu/nCov2019&quot;)
+library(nCov2019)
+x &lt;- get_nCov2019()
+x
+time(x)
+x[]</code></pre>
+<p>More details can be found on its <a href="https://github.com/GuangchuangYu/nCov2019">GitHub repo</a>.</p>
+</div>
+<div id="introduction-to-r" class="section level2">
+<h2>Introduction to R</h2>
+<p>R is a free and open-source software package. We use R for data collection, cleaning, and visualization, as well as developing models, building this website, and automatically updating.</p>
+<p>For R beginners, we published a book <em>Learning R: from the very beginning</em> (Peng Zhao and Yi Li. Research Press,2018. In Chinese). Click the following image and visit the homepage and read sample chapters for free.</p>
+<p><a href="https://pzhaonet.github.io/xuer/"><img src="https://openr.pzhao.org/img/xuer_weidian.png"  width="100%" /></a></p>
+</div>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank"> RSS </a>
+          </li>
+          <li>
+            <a href="https://pzhaonet.github.io/xuer/" class="footer-links-kudos"> 学 R </a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-157876946-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  </body>
+</html>
+

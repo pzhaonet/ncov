@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.67.0" />
+
+
+<title>Covid-19 疫情数据下载 - Covid-19：新型冠状病毒疫情报告</title>
+<meta property="og:title" content="Covid-19 疫情数据下载 - Covid-19：新型冠状病毒疫情报告">
+
+
+  <link href='https://ncov2020.org/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="pzhao.org">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/">首页</a></li>
+    
+    <li><a href="/intro/">概览</a></li>
+    
+    <li><a href="/news/">简讯</a></li>
+    
+    <li><a href="/rumors/">辟谣</a></li>
+    
+    <li><a href="/data/">数据下载</a></li>
+    
+    <li><a href="/market/">物资交换</a></li>
+    
+    <li><a href="/about/">关于本站</a></li>
+    
+    <li><a href="/en/">English</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+
+    <h1 class="article-title">Covid-19 疫情数据下载</h1>
+
+    
+
+    <div class="article-content">
+      
+
+
+<p>这里介绍几种获取疫情数据的途径。</p>
+<div id="利用-r-ncovr-包" class="section level2">
+<h2>利用 R ncovr 包</h2>
+<p>R 语言用户可以通过我们开发的 ncovr 包获取疫情数据，基本囊括了后面介绍的几种格式。</p>
+<pre class="r"><code># 安装 remotes 包
+install.packages(&#39;remotes&#39;)
+# 安装 ncovr 包
+remotes::install_github(&#39;pzhaonet/ncovr&#39;) 
+# windows 用户设置中文环境
+Sys.setlocale(&#39;LC_CTYPE&#39;, &#39;Chinese&#39;) 
+# 加载
+require(&quot;ncovr&quot;) 
+# 读取 RDS数据（推荐）
+get_ncov() 
+# 从 csv 文件读取（推荐）
+get_ncov(method = &#39;csv&#39;) 
+# 从 api 接口读取
+get_ncov(method = &#39;api&#39;) </code></pre>
+<p>更多功能请参看函数的帮助信息。</p>
+</div>
+<div id="直接下载" class="section level2">
+<h2>直接下载</h2>
+<p>普通用户可以直接从<a href="https://github.com/BlankerL/DXY-2019-nCoV-Data">BlankerL/DXY-2019-nCoV-Data</a>项目下载 csv 文件到本地，然后可以用 Excel 等工具打开：</p>
+<ul>
+<li><a href="https://raw.githubusercontent.com/BlankerL/DXY-2019-nCoV-Data/master/csv/DXYArea.csv">各地疫情</a></li>
+<li><a href="https://raw.githubusercontent.com/BlankerL/DXY-2019-nCoV-Data/master/csv/DXYOverall.csv">概况</a></li>
+<li><a href="https://raw.githubusercontent.com/BlankerL/DXY-2019-nCoV-Data/master/csv/DXYNews.csv">新闻</a></li>
+<li><a href="https://raw.githubusercontent.com/BlankerL/DXY-2019-nCoV-Data/master/csv/DXYRumors.csv">谣言</a></li>
+</ul>
+<p>上述项目还包含了 json 格式的数据。</p>
+<p>每天全国的数据可以从 <a href="https://github.com/JackieZheng/2019-nCoV/">JackieZheng/2019-nCoV</a>下载 <a href="https://github.com/JackieZheng/2019-nCoV/raw/master/Excel/data.xlsx">Excel 表格</a>。这个项目还提供了同样内容的其他数据格式。</p>
+<p>如果您知道其他的数据获取途径，欢迎告知我们，以便汇总。</p>
+</div>
+<div id="利用-r-ncov2019-包" class="section level2">
+<h2>利用 R nCov2019 包</h2>
+<p>nCov2019 是另一款获取疫情数据和可视化的 R 语言扩展包。</p>
+<pre class="r"><code>remotes::install_github(&quot;GuangchuangYu/nCov2019&quot;)
+library(nCov2019)
+x &lt;- get_nCov2019()
+x
+time(x)
+x[]</code></pre>
+<p>详见该项目的<a href="https://github.com/GuangchuangYu/nCov2019">主页</a>。</p>
+</div>
+<div id="r-语言简介" class="section level2">
+<h2>R 语言简介</h2>
+<p>作为免费开源的软件，R 语言是国际上最流行的数据分析语言之一，同时也是一个极其人性化的编程环境。本站的数据获取、清理、建模、可视化、网站搭建、自动更新等过程，全部是使用 R 语言完成的。</p>
+<p>对于欲了解或学习 R 语言的初学者，我们出版了一本入门教材：《学 R：零基础学习 R 语言》（赵鹏，李怡。研究出版社。北京，2018）。点击下面的图片可访问该书主页和免费试读。</p>
+<p><a href="https://pzhaonet.github.io/xuer/"><img src="https://openr.pzhao.org/img/xuer_weidian.png"  width="100%" /></a></p>
+</div>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank"> RSS </a>
+          </li>
+          <li>
+            <a href="https://pzhaonet.github.io/xuer/" class="footer-links-kudos"> 学 R </a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-157876946-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  </body>
+</html>
+

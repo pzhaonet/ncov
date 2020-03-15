@@ -1,0 +1,67 @@
+---
+title: 2019-nCoV 疫情缓和时间预测(<<date>>)
+date: <<date>>
+slug: predict-<<date>>
+---
+
+```{r include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, error = FALSE, collapse = TRUE, out.width = "100%")
+Sys.setlocale('LC_CTYPE', 'Chinese')
+```
+
+```{r}
+require(ncovr)
+ncovChina <- get_ncov('china') 
+ncovChina <- ncovChina[ncovChina[, "日期"] <= as.Date('<<date>>'), ]
+```
+
+## 全国确诊病例时间趋势图和模型预测
+
+```{r}
+predict_date(province = "中国",  ncov = ncovChina)
+pre <- predict_date(province = "中国",  ncov = ncovChina, ifplot = FALSE)
+```
+
+
+我们的模型显示，全国总体疫情将于 `r pre$enddate` 缓解（确诊病例不再明显增长）。
+
+2020-`r pre$tomorrow` 确诊病例将新增`r format(round(pre$tomorrowNew), scientific = FALSE)`例，累计确诊病例将达到 `r format(round(pre$tomorrowcount), scientific = FALSE)` 例。
+
+## 全国疫情时间序列
+
+<small>
+
+```{r}
+ncovChina <- ncovChina[rev(order(ncovChina[, 1])), ]
+knitr::kable(ncovChina[, 1:9], format = "html", row.names = FALSE)
+```
+
+</small>
+
+
+```{r}
+ncov <- get_ncov()
+ncov$area$date <- as.Date(ncovr:::conv_time(ncov$area$updateTime))
+ncov$area <- ncov$area[ncov$area$date < as.Date('<<date>>'), ]
+df_predict <- t(sapply(unique(ncov$area$provinceShortName[ncov$area$country == '中国']), function(x) predict_date(province = x, ncov = ncov, ifplot = FALSE)))
+
+df_predict <- as.data.frame(df_predict)
+df_predict <- df_predict[order(-as.numeric(df_predict$tomorrowNew)), ]
+tomorrow <- df_predict$tomorrow[1]
+```
+
+```{r, results='asis'}
+cat("## <<date>> 各地区疫情预测表")
+```
+
+```{r}
+knitr::kable(df_predict[!is.na(df_predict$enddate), c(1, 2, 5, 4)], format = "html", row.names = FALSE, col.names = c("地区", "疫情缓解日期", paste0(tomorrow, "新增确诊人数预测"), paste0(tomorrow, "累计确诊人数预测")))
+```
+
+```{r, results='asis'}
+for(x in unique(ncov$area$provinceShortName)) {
+  cat(x, ":  \n")
+  predict_date(province = x, ncov = ncov, ifplot = TRUE, ifchinese = TRUE)
+  cat("  \n")
+}
+```
