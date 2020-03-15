@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>market on Covid-19：新型冠状病毒疫情报告</title>
+    <link>https://ncov2020.org/categories/market/</link>
+    <description>Recent content in market on Covid-19：新型冠状病毒疫情报告</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 14 Mar 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ncov2020.org/categories/market/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>广东粤嵌科技：红外测温筛查终端</title>
+      <link>https://ncov2020.org/zh/yueqian/</link>
+      <pubDate>Sat, 14 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ncov2020.org/zh/yueqian/</guid>
+      <description>  联系电话：(+86) 020-61038926
+ 网站：http://open.gec-lab.com
+ 微信公众号：
+  knitr::include_graphics(&amp;quot;https://github.com/pzhaonet/ncov/raw/master/static/ads/yueqian_wechat.png&amp;quot;) 产品适合在人员众多的公共场所进行体温快速筛查，一旦发现被检查者的温度异常，电脑端的软件会自动报警。详情可参考下图：
+knitr::include_graphics(&amp;quot;https://github.com/pzhaonet/ncov/raw/master/static/ads/yueqian1.png&amp;quot;) knitr::include_graphics(&amp;quot;https://github.com/pzhaonet/ncov/raw/master/static/ads/yueqian2.png&amp;quot;) </description>
+    </item>
+    
+    <item>
+      <title>维科生物：过氧化氢空间灭菌器</title>
+      <link>https://ncov2020.org/zh/weike/</link>
+      <pubDate>Sat, 14 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ncov2020.org/zh/weike/</guid>
+      <description> knitr::include_graphics(&amp;quot;https://github.com/pzhaonet/ncov/raw/master/static/ads/weike1.jpg&amp;quot;) </description>
+    </item>
+    
+  </channel>
+</rss>
