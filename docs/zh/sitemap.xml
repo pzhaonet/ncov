@@ -3,23 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://ncov2020.org/categories/</loc>
-    <lastmod>2020-03-14T00:00:00+00:00</lastmod>
+    <loc>https://ncov2020.org/zh/exchange/</loc>
+    <lastmod>2020-03-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ncov2020.org/en/categories/"
+                href="https://ncov2020.org/en/en/exchange/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://ncov2020.org/categories/"
+                href="https://ncov2020.org/zh/exchange/"
                 />
   </url>
   
   <url>
     <loc>https://ncov2020.org/</loc>
-    <lastmod>2020-03-14T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -33,23 +33,8 @@
   </url>
   
   <url>
-    <loc>https://ncov2020.org/categories/market/</loc>
-    <lastmod>2020-03-14T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ncov2020.org/en/categories/market/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://ncov2020.org/categories/market/"
-                />
-  </url>
-  
-  <url>
     <loc>https://ncov2020.org/post/</loc>
-    <lastmod>2020-03-14T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -59,6 +44,36 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://ncov2020.org/post/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://ncov2020.org/tags/shared/</loc>
+    <lastmod>2020-03-15T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ncov2020.org/en/tags/shared/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://ncov2020.org/tags/shared/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://ncov2020.org/tags/</loc>
+    <lastmod>2020-03-15T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ncov2020.org/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://ncov2020.org/tags/"
                 />
   </url>
   
@@ -2073,6 +2088,20 @@
   </url>
   
   <url>
+    <loc>https://ncov2020.org/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ncov2020.org/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://ncov2020.org/categories/"
+                />
+  </url>
+  
+  <url>
     <loc>https://ncov2020.org/data/</loc>
     <xhtml:link
                 rel="alternate"
@@ -2105,20 +2134,6 @@
   </url>
   
   <url>
-    <loc>https://ncov2020.org/tags/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ncov2020.org/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://ncov2020.org/tags/"
-                />
-  </url>
-  
-  <url>
     <loc>https://ncov2020.org/about/</loc>
     <xhtml:link
                 rel="alternate"
@@ -2129,20 +2144,6 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://ncov2020.org/about/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://ncov2020.org/market/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ncov2020.org/en/market/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://ncov2020.org/market/"
                 />
   </url>
   
