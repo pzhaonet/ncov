@@ -1,5 +1,5 @@
-file.remove(list.files('content/en/post/', pattern = '.*.Rmd', full.names = TRUE))
-file.remove(list.files('content/zh/post/', pattern = '.*.Rmd', full.names = TRUE))
+# file.remove(list.files('content/en/post/', pattern = '.*.Rmd', full.names = TRUE))
+# file.remove(list.files('content/zh/post/', pattern = '.*.Rmd', full.names = TRUE))
 
 # Functions ----
 
@@ -13,23 +13,43 @@ require(htmltools)
 require(dplyr)
 Sys.setlocale('LC_CTYPE', 'Chinese')
 
-## backup data
-# mytry <- try(ncov <- get_ncov(port = 'overall', method = 'api'))
-# if(class(mytry) != "try-error"){
-#   ncov <- get_ncov(port = c('area?latest=0', 'overall', 'provinceName', 'news', 'rumors'), method = 'api')
-#   names(ncov)[1] <- 'area'
-#   ncov_tidy <- ncovr:::conv_ncov(ncov)
-#   if(!dir.exists('static/data-download')) dir.create('static/data-download')
-#   saveRDS(ncov_tidy, 'static/data-download/ncov_tidy.RDS')
-#   saveRDS(ncov, 'static/data-download/ncov.RDS')
-# } else{
-#   ncov <- readRDS('static/data-download/ncov.RDS')
-#   ncov_tidy <- readRDS('static/data-download/ncov_tidy.RDS')
-# }
+# update data
+## download all data from api
+# ncov <- get_ncov(port = c('area?latest=0', 'overall', 'provinceName', 'news?num=10000', 'rumors?num=10000'), method = 'api')
+# names(ncov) <- c('area', 'overall', 'provinceName', 'news', 'rumors')
+# range(ncovr:::conv_time(ncov$area$updateTime))
+# if(!dir.exists('static/data-download')) dir.create('static/data-download')
+# saveRDS(ncov, 'static/data-download/ncov.RDS')
+# ncov_tidy <- ncovr:::conv_ncov(ncov)
+# saveRDS(ncov_tidy, 'static/data-download/ncov_tidy.RDS')
 
-ncov <- get_ncov(method = "csv")
+## update with the latest data
+ncov <- readRDS('static/data-download/ncov.RDS')
+ncov_tidy <- readRDS('static/data-download/ncov_tidy.RDS')
+dim(ncov$area) # 14177    24
+
+ncov_new <- get_ncov(method = "json")
+if(ncov_new$area$updateTime[1] > ncov$area$updateTime[1]){
+  ncov$area$province_en <- unlist(ncov$area$province_en)
+  ncov_new$area$province_en <- unlist(ncov_new$area$province_en)
+  ncov$area <- bind_rows(ncov$area, ncov_new$area)
+}
+dim(ncov$area) # 14177    24
+
+ncov$overall <- ncov_new$overall
+
+ncov$news <- bind_rows(ncov$news, ncov_new$news)
+ncov$news <- ncov$news[!duplicated(ncov$news$title), ]
+
+ncov$rumors <- bind_rows(ncov$rumors, ncov_new$rumors)
+ncov$rumors <- ncov$rumors[!duplicated(ncov$rumors$title), ]
+
+ncov_tidy <- ncovr:::conv_ncov(ncov)
+
+# save data
+if(!dir.exists('static/data-download')) dir.create('static/data-download')
 saveRDS(ncov, 'static/data-download/ncov.RDS')
-
+saveRDS(ncov_tidy, 'static/data-download/ncov_tidy.RDS')
 
 ## Create map post ----
 post_map <- function(method, date, language = c('en', 'zh')){
@@ -61,12 +81,10 @@ post_predict <- function(date, language = c('en', 'zh')){
   # }
 }
 
-## Get data ----
-ncov$area$date <- as.Date(ncovr:::conv_time(ncov$area$updateTime))
-ncov$area <- ncov$area[rev(order(ncov$area$date)), ]
-ncov_tidy$area$date <- as.Date(ncov_tidy$area$updateTime)
-ncov_tidy$area <- ncov_tidy$area[rev(order(ncov_tidy$area$date)), ]
-
+## process time column ----
+ncov$area$updateTime2 <- ncovr:::conv_time(ncov$area$updateTime)
+ncov$area$date <- as.Date(ncov$area$updateTime2)
+ncov$area <- ncov$area[rev(order(ncov$area$updateTime2)), ]
 ncov_dates <- as.character(unique(ncov$area$date))
 
 ## create maps ----
@@ -74,7 +92,7 @@ oldwd <- getwd()
 setwd('static/leaflet')
 
 # regionNames('world')[order(regionNames('world'))]
-countryname <- data.frame(ncovr = c("United Kiongdom", "United States of America", "New Zealand", "Kampuchea (Cambodia )"),
+countryname <- data.frame(ncovr = c("United Kingdom", "United States of America", "New Zealand", "Kampuchea (Cambodia )"),
                           leafletNC = c("UnitedKingdom", "UnitedStates", "NewZealand", "Cambodia"), 
                           stringsAsFactors = FALSE)
 
@@ -82,51 +100,52 @@ countryname <- data.frame(ncovr = c("United Kiongdom", "United States of America
 for(i in ncov_dates[1:3]){
   y <- ncov$area[ncov$area$date <= as.Date(i), ]
   y <- y[!duplicated(y$provinceName), ]
-  x <- y[, c('provinceShortName', 'confirmedCount', 'curedCount', 'deadCount')]
-  names(x)[1] <- 'provinceName'
+  names(y)
+  x <- y[, c('provinceName', c('confirmedCount', 'curedCount', 'deadCount'))]
+  # names(x) <- c('provinceName', 'confirmedCount', 'curedCount', 'deadCount')
   
-  # province 
-  filename <- paste0("leafmap-province-", i, ".html")
-  # if(!file.exists(filename)){
-    leafMap <- plot_map(
-      x = y, 
-      key = "confirmedCount", 
-      scale = "log", 
-      method = c("province", "city")[1], 
-      legend_title = paste0("确诊病例(", i, ")"), 
-      filter = '待明确地区'
-    )
-    saveWidget(leafMap, filename)
-  # }
-
-    # city
-  filename <- paste0("leafmap-city-", i, ".html")
-  
-  # if(!file.exists(filename)){
-  x_city <- ncov_tidy$area[ncov_tidy$area$date <= as.Date(i) & !ncov_tidy$area$provinceShortName %in% c("北京", "上海", "重庆", "天津"), ]
-  # x_city <- x_city[as.Date(x_city$date) <= as.Date("2020-02-07"), ]
-  x_city <- x_city[!duplicated(x_city$cityName), c('cityName', 'confirmedCount', 'curedCount', 'deadCount')]
-  names(x_city)[1] <- 'provinceName'
-  
-  x <- x[x$provinceName %in% c("北京", "上海", "重庆", "天津"), ]
-  if(nrow(x_city) > 0) x <- rbind(x_city[, c('provinceName', 'confirmedCount', 'curedCount', 'deadCount')], x)
-  cities <- leafletCN::regionNames(mapName = "city")
-  x_cities <- x[x$provinceName %in% cities, ]
-  x_cities$key <- x_cities$confirmedCount
-  
-    x_cities$key_log <- log10(x_cities$key)
-    x_cities$key_log[x_cities$key == 0] <- NA
-    leafMap <- geojsonMap_legendless(dat = as.data.frame(x_cities), 
-                                   mapName = "city", palette = 'Reds', namevar = ~provinceName, 
-                                   valuevar = ~key_log, popup = paste(x_cities$provinceName, 
-                                                                      x_cities$key)) %>% 
-      leaflet::addLegend("bottomright", 
-                         bins = 4, pal = leaflet::colorNumeric(palette = 'Reds', 
-                                                               domain = x_cities$key_log), values = x_cities$key_log, 
-                         title = paste0("确诊病例(", i, ")"), labFormat = leaflet::labelFormat(digits = 0, 
-                                                                                           transform = function(x) 10^x), opacity = 1)
-    saveWidget(leafMap, filename)
-  # }
+  # # province 
+  # filename <- paste0("leafmap-province-", i, ".html")
+  # # if(!file.exists(filename)){
+  #   leafMap <- plot_map(
+  #     x = as.data.frame(x), 
+  #     key = "confirmedCount", 
+  #     scale = "log", 
+  #     method = c("province", "city")[1], 
+  #     legend_title = paste0("确诊病例(", i, ")"), 
+  #     filter = '待明确地区'
+  #   )
+  #   saveWidget(leafMap, filename)
+  # # }
+  # 
+  #   # city
+  # filename <- paste0("leafmap-city-", i, ".html")
+  # 
+  # # if(!file.exists(filename)){
+  # x_city <- ncov_tidy$area[ncov_tidy$area$date <= as.Date(i) & !ncov_tidy$area$provinceShortName %in% c("北京", "上海", "重庆", "天津"), ]
+  # # x_city <- x_city[as.Date(x_city$date) <= as.Date("2020-02-07"), ]
+  # x_city <- x_city[!duplicated(x_city$cityName), c('cityName', 'confirmedCount', 'curedCount', 'deadCount')]
+  # names(x_city)[1] <- 'provinceName'
+  # 
+  # x <- x[x$provinceName %in% c("北京", "上海", "重庆", "天津"), ]
+  # if(nrow(x_city) > 0) x <- rbind(x_city[, c('provinceName', 'confirmedCount', 'curedCount', 'deadCount')], x)
+  # cities <- leafletCN::regionNames(mapName = "city")
+  # x_cities <- x[x$provinceName %in% cities, ]
+  # x_cities$key <- x_cities$confirmedCount
+  # 
+  #   x_cities$key_log <- log10(x_cities$key)
+  #   x_cities$key_log[x_cities$key == 0] <- NA
+  #   leafMap <- geojsonMap_legendless(dat = as.data.frame(x_cities), 
+  #                                  mapName = "city", palette = 'Reds', namevar = ~provinceName, 
+  #                                  valuevar = ~key_log, popup = paste(x_cities$provinceName, 
+  #                                                                     x_cities$key)) %>% 
+  #     leaflet::addLegend("bottomright", 
+  #                        bins = 4, pal = leaflet::colorNumeric(palette = 'Reds', 
+  #                                                              domain = x_cities$key_log), values = x_cities$key_log, 
+  #                        title = paste0("确诊病例(", i, ")"), labFormat = leaflet::labelFormat(digits = 0, 
+  #                                                                                          transform = function(x) 10^x), opacity = 1)
+  #   saveWidget(leafMap, filename)
+  # # }
     
     # country 
     x <- data.frame(countryEnglishName = y$countryEnglishName,
@@ -138,14 +157,15 @@ for(i in ncov_dates[1:3]){
     
     x$countryEnglishName2 = x$countryEnglishName # for taiwan
     
-    x_other <- x[!is.na(x$countryEnglishName) & x$countryEnglishName != 'China', ]
-    x_china <- data.frame(countryEnglishName = 'China',
-                          countryName = unique(x[!is.na(x$countryEnglishName) & x$countryEnglishName == 'China', 'countryName']),
-                          confirmedCount = sum(x[!is.na(x$countryEnglishName) & x$countryEnglishName == 'China', 'confirmedCount']),
-                          countryEnglishName2 = 'China') 
-    x_taiwan <- x_china
-    x_taiwan$countryEnglishName2 = "Taiwan"
-    x <- rbind(x_other, x_china, x_taiwan)
+    # x_other <- x[!is.na(x$countryEnglishName) & x$countryEnglishName != 'China', ]
+    # x_china <- data.frame(countryEnglishName = 'China',
+    #                       countryName = unique(x[!is.na(x$countryEnglishName) & x$countryEnglishName == 'China', 'countryName']),
+    #                       confirmedCount = sum(x[!is.na(x$countryEnglishName) & x$countryEnglishName == 'China', 'confirmedCount']),
+    #                       countryEnglishName2 = 'China') 
+    # x_taiwan <- x_china
+    # x_taiwan$countryEnglishName2 = "Taiwan"
+    # x <- rbind(x_other, x_china, x_taiwan)
+    x <- x[!is.na(x$countryEnglishName),]
     filename <- paste0("leafmap-country-", i, ".html")
     # if(!file.exists(filename)){
     leafMap <- plot_map(
@@ -165,7 +185,7 @@ setwd(oldwd)
 ## create ts ----
 if(!dir.exists('static/ts')) dir.create('static/ts')
 setwd('static/ts')
-countryname <- data.frame(ncovr = c("United Kiongdom", "United States of America", "New Zealand", "Kampuchea (Cambodia )"),
+countryname <- data.frame(ncovr = c("United Kingdom", "United States of America", "New Zealand", "Kampuchea (Cambodia )"),
                           leafletNC = c("UnitedKingdom", "UnitedStates", "NewZealand", "Cambodia"), 
                           stringsAsFactors = FALSE)
 
@@ -175,7 +195,8 @@ x_ts <- ncov$area[, c('countryEnglishName', 'countryName', 'date', 'confirmedCou
             cured = max(curedCount), 
             dead = max(deadCount)) %>% 
   ungroup() %>% 
-  filter(!is.na(countryEnglishName) & !countryEnglishName == 'China') %>% 
+  filter(!is.na(countryEnglishName)) %>% 
+  # filter(!is.na(countryEnglishName) & !countryEnglishName == 'China') %>% 
   as.data.frame()
 loc <- which(x_ts$countryEnglishName %in% countryname$ncovr)
 x_ts$countryEnglishName[loc] <- countryname$leafletNC[match(x_ts$countryEnglishName[loc], countryname$ncovr)]
@@ -194,18 +215,18 @@ if(!dir.exists('content/zh/')) dir.create('content/zh/')
 if(!dir.exists('content/zh/post/')) dir.create('content/zh/post/')
 for(i in ncov_dates[1:3]){
   for(j in c('zh', 'en')){
-  post_map(method = 'province', date = i, language = j)
-  post_map(method = 'city', date = i, language = j)
+  # post_map(method = 'province', date = i, language = j)
+  # post_map(method = 'city', date = i, language = j)
   post_map(method = 'country', date = i, language = j)
   }
 }
 
 ## Create predict posts ----
-for(i in as.character(seq.Date(Sys.Date() - 2, Sys.Date(), 1))) {
-  for(j in c('zh', 'en')){
-    post_predict(date = as.Date(i), language = j)
-  }
-}
+# for(i in as.character(seq.Date(Sys.Date() - 2, Sys.Date(), 1))) {
+#   for(j in c('zh', 'en')){
+#     post_predict(date = as.Date(i), language = j)
+#   }
+# }
 
 ## Build site ----
 blogdown::install_hugo()

@@ -51,20 +51,21 @@ if(method != 'country'){
   }
   x <- x[order(-x$confirmedCount), ]
 } else {
-  countryname <- data.frame(ncovr = c("United Kiongdom", "United States of America", "New Zealand", "Kampuchea (Cambodia )"),
+  countryname <- data.frame(ncovr = c("United Kingdom", "United States of America", "New Zealand", "Kampuchea (Cambodia )"),
                             leafletNC = c("UnitedKingdom", "UnitedStates", "NewZealand", "Cambodia"), 
                             stringsAsFactors = FALSE)
   x <- ncov_raw$area[, c('countryEnglishName', 'countryName', 'confirmedCount', 'curedCount', 'deadCount')]
   loc <- which(x$countryEnglishName %in% countryname$ncovr)
   x$countryEnglishName[loc] <- countryname$leafletNC[match(x$countryEnglishName[loc], countryname$ncovr)]
   
-  x_other <- x[!is.na(x$countryEnglishName) & x$countryEnglishName != 'China', ]
+  # x_other <- x[!is.na(x$countryEnglishName) & x$countryEnglishName != 'China', ]
+  x_other <- x[!is.na(x$countryEnglishName)]
   x_other_country <- x_other$countryEnglishName
-  x_other[nrow(x_other) + 1, ] <- NA
-  x_china <- x[!is.na(x$countryEnglishName) & x$countryEnglishName == 'China', ] 
-  x_other[nrow(x_other), 1] <- "China"
-  x_other[nrow(x_other), 3:5] <- colSums(x_china[, 3:5])
-  x_other[nrow(x_other), 2] <- "中国"
+  # x_other[nrow(x_other) + 1, ] <- NA
+  # x_china <- x[!is.na(x$countryEnglishName) & x$countryEnglishName == 'China', ] 
+  # x_other[nrow(x_other), 1] <- "China"
+  # x_other[nrow(x_other), 3:5] <- colSums(x_china[, 3:5])
+  # x_other[nrow(x_other), 2] <- "中国"
   x <- x_other
   x <- x[order(-x$confirmedCount), ]
 }
