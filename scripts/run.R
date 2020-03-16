@@ -4,7 +4,7 @@
 # Functions ----
 
 ## Packages ----
-install.packages("static/rpkg/ncovr_0.0.9.tar.gz", repos = NULL, type = "source")
+install.packages("static/rpkg/ncovr_0.0.10.tar.gz", repos = NULL, type = "source")
 # remotes::install_github('pzhaonet/ncovr')
 require(ncovr)
 require(leafletCN)
