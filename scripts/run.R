@@ -25,7 +25,7 @@ Sys.setlocale('LC_CTYPE', 'Chinese')
 
 ## update with the latest data
 ncov <- readRDS('static/data-download/ncov.RDS')
-ncov_tidy <- readRDS('static/data-download/ncov_tidy.RDS')
+# ncov_tidy <- readRDS('static/data-download/ncov_tidy.RDS')
 dim(ncov$area) # 14177    24
 
 ncov_new <- get_ncov(method = "json")
@@ -44,12 +44,12 @@ ncov$news <- ncov$news[!duplicated(ncov$news$title), ]
 ncov$rumors <- bind_rows(ncov$rumors, ncov_new$rumors)
 ncov$rumors <- ncov$rumors[!duplicated(ncov$rumors$title), ]
 
-ncov_tidy <- ncovr:::conv_ncov(ncov)
+# ncov_tidy <- ncovr:::conv_ncov(ncov)
 
 # save data
 if(!dir.exists('static/data-download')) dir.create('static/data-download')
 saveRDS(ncov, 'static/data-download/ncov.RDS')
-saveRDS(ncov_tidy, 'static/data-download/ncov_tidy.RDS')
+# saveRDS(ncov_tidy, 'static/data-download/ncov_tidy.RDS')
 
 ## Create map post ----
 post_map <- function(method, date, language = c('en', 'zh')){
