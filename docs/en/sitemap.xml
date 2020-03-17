@@ -18,6 +18,21 @@
   </url>
   
   <url>
+    <loc>https://ncov2020.org/en/en/country-map-2020-03-14/</loc>
+    <lastmod>2020-03-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://ncov2020.org/zh/country-map-2020-03-14/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ncov2020.org/en/en/country-map-2020-03-14/"
+                />
+  </url>
+  
+  <url>
     <loc>https://ncov2020.org/en/en/country-map-2020-03-17/</loc>
     <lastmod>2020-03-17T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -2202,10 +2217,6 @@
                 hreflang="en"
                 href="https://ncov2020.org/en/data/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://ncov2020.org/en/en/country-ts/</loc>
   </url>
   
   <url>
