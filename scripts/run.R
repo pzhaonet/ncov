@@ -29,7 +29,8 @@ ncov <- readRDS('static/data-download/ncov.RDS')
 dim(ncov$area) # 14177    24
 
 ncov_new <- get_ncov(method = "json")
-if(ncov_new$area$updateTime[1] > ncov$area$updateTime[1]){
+if_update <- ncov_new$area$updateTime[1] > ncov$area$updateTime[1]
+if(if_update){
   ncov$area$province_en <- unlist(ncov$area$province_en)
   ncov_new$area$province_en <- unlist(ncov_new$area$province_en)
   ncov$area <- bind_rows(ncov$area, ncov_new$area)
@@ -98,6 +99,7 @@ countryname <- data.frame(ncovr = c("United Kingdom", "United States of America"
 
 # i <- ncov_dates[1]
 for(i in ncov_dates[1:3]){
+  print(paste("Plot maps of", i))
   y <- ncov$area[ncov$area$date <= as.Date(i), ]
   y <- y[!duplicated(y$provinceName), ]
   names(y)
@@ -184,6 +186,7 @@ setwd(oldwd)
 
 ## create ts ----
 if(!dir.exists('static/ts')) dir.create('static/ts')
+if(if_update){
 setwd('static/ts')
 countryname <- data.frame(ncovr = c("United Kingdom", "United States of America", "New Zealand", "Kampuchea (Cambodia )"),
                           leafletNC = c("UnitedKingdom", "UnitedStates", "NewZealand", "Cambodia"), 
@@ -202,11 +205,13 @@ loc <- which(x_ts$countryEnglishName %in% countryname$ncovr)
 x_ts$countryEnglishName[loc] <- countryname$leafletNC[match(x_ts$countryEnglishName[loc], countryname$ncovr)]
 
 for(i in unique(x_ts$countryEnglishName)){
+  print(paste("Plot TS of",i))
   ts_fig <- plot_ts(x_ts, area = i, area_col = "countryEnglishName", date_col = "date", ts_col = c("confirmed", "cured", "dead"))  
   filename <- paste0("ts-country-", i, ".html")
   saveWidget(ts_fig, filename)
 }
 setwd(oldwd)
+}
 
 ## Create map posts ----
 if(!dir.exists('content/en/')) dir.create('content/en/')
@@ -217,7 +222,21 @@ for(i in ncov_dates[1:3]){
   for(j in c('zh', 'en')){
   # post_map(method = 'province', date = i, language = j)
   # post_map(method = 'city', date = i, language = j)
-  post_map(method = 'country', date = i, language = j)
+  # post_map(method = 'country', date = i, language = j)
+    method = 'country'
+    date = i
+    language = j
+    prefix <- if(language == 'zh') '国' else 'countries'
+    filename <- paste0(method, '-map-', date)
+    pathname <- paste0('content/', language, '/post/', filename, '.Rmd')
+    # if(!file.exists(pathname)){
+    link <- paste0('https://pzhaonet.github.io/ncov/leaflet/leafmap-', method, '-', date, '.html')
+    filetext <- readLines(paste0('static/template/post-worldtop10-', language, '.Rmd'), encoding = 'UTF-8')
+    filetext <- gsub("<<method>>", method, filetext)
+    filetext <- gsub("<<language>>", language, filetext)
+    filetext <- gsub("<<method-zh>>", prefix, filetext)
+    filetext <- gsub("<<date>>", date, filetext)
+    writeLines(filetext, pathname, useBytes = TRUE)
   }
 }
 

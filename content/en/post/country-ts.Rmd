@@ -1,0 +1,22 @@
+---
+title: "Epidemic Time Series for All Countries/Regions (Covid-19)"
+date: `r Sys.Date()`
+slug: country-ts
+---
+
+```{r include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, error = FALSE)
+Sys.setlocale('LC_CTYPE', 'Chinese')
+```
+
+```{r}
+tsfiles <- list.files("../../../static/ts")
+```
+
+
+```{r, results='asis'}
+  cat("## Time series of COVID-19 for Each Country\\n")
+  for(tsfile in tsfiles){
+  cat('<iframe seamless src="https://pzhaonet.github.io/ncov/ts/', tsfile, '" width="100%" height="400"></iframe>\\n', sep = '')
+  }
+```

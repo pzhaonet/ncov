@@ -1,0 +1,29 @@
+---
+title: News on Covid-19
+slug: news
+---
+
+```{r include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, error = FALSE)
+Sys.setlocale('LC_CTYPE', 'Chinese')
+```
+
+```{r, results='asis'}
+require(ncovr)
+ncov <- get_ncov('csv', 'news')$news
+ncov$title <- gsub('\u00A0', ' ', ncov$title)
+ncov$summary <- gsub('\u00A0', ' ', ncov$summary)
+ncov$summary <- gsub('begin-->', '', ncov$summary)
+ncov$summary <- gsub('end-->', '', ncov$summary)
+ncov$summary <- gsub(' ', '', ncov$summary)
+ncov$summary <- gsub('\t', '', ncov$summary)
+
+ncov <- ncov[!duplicated(ncov$title) & !duplicated(ncov$summary), ]
+ncov <- ncov[grepl("[a-zA-Z]", ncov$infoSource), ]
+cat(paste0('## [', ncov$title, '](', ncov$sourceUrl, ')  \n\n',
+           ncov$pubDate, ' ',
+           ncov$infoSource, ' ',
+           ncov$provinceName,  '  \n\n',
+           ncov$summary), 
+    sep = '  \n\n')
+```

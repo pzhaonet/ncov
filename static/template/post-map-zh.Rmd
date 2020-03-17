@@ -59,7 +59,7 @@ if(method != 'country'){
   x$countryEnglishName[loc] <- countryname$leafletNC[match(x$countryEnglishName[loc], countryname$ncovr)]
   
   # x_other <- x[!is.na(x$countryEnglishName) & x$countryEnglishName != 'China', ]
-  x_other <- x[!is.na(x$countryEnglishName)]
+  x_other <- x[!is.na(x$countryEnglishName),]
   x_other_country <- x_other$countryEnglishName
   # x_other[nrow(x_other) + 1, ] <- NA
   # x_china <- x[!is.na(x$countryEnglishName) & x$countryEnglishName == 'China', ] 

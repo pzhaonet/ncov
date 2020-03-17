@@ -19,6 +19,7 @@ ncov$summary <- gsub(' ', '', ncov$summary)
 ncov$summary <- gsub('\t', '', ncov$summary)
 
 ncov <- ncov[!duplicated(ncov$title) & !duplicated(ncov$summary), ]
+ncov <- ncov[!grepl("[a-zA-Z]", ncov$infoSource), ]
 cat(paste0('## [', ncov$title, '](', ncov$sourceUrl, ')  \n\n',
            ncov$pubDate, ' ',
            ncov$infoSource, ' ',
