@@ -32,8 +32,8 @@ before_install:
   - git config --global user.name "pzhaonet"
 
 script:
-#  - Rscript scripts/build.R
-  - Rscript scripts/run.R
+  - Rscript scripts/build.R
+#  - Rscript scripts/run.R
 
 after_success:
   - git add -A

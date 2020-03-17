@@ -1,6 +1,6 @@
 # baseurl = "https://pzhaonet.github.io/ncov/"
 baseurl = "https://ncov2020.org/"
-# baseurl = "file:///D:/temp/delete/github/ncov-en/docs/"
+# baseurl = "file:///D:/github/ncov/docs/"
 # languageCode = "en-us"
 languageCode = "zh-cn"
 theme = "hugo-lithium"

@@ -1,6 +1,5 @@
 ---
 title: "Epidemic Time Series for All Countries/Regions (Covid-19)"
-date: `r Sys.Date()`
 slug: country-ts
 ---
 
