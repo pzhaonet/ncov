@@ -18,8 +18,23 @@
   </url>
   
   <url>
+    <loc>https://ncov2020.org/zh/country-map-2020-03-17/</loc>
+    <lastmod>2020-03-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ncov2020.org/en/en/country-map-2020-03-17/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://ncov2020.org/zh/country-map-2020-03-17/"
+                />
+  </url>
+  
+  <url>
     <loc>https://ncov2020.org/</loc>
-    <lastmod>2020-03-15T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-17T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -34,7 +49,7 @@
   
   <url>
     <loc>https://ncov2020.org/post/</loc>
-    <lastmod>2020-03-15T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-17T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -44,6 +59,36 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://ncov2020.org/post/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://ncov2020.org/zh/country-map-2020-03-16/</loc>
+    <lastmod>2020-03-16T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ncov2020.org/en/en/country-map-2020-03-16/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://ncov2020.org/zh/country-map-2020-03-16/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://ncov2020.org/zh/country-map-2020-03-15/</loc>
+    <lastmod>2020-03-15T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ncov2020.org/en/en/country-map-2020-03-15/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://ncov2020.org/zh/country-map-2020-03-15/"
                 />
   </url>
   
@@ -74,6 +119,21 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://ncov2020.org/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://ncov2020.org/zh/country-map-2020-03-14/</loc>
+    <lastmod>2020-03-14T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ncov2020.org/en/en/country-map-2020-03-14/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://ncov2020.org/zh/country-map-2020-03-14/"
                 />
   </url>
   
@@ -2146,6 +2206,16 @@
   
   <url>
     <loc>https://ncov2020.org/news/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ncov2020.org/en/news/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://ncov2020.org/news/"
+                />
   </url>
   
   <url>
