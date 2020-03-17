@@ -15,11 +15,11 @@ Sys.setlocale('LC_CTYPE', 'Chinese')
 
 # update data
 ## download all data from api
-# ncov <- get_ncov(port = c('area?latest=0', 'overall', 'provinceName', 'news?num=10000', 'rumors?num=10000'), method = 'api')
-# names(ncov) <- c('area', 'overall', 'provinceName', 'news', 'rumors')
-# range(ncovr:::conv_time(ncov$area$updateTime))
-# if(!dir.exists('static/data-download')) dir.create('static/data-download')
-# saveRDS(ncov, 'static/data-download/ncov.RDS')
+ncov <- get_ncov(port = c('area?latest=0', 'overall', 'provinceName', 'news?num=10000', 'rumors?num=10000'), method = 'api')
+names(ncov) <- c('area', 'overall', 'provinceName', 'news', 'rumors')
+range(ncovr:::conv_time(ncov$area$updateTime))
+if(!dir.exists('static/data-download')) dir.create('static/data-download')
+saveRDS(ncov, 'static/data-download/ncov.RDS')
 # ncov_tidy <- ncovr:::conv_ncov(ncov)
 # saveRDS(ncov_tidy, 'static/data-download/ncov_tidy.RDS')
 
@@ -29,21 +29,23 @@ ncov <- readRDS('static/data-download/ncov.RDS')
 dim(ncov$area) # 14177    24
 
 ncov_new <- get_ncov(method = "json")
+ncovr:::conv_time(ncov_new$area$updateTime[1])
+ncovr:::conv_time(ncov$area$updateTime[1])
 if_update <- ncov_new$area$updateTime[1] > ncov$area$updateTime[1]
 if(if_update){
   ncov$area$province_en <- unlist(ncov$area$province_en)
   ncov_new$area$province_en <- unlist(ncov_new$area$province_en)
   ncov$area <- bind_rows(ncov$area, ncov_new$area)
+  
+  ncov$overall <- ncov_new$overall
+  
+  ncov$news <- bind_rows(ncov_new$news, ncov$news)
+  ncov$news <- ncov$news[!duplicated(ncov$news$title), ]
+  
+  ncov$rumors <- bind_rows(ncov_new$rumors, ncov$rumors)
+  ncov$rumors <- ncov$rumors[!duplicated(ncov$rumors$title), ]
 }
 dim(ncov$area) # 14177    24
-
-ncov$overall <- ncov_new$overall
-
-ncov$news <- bind_rows(ncov$news, ncov_new$news)
-ncov$news <- ncov$news[!duplicated(ncov$news$title), ]
-
-ncov$rumors <- bind_rows(ncov$rumors, ncov_new$rumors)
-ncov$rumors <- ncov$rumors[!duplicated(ncov$rumors$title), ]
 
 # ncov_tidy <- ncovr:::conv_ncov(ncov)
 
@@ -97,7 +99,7 @@ countryname <- data.frame(ncovr = c("United Kingdom", "United States of America"
                           leafletNC = c("UnitedKingdom", "UnitedStates", "NewZealand", "Cambodia"), 
                           stringsAsFactors = FALSE)
 
-# i <- ncov_dates[1]
+# i <- ncov_dates[4]
 for(i in ncov_dates[1:3]){
   print(paste("Plot maps of", i))
   y <- ncov$area[ncov$area$date <= as.Date(i), ]
@@ -154,6 +156,12 @@ for(i in ncov_dates[1:3]){
                     countryName = y$countryName, 
                     confirmedCount = y$confirmedCount, 
                     stringsAsFactors = FALSE)
+    x <- x %>% 
+      group_by(countryEnglishName, countryName) %>%
+      summarise(confirmedCount = sum(confirmedCount)) %>%
+      ungroup() %>%
+      as.data.frame()
+    
     loc <- which(x$countryEnglishName %in% countryname$ncovr)
     x$countryEnglishName[loc] <- countryname$leafletNC[match(x$countryEnglishName[loc], countryname$ncovr)]
     
@@ -168,6 +176,7 @@ for(i in ncov_dates[1:3]){
     # x_taiwan$countryEnglishName2 = "Taiwan"
     # x <- rbind(x_other, x_china, x_taiwan)
     x <- x[!is.na(x$countryEnglishName),]
+    
     filename <- paste0("leafmap-country-", i, ".html")
     # if(!file.exists(filename)){
     leafMap <- plot_map(
@@ -218,7 +227,7 @@ if(!dir.exists('content/en/')) dir.create('content/en/')
 if(!dir.exists('content/en/post/')) dir.create('content/en/post/')
 if(!dir.exists('content/zh/')) dir.create('content/zh/')
 if(!dir.exists('content/zh/post/')) dir.create('content/zh/post/')
-for(i in ncov_dates[1:3]){
+for(i in ncov_dates[1:4]){
   for(j in c('zh', 'en')){
   # post_map(method = 'province', date = i, language = j)
   # post_map(method = 'city', date = i, language = j)
@@ -246,6 +255,15 @@ for(i in ncov_dates[1:3]){
 #     post_predict(date = as.Date(i), language = j)
 #   }
 # }
+
+## Create ts posts ----
+
+for(j in c('zh', 'en')){
+  pathname <- paste0('content/', j, '/post/country-ts.Rmd')
+  filetext[3] <- paste("date:", Sys.Date())
+  writeLines(filetext, pathname, useBytes = TRUE)
+}
+
 
 ## Build site ----
 blogdown::install_hugo()

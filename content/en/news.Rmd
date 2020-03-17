@@ -8,18 +8,22 @@ knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALS
 Sys.setlocale('LC_CTYPE', 'Chinese')
 ```
 
-```{r, results='asis'}
+```{r}
 require(ncovr)
 ncov <- get_ncov('csv', 'news')$news
 ncov$title <- gsub('\u00A0', ' ', ncov$title)
 ncov$summary <- gsub('\u00A0', ' ', ncov$summary)
 ncov$summary <- gsub('begin-->', '', ncov$summary)
 ncov$summary <- gsub('end-->', '', ncov$summary)
-ncov$summary <- gsub(' ', '', ncov$summary)
+# ncov$summary <- gsub(' ', '', ncov$summary)
 ncov$summary <- gsub('\t', '', ncov$summary)
 
 ncov <- ncov[!duplicated(ncov$title) & !duplicated(ncov$summary), ]
 ncov <- ncov[grepl("[a-zA-Z]", ncov$infoSource), ]
+
+```
+
+```{r, results='asis'}
 cat(paste0('## [', ncov$title, '](', ncov$sourceUrl, ')  \n\n',
            ncov$pubDate, ' ',
            ncov$infoSource, ' ',

@@ -1,5 +1,5 @@
 ---
-title: "<<date>>: 世界疫情地图和时间序列 (前十)"
+title: "<<date>>: 世界疫情地图和重点国家时间序列"
 date: <<date>>
 slug: <<method>>-map-<<date>>
 ---
@@ -80,7 +80,7 @@ if(method != 'country'){
 ```
 
 ```{r, results='asis'}
-cat("## <<date>> 疫情最严重的十国数据表)")
+cat("## <<date>> 疫情最严重的十国数据表")
 ```
 
 ```{r}

@@ -29,7 +29,7 @@ DefaultContentLanguage = "zh"
     weight = 20
   [[languages.en.menu.main]]
     name = "News"
-    url = "/news/"
+    url = "/en/news/"
     weight = 40
   [[languages.en.menu.main]]
     name = "Data"
