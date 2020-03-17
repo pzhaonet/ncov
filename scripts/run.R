@@ -15,11 +15,11 @@ Sys.setlocale('LC_CTYPE', 'Chinese')
 
 # update data
 ## download all data from api
-ncov <- get_ncov(port = c('area?latest=0', 'overall', 'provinceName', 'news?num=10000', 'rumors?num=10000'), method = 'api')
-names(ncov) <- c('area', 'overall', 'provinceName', 'news', 'rumors')
-range(ncovr:::conv_time(ncov$area$updateTime))
-if(!dir.exists('static/data-download')) dir.create('static/data-download')
-saveRDS(ncov, 'static/data-download/ncov.RDS')
+# ncov <- get_ncov(port = c('area?latest=0', 'overall', 'provinceName', 'news?num=10000', 'rumors?num=10000'), method = 'api')
+# names(ncov) <- c('area', 'overall', 'provinceName', 'news', 'rumors')
+# range(ncovr:::conv_time(ncov$area$updateTime))
+# if(!dir.exists('static/data-download')) dir.create('static/data-download')
+# saveRDS(ncov, 'static/data-download/ncov.RDS')
 # ncov_tidy <- ncovr:::conv_ncov(ncov)
 # saveRDS(ncov_tidy, 'static/data-download/ncov_tidy.RDS')
 
