@@ -99,8 +99,8 @@ countryname <- data.frame(ncovr = c("United Kingdom", "United States of America"
                           leafletNC = c("UnitedKingdom", "UnitedStates", "NewZealand", "Cambodia"), 
                           stringsAsFactors = FALSE)
 
-# i <- ncov_dates[4]
-for(i in ncov_dates[1:3]){
+# i <- ncov_dates[1]
+for(i in ncov_dates[1:4]){
   print(paste("Plot maps of", i))
   y <- ncov$area[ncov$area$date <= as.Date(i), ]
   y <- y[!duplicated(y$provinceName), ]
@@ -152,15 +152,16 @@ for(i in ncov_dates[1:3]){
   # # }
     
     # country 
-    x <- data.frame(countryEnglishName = y$countryEnglishName,
-                    countryName = y$countryName, 
+  y <- y[!is.na(y$countryEnglishName) & y$provinceEnglishName == y$countryEnglishName, ]
+  x <- data.frame(countryEnglishName = y$provinceEnglishName,
+                    countryName = y$provinceName, 
                     confirmedCount = y$confirmedCount, 
                     stringsAsFactors = FALSE)
-    x <- x %>% 
-      group_by(countryEnglishName, countryName) %>%
-      summarise(confirmedCount = sum(confirmedCount)) %>%
-      ungroup() %>%
-      as.data.frame()
+    # x <- x %>% 
+    #   group_by(countryEnglishName, countryName) %>%
+    #   summarise(confirmedCount = sum(confirmedCount)) %>%
+    #   ungroup() %>%
+    #   as.data.frame()
     
     loc <- which(x$countryEnglishName %in% countryname$ncovr)
     x$countryEnglishName[loc] <- countryname$leafletNC[match(x$countryEnglishName[loc], countryname$ncovr)]
