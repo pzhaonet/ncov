@@ -35,7 +35,7 @@ if_update <- ncov_new$area$updateTime[1] > ncov$area$updateTime[1]
 if(if_update){
   ncov$area$province_en <- unlist(ncov$area$province_en)
   ncov_new$area$province_en <- unlist(ncov_new$area$province_en)
-  ncov$area <- bind_rows(ncov$area, ncov_new$area)
+  ncov$area <- bind_rows(ncov_new$area, ncov$area)
   
   ncov$overall <- ncov_new$overall
   
@@ -260,6 +260,7 @@ for(i in ncov_dates[1:4]){
 
 for(j in c('zh', 'en')){
   pathname <- paste0('content/', j, '/post/country-ts.Rmd')
+  filetext <- readLines(pathname, encoding = "UTF-8")
   filetext[3] <- paste("date:", Sys.Date())
   writeLines(filetext, pathname, useBytes = TRUE)
 }
