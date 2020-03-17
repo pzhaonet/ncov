@@ -54,7 +54,11 @@ if(method != 'country'){
   countryname <- data.frame(ncovr = c("United Kingdom", "United States of America", "New Zealand", "Kampuchea (Cambodia )"),
                             leafletNC = c("UnitedKingdom", "UnitedStates", "NewZealand", "Cambodia"), 
                             stringsAsFactors = FALSE)
-  x <- ncov_raw$area[, c('countryEnglishName', 'countryName', 'confirmedCount', 'curedCount', 'deadCount')]
+  y <- ncov_raw$area
+  y <- y[!duplicated(y$provinceName), ]
+  y <- y[!is.na(y$countryEnglishName) & y$provinceEnglishName == y$countryEnglishName, ]
+
+  x <- y[, c('countryEnglishName', 'countryName', 'confirmedCount', 'curedCount', 'deadCount')]
   loc <- which(x$countryEnglishName %in% countryname$ncovr)
   x$countryEnglishName[loc] <- countryname$leafletNC[match(x$countryEnglishName[loc], countryname$ncovr)]
   
@@ -66,13 +70,13 @@ if(method != 'country'){
   # x_other[nrow(x_other), 1] <- "China"
   # x_other[nrow(x_other), 3:5] <- colSums(x_china[, 3:5])
   # x_other[nrow(x_other), 2] <- "中国"
-    x <- x_other %>% 
-    group_by(countryEnglishName, countryName) %>%
-    summarise(confirmedCount = sum(confirmedCount),
-              curedCount = sum(curedCount),
-              deadCount = sum(deadCount)) %>%
-    ungroup() %>%
-    as.data.frame()
+    # x <- x_other %>% 
+    # group_by(countryEnglishName, countryName) %>%
+    # summarise(confirmedCount = sum(confirmedCount),
+    #           curedCount = sum(curedCount),
+    #           deadCount = sum(deadCount)) %>%
+    # ungroup() %>%
+    # as.data.frame()
   x <- x[order(-x$confirmedCount), ]
   x <- x[1:10, ]
   x_other_country <- x$countryEnglishName

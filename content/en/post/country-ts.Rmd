@@ -1,6 +1,6 @@
 ---
 title: "Epidemic Time Series for All Countries/Regions (Covid-19)"
-date
+date: 2020-03-17
 slug: country-ts
 ---
 
