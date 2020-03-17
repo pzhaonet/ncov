@@ -6,14 +6,14 @@ slug: rumors
 ```{r include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, error = FALSE)
 Sys.setlocale('LC_CTYPE', 'Chinese')
-```
-
-```{r, results='asis'}
 require(ncovr)
 ncov <- get_ncov('csv', 'rumors')$rumors
 ncov$title <- gsub('\u00A0', ' ', ncov$title)
 ncov$body <- gsub('\u00A0', ' ', ncov$body)
 ncov <- ncov[!duplicated(ncov$id) & !duplicated(ncov$body) , ]
+```
+
+```{r, results='asis'}
 
 cat(paste0('## ', ncov$title, '  \n\n',
     ncov$mainSummary, '  \n\n',
