@@ -197,42 +197,43 @@ setwd(oldwd)
 ## create ts ----
 if(!dir.exists('static/ts')) dir.create('static/ts')
 if(if_update){
-setwd('static/ts')
-countryname <- data.frame(ncovr = c("United Kingdom", "United States of America", "New Zealand", "Kampuchea (Cambodia )"),
-                          leafletNC = c("UnitedKingdom", "UnitedStates", "NewZealand", "Cambodia"), 
-                          stringsAsFactors = FALSE)
-y <- ncov$area[ncov$area$countryEnglishName == ncov$area$provinceEnglishName, ]
-x_ts <- y[, c('countryEnglishName', 'countryName', 'date', 'confirmedCount', 'curedCount', 'deadCount')] %>% 
-  group_by(countryEnglishName, date) %>% 
-  summarise(confirmed = max(confirmedCount), 
-            cured = max(curedCount), 
-            dead = max(deadCount)) %>% 
-  ungroup() %>% 
-  filter(!is.na(countryEnglishName)) %>% 
-  # filter(!is.na(countryEnglishName) & !countryEnglishName == 'China') %>% 
-  as.data.frame()
-loc <- which(x_ts$countryEnglishName %in% countryname$ncovr)
-x_ts$countryEnglishName[loc] <- countryname$leafletNC[match(x_ts$countryEnglishName[loc], countryname$ncovr)]
-
-for(i in unique(x_ts$countryEnglishName)){
-  if(i != "China"){
+  setwd('static/ts')
+  countryname <- data.frame(ncovr = c("United Kingdom", "United States of America", "New Zealand", "Kampuchea (Cambodia )"),
+                            leafletNC = c("UnitedKingdom", "UnitedStates", "NewZealand", "Cambodia"), 
+                            stringsAsFactors = FALSE)
+  y <- ncov$area[ncov$area$countryEnglishName == ncov$area$provinceEnglishName, ]
+  x_ts <- y[, c('countryEnglishName', 'countryName', 'date', 'confirmedCount', 'curedCount', 'deadCount')] %>% 
+    group_by(countryEnglishName, date) %>% 
+    summarise(confirmed = max(confirmedCount), 
+              cured = max(curedCount), 
+              dead = max(deadCount)) %>% 
+    ungroup() %>% 
+    filter(!is.na(countryEnglishName)) %>% 
+    # filter(!is.na(countryEnglishName) & !countryEnglishName == 'China') %>% 
+    as.data.frame()
+  loc <- which(x_ts$countryEnglishName %in% countryname$ncovr)
+  x_ts$countryEnglishName[loc] <- countryname$leafletNC[match(x_ts$countryEnglishName[loc], countryname$ncovr)]
+  
+  for(i in unique(x_ts$countryEnglishName)){
+    if(i != "China"){
+      print(paste("Plot TS of",i))
+      ts_fig <- plot_ts(x_ts, area = i, area_col = "countryEnglishName", date_col = "date", ts_col = c("confirmed", "cured", "dead"))  
+      filename <- paste0("ts-country-", i, ".html")
+      saveWidget(ts_fig, filename)
+    }
+  }
+  x_ts_china <- get_ncov(method = "china")
+  x_ts_china <- x_ts_china[, c("日期", "累计确诊", "累计死亡","累计治愈" )]
+  names(x_ts_china) <- c("date", "confirmed", "dead", "cured")
+  x_ts_china$countryEnglishName <- "China"
+  i <- "China"
   print(paste("Plot TS of",i))
-  ts_fig <- plot_ts(x_ts, area = i, area_col = "countryEnglishName", date_col = "date", ts_col = c("confirmed", "cured", "dead"))  
+  ts_fig <- plot_ts(x_ts_china, area = i, area_col = "countryEnglishName", date_col = "date", ts_col = c("confirmed", "cured", "dead"))  
   filename <- paste0("ts-country-", i, ".html")
   saveWidget(ts_fig, filename)
-  }
+  
+  setwd(oldwd)
 }
-setwd(oldwd)
-}
-x_ts_china <- get_ncov(method = "china")
-x_ts_china <- x_ts_china[, c("日期", "累计确诊", "累计死亡","累计治愈" )]
-names(x_ts_china) <- c("date", "confirmed", "dead", "cured")
-x_ts_china$countryEnglishName <- "China"
-i <- "China"
-print(paste("Plot TS of",i))
-ts_fig <- plot_ts(x_ts_china, area = i, area_col = "countryEnglishName", date_col = "date", ts_col = c("confirmed", "cured", "dead"))  
-filename <- paste0("ts-country-", i, ".html")
-saveWidget(ts_fig, filename)
 
 ## Create map posts ----
 if(!dir.exists('content/en/')) dir.create('content/en/')
