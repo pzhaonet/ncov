@@ -61,7 +61,12 @@ x <- x[, c(5, 1:4)]
     countryname <- data.frame(ncovr = c("United Kingdom", "United States of America", "New Zealand", "Kampuchea (Cambodia )"),
                             leafletNC = c("UnitedKingdom", "UnitedStates", "NewZealand", "Cambodia"), 
                             stringsAsFactors = FALSE)
-  x <- ncov_raw$area[, c('countryEnglishName', 'countryName', 'confirmedCount', 'curedCount', 'deadCount')]
+      y <- ncov_raw$area
+  y <- y[!duplicated(y$provinceName), ]
+  y <- y[!is.na(y$countryEnglishName) & y$provinceEnglishName == y$countryEnglishName, ]
+
+  x <- y[, c('countryEnglishName', 'countryName', 'confirmedCount', 'curedCount', 'deadCount')]
+
   loc <- which(x$countryEnglishName %in% countryname$ncovr)
   x$countryEnglishName[loc] <- countryname$leafletNC[match(x$countryEnglishName[loc], countryname$ncovr)]
   
