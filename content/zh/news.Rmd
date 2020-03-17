@@ -6,9 +6,6 @@ slug: news
 ```{r include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, error = FALSE)
 Sys.setlocale('LC_CTYPE', 'Chinese')
-```
-
-```{r}
 require(ncovr)
 ncov <- get_ncov('csv', 'news')$news
 ncov <- ncov[!grepl("[a-zA-Z]", ncov$infoSource), ]
@@ -27,7 +24,7 @@ ncov <- ncov[!duplicated(ncov$title) & !duplicated(ncov$summary), ]
 cat(paste0('## [', ncov$title, '](', ncov$sourceUrl, ')  \n\n',
            ncov$pubDate, ' ',
            ncov$infoSource, ' ',
-           ncov$provinceName,  '  \n\n',
+           ifelse(is.na(ncov$provinceName), "", ncov$provinceName),  '  \n\n',
            ncov$summary), 
     sep = '  \n\n')
 ```
