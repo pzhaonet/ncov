@@ -1,6 +1,6 @@
 ---
 title: "各国（地区）疫情时间序列"
-date: 2020-03-20
+date: 2020-03-21
 slug: country-ts
 ---
 
