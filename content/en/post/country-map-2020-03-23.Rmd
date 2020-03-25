@@ -1,0 +1,125 @@
+---
+title: "2020-03-23: World Map and Time Series Top-10"
+date: 2020-03-23
+slug: country-map-2020-03-23
+---
+
+```{r include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, error = FALSE)
+Sys.setlocale('LC_CTYPE', 'Chinese')
+```
+
+Updated: `r format(Sys.time(), tz = "Asia/Shanghai")` (UTC+08:00)
+
+<iframe seamless src="https://pzhaonet.github.io/ncov/leaflet/leafmap-country-2020-03-23.html" width="100%" height="500"></iframe>
+
+Confirmed cases. The gray area in the figure indicates the lack of relevant data or 0 case in this area.
+
+[Click here for full screen display.](https://pzhaonet.github.io/ncov/leaflet/leafmap-country-2020-03-23.html)
+
+
+```{r}
+require(ncovr)
+require(leafletCN)
+require(dplyr)
+ncov_raw <- get_ncov()
+ncov_raw$area$date <- as.Date(ncovr:::conv_time(ncov_raw$area$updateTime))
+ncov_raw$area <- ncov_raw$area[rev(order(ncov_raw$area$date)), ]
+ncov_raw$area <- ncov_raw$area[ncov_raw$area$date <= as.Date("2020-03-23"), ]
+x_ts <- ncov_raw$area
+ncov_raw$area <- ncov_raw$area[!duplicated(ncov_raw$area$provinceName), ]
+method <- "country"
+
+if(method != 'country'){
+  ncov <- ncov_raw
+  ncov$area <- ncov$area[ncov$area$countryName == '中国' & ncov$area$provinceName != '待明确地区' , ]
+
+x <- ncov$area[, c('provinceShortName', 'confirmedCount', 'curedCount', 'deadCount', 'province_en')]
+names(x)[1] <- 'provinceName'
+
+if(method == 'city'){
+  x <- x[x$provinceName %in% c("北京", "上海", "重庆", "天津"), ]
+  names(x)[1] <- "cityName"
+  names(x)[5] <- "city_en"
+  x$city_en <- unlist(x$city_en)
+  x_city <- get_ncov('tidy')$area
+  x_city$date <- x_city$updateTime
+  x_city <- x_city[rev(order(x_city$date)), ]
+  x_city <- x_city[as.Date(x_city$date) <= as.Date("2020-03-23"), ]
+  x_city <- x_city[!duplicated(x_city$cityName), ]
+  if(nrow(x_city) > 0) x <- rbind(x_city[, c('cityName', 'confirmedCount', 'curedCount', 'deadCount', 'city_en')], x)
+  cities <- leafletCN::regionNames(mapName = "city")
+  x <- x[x$cityName %in% cities, ]
+  require(pinyin)
+  mydic <- pydic('toneless', dic = 'pinyin2')
+  x$city_en[is.na(x$city_en)] <- ncovr:::conv_firstletter(py(x$cityName[is.na(x$city_en)], dic = mydic, sep =''))
+}
+
+x <- x[order(-x$confirmedCount), ]
+x <- x[, c(5, 1:4)]
+} else{
+    countryname <- data.frame(ncovr = c("United Kingdom", "United States of America", "New Zealand", "Kampuchea (Cambodia )"),
+                            leafletNC = c("UnitedKingdom", "UnitedStates", "NewZealand", "Cambodia"), 
+                            stringsAsFactors = FALSE)
+      y <- ncov_raw$area
+  y <- y[!duplicated(y$provinceName), ]
+  y <- y[!is.na(y$countryEnglishName) & y$provinceEnglishName == y$countryEnglishName, ]
+
+  x <- y[, c('countryEnglishName', 'countryName', 'confirmedCount', 'curedCount', 'deadCount')]
+
+  loc <- which(x$countryEnglishName %in% countryname$ncovr)
+  x$countryEnglishName[loc] <- countryname$leafletNC[match(x$countryEnglishName[loc], countryname$ncovr)]
+  
+  # x_other <- x[!is.na(x$countryEnglishName) & x$countryEnglishName != 'China', ]
+  x_other <- x[!is.na(x$countryEnglishName), ]
+  x_other_country <- x_other$countryEnglishName
+  # x_other[nrow(x_other) + 1, ] <- NA
+  # x_china <- x[!is.na(x$countryEnglishName) & x$countryEnglishName == 'China', ] 
+  # x_other[nrow(x_other), 1] <- "China"
+  # x_other[nrow(x_other), 3:5] <- colSums(x_china[, 3:5])
+  # x_other[nrow(x_other), 2] <- "中国"
+    x <- x_other %>% 
+    group_by(countryEnglishName, countryName) %>%
+    summarise(confirmedCount = sum(confirmedCount),
+              curedCount = sum(curedCount),
+              deadCount = sum(deadCount)) %>%
+    ungroup() %>%
+    as.data.frame()
+  x <- x[order(-x$confirmedCount), ]
+  x <- x[1:10, ]
+  x_other_country <- x$countryEnglishName
+}
+```
+
+```{r, results='asis'}
+cat("## 2020-03-23 Epidemic Data Sheet Top 10 Countries)")
+```
+
+```{r}
+# knitr::kable(x, format = "html", row.names = FALSE, col.names = c("Rank", "Area", "Area_cn", "Confirmed", "Cured", "Dead"))
+# flextable::flextable(x)
+
+names(x) <- c("Area_en", "Area_zh", "Confirmed", "Cured", "Dead")
+x$Area <- unlist(x$Area)
+DT::datatable(x, rownames =as.character(1:nrow(x)))
+```
+
+
+```{r, results='asis'}
+if(method == "country" & as.Date("2020-03-23") == max(ncov_raw$area$date, na.rm = TRUE)){
+  cat("## Time series of COVID-19 for Top-10 Countries\\n")
+  for(coutryname in x_other_country){
+  cat('<iframe seamless src="https://pzhaonet.github.io/ncov/ts/ts-country-', coutryname, '.html" width="100%" height="400"></iframe>\\n', sep = '')
+  }
+  # x <- x_ts[, c('countryEnglishName', 'countryName', 'date', 'confirmedCount', 'curedCount', 'deadCount')] %>% 
+  #   group_by(countryEnglishName, date) %>% 
+  #   summarise(confirmed = sum(confirmedCount), 
+  #             cured = sum(curedCount), 
+  #             dead = sum(deadCount)) %>% 
+  #   ungroup() %>% 
+  #   filter(!is.na(countryEnglishName) & !countryEnglishName == 'China') %>% 
+  #   as.data.frame()
+  # res <- lapply(unique(x$countryEnglishName), function(i) plot_ts(x, area = i, area_col = "countryEnglishName", date_col = "date", ts_col = c("confirmed", "cured", "dead")))
+  # htmltools::tagList(res)
+}
+```
